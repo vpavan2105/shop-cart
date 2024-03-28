@@ -15,7 +15,7 @@ export const Links = [
   "Luggage & Bags",
 ];
 
-export const Fashion = ["Men-clothing", "Women-clothing", "Jewelry", "Fragrances", "Shoes"];
+export const Fashion = ["men's clothing", "womes clothing", "jewelry", "fragrances", "shoes"];
 export const Electronics = ["Mobiles", "Laptops", "Storage"];
 
 export const NavLink = ({children, onclick}: Props) => {
