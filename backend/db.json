@@ -1,219 +1,202 @@
-
 {
-    "products": [
-      {
-        "id": 1,
-        "title": "Samsung 55-Inch 4K UHD Smart TV",
-        "price": 799.99,
-        "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
-        "category": "homeappliances",
-        "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
-        "rating": {
-          "rate": 4.8
-        }
-      },
-      {
-        "id": 2,
-        "title": "Breville BES870XL Barista Express Espresso Machine",
-        "price": 599.95,
-        "description": "Create cafe-quality coffee at home with the Breville Barista Express Espresso Machine. Enjoy rich espresso and customizable flavors.",
-        "category": "kitchen",
-        "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-        "rating": {
-          "rate": 4.5
-        }
-      },
-      {
-        "id": 3,
-        "title": "Sony PlayStation 5 Console",
-        "price": 499.99,
-        "description": "Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D audio, and an all-new generation of incredible PlayStation games.",
-        "category": "electronics",
-        "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
-        "rating": {
-          "rate": 4.9
-        }
-      },
-      {
-        "id": 4,
-        "title": "Apple AirPods Pro",
-        "price": 249.99,
-        "description": "Enjoy superior sound quality and active noise cancellation with Apple AirPods Pro. Designed for a comfortable and customizable fit.",
-        "category": "electronics",
-        "image": "https://fakestoreapi.com/img/71MHT4wG6RL._AC_SL1500_.jpg",
-        "rating": {
-          "rate": 4.7
-        }
-      },
-      {
-        "id": 5,
-        "title": "Amazon Echo (3rd Gen)",
-        "price": 99.99,
-        "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
-        "category": "electronics",
-        "image": "https://fakestoreapi.com/img/61eqZe4R1zL._AC_SL1000_.jpg",
-        "rating": {
-          "rate": 4.7
-        }
-      },
-      {
-        "id": 6,
-        "title": "Samsung Galaxy S20 Ultra",
-        "price": 1199.99,
-        "description": "Experience the power of 5G connectivity and revolutionary camera features with the Samsung Galaxy S20 Ultra. Capture stunning photos and videos in high resolution.",
-        "category": "electronics",
-        "image": "https://fakestoreapi.com/img/61n1zKqo1BL._AC_SL1000_.jpg",
-        "rating": {
-          "rate": 4.8
-        }
-      },
-      {
-        "id": 7,
-        "title": "Dell XPS 13 Laptop",
-        "price": 1299.99,
-        "description": "Work and play with speed, performance, and a stunning display with the Dell XPS 13 Laptop. Perfect for professionals and enthusiasts alike.",
-        "category": "electronics",
-        "image": "https://fakestoreapi.com/img/61AUPUN1IsL._AC_SL1500_.jpg",
-        "rating": {
-          "rate": 4.6
-        }
-      },
-      {
-        "id": 8,
-        "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
-        "price": 349.99,
-        "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
-        "category": "electronics",
-        "image": "https://fakestoreapi.com/img/81Skzr0uuLL._AC_SX569_.jpg",
-        "rating": {
-          "rate": 4.9
-        }
-      },
-      {
-        "id": 9,
-        "title": "Fitbit Charge 4 Fitness and Activity Tracker",
-        "price": 149.95,
-        "description": "Track workouts, heart rate, distance, calories burned, and more with Fitbit Charge 4 Fitness and Activity Tracker. Stay motivated and achieve your fitness goals.",
-        "category": "electronics",
-        "image": "https://fakestoreapi.com/img/71Swueo5hIL._AC_SX466_.jpg",
-        "rating": {
-          "rate": 4.5
-        }
-      },
-      {
-        "id": 10,
-        "title": "GoPro HERO9 Black",
-        "price": 449.99,
-        "description": "Capture stunning 5K video and vibrant photos with GoPro HERO9 Black. With HyperSmooth 3.0 stabilization and a front display, it's the ultimate action camera.",
-        "category": "electronics",
-        "image": "https://fakestoreapi.com/img/61pimc1uDYL._AC_SL1500_.jpg",
-        "rating": {
-          "rate": 4.8
-        }
+  "products": [
+    {
+      "id": "1",
+      "title": "Samsung 55-Inch 4K UHD Smart TV",
+      "price": 799.99,
+      "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
+      "category": "homeappliances",
+      "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+      "rating": {
+        "rate": 4.8
       }
-    ],
-    
-    "carts":[
-      {
-        "id":"1",
-        "user_id":"1",
-        "products": [
-          {
-            "id": 3,
-            "title": "Sony PlayStation 5 Console",
-            "price": 499.99,
-            "description": "Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D audio, and an all-new generation of incredible PlayStation games.",
-            "category": "electronics",
-            "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
-            "rating": {
-              "rate": 4.9
-            },
-            "quantity": 1
-          },
-          {
-            "id": 4,
-            "title": "Apple AirPods Pro",
-            "price": 249.99,
-            "description": "Enjoy superior sound quality and active noise cancellation with Apple AirPods Pro. Designed for a comfortable and customizable fit.",
-            "category": "electronics",
-            "image": "https://fakestoreapi.com/img/71MHT4wG6RL._AC_SL1500_.jpg",
-            "rating": {
-              "rate": 4.7
-            },
-            "quantity": 1
-          }
-        ]
-      },
-      {
-        "id": "2",
-        "user_id":"2",
-        
-        "products": [
-          {
-            "id": 1,
-            "title": "Samsung 55-Inch 4K UHD Smart TV",
-            "price": 799.99,
-            "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
-            "category": "homeappliances",
-            "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
-            "rating": {
-              "rate": 4.8
-            },
-            "quantity": 1
-          },
-          {
-            "id": 5,
-            "title": "Amazon Echo (3rd Gen)",
-            "price": 99.99,
-            "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
-            "category": "electronics",
-            "image": "https://fakestoreapi.com/img/61eqZe4R1zL._AC_SL1000_.jpg",
-            "rating": {
-              "rate": 4.7
-            },
-            "quantity": 1
-          },
-          {
-            "id": 8,
-            "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
-            "price": 349.99,
-            "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
-            "category": "electronics",
-            "image": "https://fakestoreapi.com/img/81Skzr0uuLL._AC_SX569_.jpg",
-            "rating": {
-              "rate": 4.9
-            },
-            "quantity": 1
-          }
-        ]
+    },
+    {
+      "id": "2",
+      "title": "Breville BES870XL Barista Express Espresso Machine",
+      "price": 599.95,
+      "description": "Create cafe-quality coffee at home with the Breville Barista Express Espresso Machine. Enjoy rich espresso and customizable flavors.",
+      "category": "kitchen",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "rating": {
+        "rate": 4.5
       }
-    ],
-      "users": [
+    },
+    {
+      "id": "3",
+      "title": "Sony PlayStation 5 Console",
+      "price": 499.99,
+      "description": "Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D audio, and an all-new generation of incredible PlayStation games.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+      "rating": {
+        "rate": 4.9
+      }
+    },
+    {
+      "id": "4",
+      "title": "Apple AirPods Pro",
+      "price": 249.99,
+      "description": "Enjoy superior sound quality and active noise cancellation with Apple AirPods Pro. Designed for a comfortable and customizable fit.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/71MHT4wG6RL._AC_SL1500_.jpg",
+      "rating": {
+        "rate": 4.7
+      }
+    },
+    {
+      "id": "5",
+      "title": "Amazon Echo (3rd Gen)",
+      "price": 99.99,
+      "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61eqZe4R1zL._AC_SL1000_.jpg",
+      "rating": {
+        "rate": 4.7
+      }
+    },
+    {
+      "id": "6",
+      "title": "Samsung Galaxy S20 Ultra",
+      "price": 1199.99,
+      "description": "Experience the power of 5G connectivity and revolutionary camera features with the Samsung Galaxy S20 Ultra. Capture stunning photos and videos in high resolution.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61n1zKqo1BL._AC_SL1000_.jpg",
+      "rating": {
+        "rate": 4.8
+      }
+    },
+    {
+      "id": "7",
+      "title": "Dell XPS 13 Laptop",
+      "price": 1299.99,
+      "description": "Work and play with speed, performance, and a stunning display with the Dell XPS 13 Laptop. Perfect for professionals and enthusiasts alike.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61AUPUN1IsL._AC_SL1500_.jpg",
+      "rating": {
+        "rate": 4.6
+      }
+    },
+    {
+      "id": "8",
+      "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
+      "price": 349.99,
+      "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/81Skzr0uuLL._AC_SX569_.jpg",
+      "rating": {
+        "rate": 4.9
+      }
+    },
+    {
+      "id": "9",
+      "title": "Fitbit Charge 4 Fitness and Activity Tracker",
+      "price": 149.95,
+      "description": "Track workouts, heart rate, distance, calories burned, and more with Fitbit Charge 4 Fitness and Activity Tracker. Stay motivated and achieve your fitness goals.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/71Swueo5hIL._AC_SX466_.jpg",
+      "rating": {
+        "rate": 4.5
+      }
+    },
+    {
+      "id": "10",
+      "title": "GoPro HERO9 Black",
+      "price": 449.99,
+      "description": "Capture stunning 5K video and vibrant photos with GoPro HERO9 Black. With HyperSmooth 3.0 stabilization and a front display, it's the ultimate action camera.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61pimc1uDYL._AC_SL1500_.jpg",
+      "rating": {
+        "rate": 4.8
+      }
+    }
+  ],
+  "carts": [
+    {
+      "id": "1",
+      "user_id": "1",
+      "products": [
         {
-          "id": "1",
-          "username": "exampleUser",
-          "email": "user@example.com",
-          "password": "hashedPassword",
-          "phonenumber": "1234567890"
+          "id": 1,
+          "title": "Samsung 55-Inch 4K UHD Smart TV",
+          "price": 799.99,
+          "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
+          "category": "homeappliances",
+          "image": "https://media.istockphoto.com/id/1453241155/photo/curious-cat-sitting-while-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=AMYu9_ks9-slttX22iCxBwVtTswk9K1U9oDH09wWwVM=",
+          "rating": {
+            "rate": 4.8
+          },
+          "quantity": 5
         },
         {
-          "id": "2",
-          "username": "anotherUser",
-          "email": "anotheruser@example.com",
-          "password": "hashedPassword",
-          "phonenumber": "9876543210"
+          "id": 5,
+          "title": "Amazon Echo (3rd Gen)",
+          "price": 99.99,
+          "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
+          "category": "electronics",
+          "image": "https://media.istockphoto.com/id/1293763250/photo/cute-kitten-licking-glass-table-with-copy-space.webp?b=1&s=170667a&w=0&k=20&c=f0VoM2wiDR3iZVTC0n-WK4cfstZEfbDh33lWc2KRbFM=",
+          "rating": {
+            "rate": 4.7
+          },
+          "quantity": 8
         },
         {
-          "id": "user555",
-          "username": "exampleUser2",
-          "email": "user2@example.com",
-          "password": "hashedPassword",
-          "phonenumber": "9998887777"
+          "id": 8,
+          "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
+          "price": 349.99,
+          "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
+          "category": "electronics",
+          "image": "https://media.istockphoto.com/id/1483360428/photo/cute-young-tabby-cat-playing-in-a-garden.webp?b=1&s=170667a&w=0&k=20&c=dw4l18FO9_MDnWPyD6flSoUYim3p52m2_PcCNVWFz_4=",
+          "rating": {
+            "rate": 4.9
+          },
+          "quantity": 1
         }
       ]
-    ,
-    
-    "orders":[
+    },
+    {
+      "id": "2",
+      "user_id": "2",
+      "products": [
+        {
+          "id": 1,
+          "title": "Samsung 55-Inch 4K UHD Smart TV",
+          "price": 799.99,
+          "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
+          "category": "homeappliances",
+          "image": "https://media.istockphoto.com/id/1453241155/photo/curious-cat-sitting-while-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=AMYu9_ks9-slttX22iCxBwVtTswk9K1U9oDH09wWwVM=",
+          "rating": {
+            "rate": 4.8
+          },
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "exampleUser",
+      "email": "user@example.com",
+      "password": "hashedPassword",
+      "phonenumber": "1234567890"
+    },
+    {
+      "id": "2",
+      "username": "anotherUser",
+      "email": "anotheruser@example.com",
+      "password": "hashedPassword",
+      "phonenumber": "9876543210"
+    },
+    {
+      "id": "user555",
+      "username": "exampleUser2",
+      "email": "user2@example.com",
+      "password": "hashedPassword",
+      "phonenumber": "9998887777"
+    }
+  ],
+  "orders": [
     {
       "orderId": "order123",
       "userId": "user123",
@@ -226,8 +209,8 @@
         "Country"
       ],
       "date": "2024-03-26T12:00:00Z",
-      "status": "pending"
+      "status": "pending",
+      "id": "bbc7"
     }
-    ]
-  
-  }
+  ]
+}
