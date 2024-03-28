@@ -48,17 +48,3 @@ export function OrderList():ReactElement{
   </FormControl></>
 }
 
-
-//  "orderId": "order123",
-//     "userId": "user123",
-//     "productId": "product456",
-//     "address": [
-//       "123 Main Street",
-//       "City",
-//       "State",
-//       "Zip Code",
-//       "Country"
-//     ],
-//     "date": "2024-03-26T12:00:00Z",
-//     "status": "pending",
-//     "id": "bbc7"
