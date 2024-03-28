@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Product } from "./ProductList";
 import axios from "axios";
 import { Box, List, Text } from "@chakra-ui/react";
-// import { ProductCard } from "./ProductCard";
+import { ProductCard } from "./ProductCard";
 import { CardSkeleton } from "./Skeleton";
 
 interface FilteredProductsProps {
@@ -32,9 +32,9 @@ const FilteredProducts: React.FC<FilteredProductsProps> = ({ category }) => {
       <List spacing={3}>
         {filteredProducts.length > 0 ? (
           <List spacing={3}>
-            {/* {filteredProducts.map((prod) => ()
+            {filteredProducts.map((prod) => ()
               // <ProductCard key={prod.id} prod={prod} />
-            )} */}
+            )}
           </List>
         ) : (
           <CardSkeleton />
