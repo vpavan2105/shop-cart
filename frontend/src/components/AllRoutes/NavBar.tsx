@@ -1,5 +1,5 @@
-import React from 'react'
-import {Link, NavLink} from 'react-router-dom'
+import { Flex } from '@chakra-ui/react'
+import {NavLink} from 'react-router-dom'
 
 const NavBar = () => {
     const listOfLinks = [
@@ -29,16 +29,26 @@ const NavBar = () => {
         }
     ]
 
+    const defaultStyle = {color:"black"}
+    const activeStyle = {color:"red"}
+
     return (
-        <div style={{
-            display:"flex",
-            justifyContent:"space-around",
-            listStyle:"none"
-        }}>
-           {listOfLinks.map((link)=>{
-            return(<Link key={link.to} to={link.to}>{link.displayText}</Link>)
-           })}
-        </div>
+
+        <>
+        <Flex
+        as="nav"
+        align="center"
+        justify="space-between"
+        padding="1rem"
+        bg="blue.300"
+        >
+            {listOfLinks.map((link)=>{
+                return(<NavLink style={({isActive})=> isActive?activeStyle:defaultStyle}
+                    key={link.to} to={link.to}>{link.displayText}</NavLink>)
+            })}
+            
+        </Flex>
+        </>
         
     )
 }
