@@ -1,5 +1,5 @@
 import { IOrderState } from '../utils/adminUtils'
-import { FetchOrder, UpdateOrder } from '../actionTypes'
+import { FetchOrder, UpdateOrder } from '../actionTypes/actionTypes_Products'
 
 
 const initialState :IOrderState = {

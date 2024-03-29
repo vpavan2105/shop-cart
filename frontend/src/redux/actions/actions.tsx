@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ADD_TO_CART, FETCH_CATEGORIES, FETCH_PRODUCTS, PRODUCTS_LOADING } from '../actionTypes.tsx';
+import { ADD_TO_CART, FETCH_CATEGORIES, FETCH_PRODUCTS, PRODUCTS_LOADING } from '../actionTypes/actionTypes_Products.tsx';
 import { Dispatch } from 'redux';
 import { Product } from '../utils/Product_Utils';
 

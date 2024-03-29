@@ -9,9 +9,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/actions/actions";
-import { RootState } from "../../redux/store";
 import { Product, useAppDispatch } from "../../redux/utils/Product_Utils";
 
 interface SingleProductPageProps {
