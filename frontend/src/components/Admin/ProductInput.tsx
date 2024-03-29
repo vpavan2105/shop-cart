@@ -3,8 +3,9 @@ import  { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-import { ProdData, useAppDispatch } from "../../redux/utils/adminUtils";
+import { ProdData } from "../../redux/utils/adminUtils";
 import { addDataProduct } from "../../redux/actions/actionAdmin";
+import { useAppDispatch } from '../../redux/utils/Product_Utils';
 
 
 const initialState:ProdData = {

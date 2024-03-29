@@ -12,7 +12,8 @@ import {
     Textarea,
   } from '@chakra-ui/react'
 
-import { ProdData, useAppDispatch } from '../../redux/utils/adminUtils';
+import { ProdData } from '../../redux/utils/adminUtils';
+import { useAppDispatch } from '../../redux/utils/Product_Utils';
 import { updateDataProduct } from '../../redux/actions/actionAdmin';
 
 interface ProductUpdateProps{

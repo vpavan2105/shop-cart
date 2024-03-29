@@ -1,5 +1,5 @@
 import { IUserState } from "../utils/adminUtils"
-import { DeleteUser, FetchUsers } from "../actionTypes/actionTypes_Products"
+import { DeleteUser, FetchUsers } from "../actionTypes/actionTypes"
 
 const initialState : IUserState = {
     isLoading: false,

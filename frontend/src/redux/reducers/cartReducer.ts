@@ -1,5 +1,5 @@
 import { ICartState } from "../utils/adminUtils"
-import { FetchCarts } from "../actionTypes/actionTypes_Products"
+import { FetchCarts } from "../actionTypes/actionTypes"
 
 const initialState:ICartState = {
     isLoading: false,
