@@ -1,62 +1,73 @@
-import { ReactElement, useState } from "react";
-import {
-  Box,
-  Button,
-  Card,
-  Center,
-  Divider,
-  Flex,
-  Heading,
-  Image,
-  Text,
-  useToast,
-} from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, Button, Card, Center, Divider, Flex, Heading, Image, Text, useToast } from "@chakra-ui/react";
+import { addToCart, url } from "../../redux/actions/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
-import { Product } from "./ProductList";
+import SingleProductPage from "./SingleProductCard";
+import { useAppDispatch, useAppSelector } from "../../redux/utils/Product_Utils";
+import { RootState } from "../../redux/store";
 
-export interface ProductCardProp {
-  prod: {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    image: string;
-    category: string;
-    rating: {
-      rate: number;
-    };
+
+export interface Product {
+  id: string;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
   };
+}
+
+export interface ProductCardProps {
+  prod: Product;
   truncateDescription: (description: string) => string;
   truncateTitle: (title: string) => string;
 }
 
-export function ProductCard({
-  prod,
-  truncateDescription,
-  truncateTitle,
-}: ProductCardProp): ReactElement {
+export const ProductCard: React.FC<ProductCardProps> = ({ prod, truncateDescription, truncateTitle }: ProductCardProps) => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
+  const dispatch = useAppDispatch();
+  const isAuth = useAppSelector((state:RootState) => state.auth);
   const toast = useToast();
 
-  function handleBuy() {
+  const handleBuy = () => {
     setTimeout(() => {
       console.log("moved to payment page");
     }, 500);
-  }
+  };
 
-  function handleCart() {
-    setCartItems([...cartItems, prod]);
-    console.log("product added to cart");
-    toast({
-      title: " Succefully Added",
-      description: "You added one product to cart.",
-      status: "success",
-      duration: 700,
-      isClosable: true,
-      position: "top",
-    });
-  }
+  const handleCart = () => {
+    if(isAuth){
+      setCartItems([...cartItems, prod]);
+      dispatch(addToCart(prod));
+      console.log("product added to cart");
+      toast({
+        title: "Successfully Added",
+        description: "You added one product to cart.",
+        status: "success",
+        duration: 700,
+        isClosable: true,
+        position: "top",
+      });
+    } else {
+      toast({
+        title: "Unable to Add",
+        description: "You are not loggedin yet.",
+        status: "error",
+        duration: 900,
+        isClosable: true,
+        position: "top",
+      })
+    }
+  };
+
+  const handleProductClick = () => {
+    console.log("clicked..");
+   return <SingleProductPage product={prod} />
+  };
 
   return (
     <Box
@@ -66,10 +77,10 @@ export function ProductCard({
     >
       <Card p={3} height="100%">
         <Flex direction={['column']} height='40%'>
-          <Image src={prod.image} height="100px" objectFit="contain" />
+          <Image src={prod.image} height="100px" objectFit="contain" onClick={handleProductClick} />
           <Box p={2}>
             <Center>
-              <Heading fontSize={{ base: "sm", sm: "md", md: "lg" }}>
+              <Heading fontSize={{ base: "sm", sm: "md", md: "lg" }} onClick={handleProductClick}>
                 {truncateTitle(prod.title)}
               </Heading>
             </Center>
@@ -144,4 +155,5 @@ export function ProductCard({
       </Card>
     </Box>
   );
-}
+};
+

@@ -1,11 +1,17 @@
 
+import ProductList from './components/Products/ProductList'
+import ProductNav from './components/Products/ProductNav'
+import SingleProductPage from './components/Products/SingleProductCard'
 import { Home } from './pages/Home'
 
 function App() {
 
   return (
     <>
-    <Home/>
+    {/* <Home/> */}
+    <ProductNav />
+    <ProductList />
+    {/* <SingleProductPage  product={product}/> */}
     </>
   )
 }

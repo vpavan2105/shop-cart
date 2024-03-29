@@ -1,94 +1,93 @@
-import { ReactElement, useEffect, useState } from "react";
-import axios from "axios";
-import { ProductCard } from "./ProductCard";
-import { Heading, Stack } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { Box, Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import { useSelector, useDispatch } from "react-redux";
+import { Product, ProductCard } from "./ProductCard";
 import { CardSkeleton } from "./Skeleton";
-import { ProductNav } from "./ProductNav";
-
-export interface Product {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    price: number;
-    category: string;
-    rating: {
-        rate: number;
-    };
-}
+import { fetchProducts } from "../../redux/actions/actions";
+import { useAppDispatch } from "../../redux/utils/Product_Utils";
+import { RootState } from "../../redux/store";
 
 const MAX_DESCRIPTION_LENGTH: number = 40;
 const MAX_TITLE_LENGTH: number = 30;
+const PER_PAGE: number = 10;
 
-// API URL
-export const url: string = "http://localhost:8000/products";
+const ProductList: React.FC = () => {
+  const products = useSelector((state: RootState) => state.product.products);
+  const loading = useSelector((state: RootState) => state.product.loading);
+  const [page, setPage] = useState<number>(1);
+  const dispatch = useAppDispatch();
 
-// Function to fetch data from the API
-export async function getData(): Promise<Product[]> {
-    try {
-        let res = await axios.get(url);
-        return res.data;
-    } catch (error) {
-        console.log(error);
-        return [];
+  console.log(loading);
+  
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
+
+
+  const truncateDescription = (description: string): string => {
+    if (description.length > MAX_DESCRIPTION_LENGTH) {
+      return description.slice(0, MAX_DESCRIPTION_LENGTH) + "...";
     }
-}
+    return description;
+  };
 
-export function ProductList(): ReactElement {
-    const [products, setProducts] = useState<Product[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
+  const truncateTitle = (title: string): string => {
+    if (title.length > MAX_TITLE_LENGTH) {
+      return title.slice(0, MAX_TITLE_LENGTH) + "...";
+    }
+    return title;
+  };
 
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                let res = await getData();
-                setProducts(res);
-                setLoading(false);
-                console.log(res);
-            } catch (error) {
-                console.log(error);
-                setLoading(false);
-            }
-        }
-        fetchData();
-    }, []);
+  const paginate = (pageNumber: number) => {
+    setPage(pageNumber);
+  };
 
-    // Function to truncate description
-    const truncateDescription = (description: string): string => {
-        if (description.length > MAX_DESCRIPTION_LENGTH) {
-            return description.slice(0, MAX_DESCRIPTION_LENGTH) + "...";
-        }
-        return description;
-    };
+  const indexOfLastProduct = page * PER_PAGE;
+  const indexOfFirstProduct = indexOfLastProduct - PER_PAGE;
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
-    // Function to truncate title
-    const truncateTitle = (title: string): string => {
-        if (title.length > MAX_TITLE_LENGTH) {
-            return title.slice(0, MAX_TITLE_LENGTH) + "...";
-        }
-        return title;
-    };
+  return (
+    <>
+      <Heading>Product page</Heading>
+      <Flex mt="4" justifyContent="center">
+        <Text fontSize="20px" p={1} fontWeight="bold">Pages : </Text>
+        {Array.from(
+          { length: Math.ceil(products.length / PER_PAGE) },
+          (_, index) => (
+            <Button
+              key={index}
+              mr="2"
+              colorScheme={page === index + 1 ? "yellow" : "gray"}
+              onClick={() => paginate(index + 1)}
+            >
+              {index + 1}
+            </Button>
+          )
+        )}
+      </Flex>
+      {loading ? (
+        <Stack direction={["row"]} flexWrap="wrap" spacing="24px">
+          {[...Array(12)].map((_, index) => (
+            <CardSkeleton key={index} />
+          ))}
+        </Stack>
+      ) : (
+        <Stack direction={["row"]} flexWrap="wrap" spacing="24px">
+          {currentProducts.map((prod: Product) => (
+            <ProductCard
+              key={prod.id}
+              prod={prod}
+              truncateDescription={truncateDescription}
+              truncateTitle={truncateTitle}
+            />
+          ))}
+        </Stack>
+      )}
+    </>
+  );
+};
 
-    return (
-        <>
-            <Heading>Product page</Heading>
-            <ProductNav />
-            {loading ? (
-                <Stack direction={['row']} flexWrap='wrap' spacing='24px'>
-                {[...Array(12)].map((_,index) => <CardSkeleton key={index}/>)}
-                </Stack>
-            ) : (
-                <Stack direction={['row']} flexWrap='wrap' spacing='24px'>
-                    {products.map(prod => (
-                        <ProductCard
-                            key={prod.id}
-                            prod={prod}
-                            truncateDescription={truncateDescription}
-                            truncateTitle={truncateTitle}
-                        />
-                    ))}
-                </Stack>
-            )}
-        </>
-    );
-}
+export default ProductList;

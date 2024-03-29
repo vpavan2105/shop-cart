@@ -2,7 +2,7 @@ import { Card, Flex, Skeleton, Stack } from "@chakra-ui/react";
 import { ReactElement } from "react";
 
 export function CardSkeleton(): ReactElement {
-    console.log("skeleton");
+    // console.log("skeleton");
     
   return (
     <Card width="30%">

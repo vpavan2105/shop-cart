@@ -1,25 +1,28 @@
-import { Box, Flex, HStack, useColorModeValue } from "@chakra-ui/react";
-import { ReactElement, useState } from "react";
-import { SubCategories } from "./SubCategories";
+import React, { useEffect, useState } from "react";
+import { Box, Button, Flex, HStack, useColorModeValue } from "@chakra-ui/react";
+// import { useSelector, useDispatch } from "react-redux";
+// import { RootState } from "../../redux/reducers/ProductReducer";
+// import { fetchCategories } from "../../redux/actions/actions";
+import SubCategories from "./SubCategories";
+import { useAppDispatch } from "../../redux/utils/Product_Utils";
+import { fetchProducts } from "../../redux/actions/actions";
+
+interface ProductNavProps {}
 
 interface Props {
   children: React.ReactNode;
-  onclick ?: () => void;
+  onclick?: () => void;
 }
 
 export const Links = [
   "Fashion",
-  "Electronics",
+  "electronics",
   "Furniture",
   "Home & Kitchen",
   "Luggage & Bags",
 ];
 
-export const Fashion = ["men's clothing", "womes clothing", "jewelry", "fragrances", "shoes"];
-export const Electronics = ["Mobiles", "Laptops", "Storage"];
-
-export const NavLink = ({children, onclick}: Props) => {
-
+export const NavLink = ({ children, onclick }: Props) => {
   return (
     <Box
       as="a"
@@ -38,10 +41,13 @@ export const NavLink = ({children, onclick}: Props) => {
   );
 };
 
-export function ProductNav(): ReactElement {
+const ProductNav: React.FC<ProductNavProps> = () => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
+  // const categories = useSelector(
+  //   (state: RootState) => state.category
+  // );
+  const dispatch = useAppDispatch();
 
-  // Function to handle mouse
   const handleMouseEnter = (category: string) => {
     setIsHovered(category);
   };
@@ -50,27 +56,9 @@ export function ProductNav(): ReactElement {
     setIsHovered(null);
   };
 
-  // Function for subcategories
-  // const SubCategories = useCallback((category: string) => {
-  //   if (category === "Fashion") {
-  //     return (
-  //       <Card mb="10px" position="absolute" top="87px" zIndex="1" p={2}>
-  //         {Fashion.map((link) => (
-  //           <NavLink key={link}>{link}</NavLink>
-  //         ))}
-  //       </Card>
-  //     );
-  //   } else if (category === "Electronics") {
-  //     return (
-  //       <Card mb="10px" position="absolute" top="87px" zIndex="1" p={2}>
-  //         {Electronics.map((link) => (
-  //           <NavLink key={link}>{link}</NavLink>
-  //         ))}
-  //       </Card>
-  //     );
-  //   }
-  //   return null;
-  // }, []);
+  // useEffect(() => {
+  //   dispatch(fetchCategories());
+  // }, [dispatch]);
 
   return (
     <>
@@ -78,20 +66,25 @@ export function ProductNav(): ReactElement {
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <HStack spacing={8} alignItems={"center"}>
             <HStack as={"nav"} spacing={4} display={{ base: "flex" }}>
-              {Links.map((link) => (
+              {Links.map((category: string) => (
                 <Box
-                  key={link}
-                  onMouseEnter={() => handleMouseEnter(link)}
+                  key={category}
+                  onMouseEnter={() => handleMouseEnter(category)}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <NavLink>{link}</NavLink>
-                  {isHovered === link && <SubCategories category={link} />}
+                  <NavLink>{category}</NavLink>
+                  {isHovered === category && (
+                    <SubCategories category={category} />
+                  )}
                 </Box>
               ))}
+              <Button onClick={() => dispatch(fetchProducts())}>All</Button>
             </HStack>
           </HStack>
         </Flex>
       </Box>
     </>
   );
-}
+};
+
+export default ProductNav;
