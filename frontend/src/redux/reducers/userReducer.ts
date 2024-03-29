@@ -1,4 +1,4 @@
-import { IUserState } from "../../utils/Admin/adminUtils"
+import { IUserState } from "../utils/adminUtils"
 import { DeleteUser, FetchUsers } from "../actionTypes"
 
 const initialState : IUserState = {

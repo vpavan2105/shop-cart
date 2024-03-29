@@ -1,6 +1,6 @@
 import axios from "axios";
-import {  AddProduct, DeleteProduct, DeleteUser, FetchCarts, FetchOrder, FetchProduct, FetchUsers, UpdateOrder, UpdateProduct } from "./actionTypes";
-import {  ProdData } from "../utils/Admin/adminUtils";
+import {  AddProduct, DeleteProduct, DeleteUser, FetchCarts, FetchOrder, FetchProduct, FetchUsers, UpdateOrder, UpdateProduct } from "../actionTypes";
+import {  ProdData } from "../utils/adminUtils";
 import {  Dispatch } from "redux";
 
 const BaseUrl:string = `http://localhost:3000/products`;

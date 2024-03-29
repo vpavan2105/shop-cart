@@ -1,4 +1,4 @@
-import { ICartState } from "../../utils/Admin/adminUtils"
+import { ICartState } from "../utils/adminUtils"
 import { FetchCarts } from "../actionTypes"
 
 const initialState:ICartState = {

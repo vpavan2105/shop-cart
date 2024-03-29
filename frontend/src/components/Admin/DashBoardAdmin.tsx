@@ -1,4 +1,4 @@
-import { useAppSelector } from "../../utils/Admin/adminUtils";
+import { useAppSelector } from "../../redux/utils/adminUtils";
 import { Box, Flex, Heading,Text, useBreakpointValue } from "@chakra-ui/react"
 import OrderLineComponents from "./OrdersLineComponents";
 import AreaChartComponent from "./AreaChartCompoent";

@@ -1,6 +1,6 @@
 import { ReactElement, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../utils/Admin/adminUtils"
-import { fetchDataProduct } from "../../redux/action";
+import { useAppDispatch, useAppSelector } from "../../redux/utils/adminUtils"
+import { fetchDataProduct } from "../../redux/actions/actionAdmin";
 import { RootState } from "../../redux/store";
 import { ProductInput } from "../../components/Admin/ProductInput";
 import { ProductList } from "../../components/Admin/ProductList";

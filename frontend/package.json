@@ -29,7 +29,10 @@
     "react-redux": "^9.1.0",
     "react-router": "^6.22.3",
     "react-router-dom": "^6.22.3",
+<<<<<<< HEAD
     "recharts": "^2.12.3",
+=======
+>>>>>>> bae62114e604ca099c32862113c82e386c46857e
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0"
   },

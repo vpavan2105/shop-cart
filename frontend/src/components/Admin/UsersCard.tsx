@@ -5,7 +5,7 @@ import {
   Td,
 } from '@chakra-ui/react'
 
-import { UserData } from '../../utils/Admin/adminUtils';
+import { UserData } from '../../redux/utils/adminUtils';
 
 const UsersCard = ({user}:{user:UserData}) => {
 

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
-import { useAppDispatch } from "../../utils/Admin/adminUtils"
-import { fetchDataProduct, fetchOrdersData, fetchUsersData } from "../../redux/action"
+import { useAppDispatch } from "../../redux/utils/adminUtils"
+import { fetchDataProduct, fetchOrdersData, fetchUsersData } from "../../redux/actions/actionAdmin"
 import DashBoardAdmin from "../../components/Admin/DashBoardAdmin"
 
 const DashBoard = () => {

@@ -1,6 +1,6 @@
 import  { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { CartData, ProdData, useAppSelector } from '../../utils/Admin/adminUtils';
+import { CartData, ProdData, useAppSelector } from '../../redux/utils/adminUtils';
 
 const SignleUserCard = () => {
     const {id} = useParams();

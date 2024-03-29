@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { UsersList } from "../../components/Admin/UsersList"
-import { useAppDispatch } from "../../utils/Admin/adminUtils"
-import { fetchUsersData } from "../../redux/action";
+import { useAppDispatch } from "../../redux/utils/adminUtils"
+import { fetchUsersData } from "../../redux/actions/actionAdmin";
 
 
 const UsersAdmin = () => {

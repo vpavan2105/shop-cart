@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { Box, Image, Text, Button } from "@chakra-ui/react";
-import { ProdData } from "../../utils/Admin/adminUtils";
+import { ProdData } from "../../redux/utils/adminUtils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 

@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading,Text } from '@chakra-ui/react'
-import { OrderData, useAppDispatch } from '../../utils/Admin/adminUtils';
-import { updateOrderData } from '../../redux/action';
+import { OrderData, useAppDispatch } from '../../redux/utils/adminUtils';
+import { updateOrderData } from '../../redux/actions/actionAdmin';
 
 
 const OrderCard = ({order}:{order:OrderData}) => {

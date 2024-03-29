@@ -3,8 +3,8 @@ import {ProductCard} from "./ProductCard";
 import { Box, Button, SimpleGrid, useDisclosure } from "@chakra-ui/react";
 
 import { ReactElement, useState } from "react";
-import {  ProdData, useAppDispatch, useAppSelector,  } from "../../utils/Admin/adminUtils";
-import { deleteDataProduct } from "../../redux/action";
+import {  ProdData, useAppDispatch, useAppSelector,  } from "../../redux/utils/adminUtils";
+import { deleteDataProduct } from "../../redux/actions/actionAdmin";
 import { ProductUpdate } from "./ProductUpdate";
 import Pagination from "./Pagination";
 

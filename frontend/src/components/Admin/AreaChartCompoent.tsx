@@ -1,6 +1,6 @@
 
 import { Pie, PieChart, Cell, Legend } from 'recharts';
-import { useAppSelector } from '../../utils/Admin/adminUtils';
+import { useAppSelector } from '../../redux/utils/adminUtils';
 
 const AreaChartComponent = () => {
     const products = useAppSelector(state => state.products.productsData);

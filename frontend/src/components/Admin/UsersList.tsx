@@ -1,6 +1,6 @@
 
 import { Table, TableCaption, TableContainer, Tbody, Th, Thead, Tr } from '@chakra-ui/react';
-import { UserData, useAppSelector } from '../../utils/Admin/adminUtils';
+import { UserData, useAppSelector } from '../../redux/utils/adminUtils';
 import { UsersCard } from './UsersCard';
 
 const UsersList = () => {

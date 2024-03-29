@@ -1,4 +1,4 @@
-import { IOrderState } from '../../utils/Admin/adminUtils'
+import { IOrderState } from '../utils/adminUtils'
 import { FetchOrder, UpdateOrder } from '../actionTypes'
 
 

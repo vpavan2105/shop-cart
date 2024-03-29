@@ -12,8 +12,8 @@ import {
     Textarea,
   } from '@chakra-ui/react'
 
-import { ProdData, useAppDispatch } from '../../utils/Admin/adminUtils';
-import { updateDataProduct } from '../../redux/action';
+import { ProdData, useAppDispatch } from '../../redux/utils/adminUtils';
+import { updateDataProduct } from '../../redux/actions/actionAdmin';
 
 interface ProductUpdateProps{
   isOpen: boolean;
