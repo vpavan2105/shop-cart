@@ -3,118 +3,114 @@
     {
       "id": "1",
       "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      "price": 109.95,
+      "price": "10",
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "title": "Samsung 55-Inch 4K UHD Smart TV",
+      "price": 799.99,
+      "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
+      "category": "homeappliances",
+      "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
       "rating": {
-        "rate": 3.9,
-        "count": 120
+        "rate": 4.8
       }
     },
     {
       "id": "2",
-      "title": "Mens Casual Premium Slim Fit T-Shirts ",
-      "price": 22.3,
-      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-      "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "title": "Breville BES870XL Barista Express Espresso Machine",
+      "price": 599.95,
+      "description": "Create cafe-quality coffee at home with the Breville Barista Express Espresso Machine. Enjoy rich espresso and customizable flavors.",
+      "category": "kitchen",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "rating": {
-        "rate": 4.1,
-        "count": 259
+        "rate": 4.5
       }
     },
     {
       "id": "3",
-      "title": "Mens Cotton Jacket",
-      "price": 55.99,
-      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-      "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      "title": "Sony PlayStation 5 Console",
+      "price": 499.99,
+      "description": "Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D audio, and an all-new generation of incredible PlayStation games.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
       "rating": {
-        "rate": 4.7,
-        "count": 500
+        "rate": 4.9
       }
     },
     {
       "id": "4",
-      "title": "Mens Casual Slim Fit",
-      "price": 15.99,
-      "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-      "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      "title": "Apple AirPods Pro",
+      "price": 249.99,
+      "description": "Enjoy superior sound quality and active noise cancellation with Apple AirPods Pro. Designed for a comfortable and customizable fit.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/71MHT4wG6RL._AC_SL1500_.jpg",
       "rating": {
-        "rate": 2.1,
-        "count": 430
+        "rate": 4.7
       }
     },
     {
       "id": "5",
-      "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-      "price": 695,
-      "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-      "category": "jewelery",
-      "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      "title": "Amazon Echo (3rd Gen)",
+      "price": 99.99,
+      "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61eqZe4R1zL._AC_SL1000_.jpg",
       "rating": {
-        "rate": 4.6,
-        "count": 400
+        "rate": 4.7
       }
     },
     {
       "id": "6",
-      "title": "Solid Gold Petite Micropave ",
-      "price": 168,
-      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-      "category": "jewelery",
-      "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+      "title": "Samsung Galaxy S20 Ultra",
+      "price": 1199.99,
+      "description": "Experience the power of 5G connectivity and revolutionary camera features with the Samsung Galaxy S20 Ultra. Capture stunning photos and videos in high resolution.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61n1zKqo1BL._AC_SL1000_.jpg",
       "rating": {
-        "rate": 3.9,
-        "count": 70
+        "rate": 4.8
       }
     },
     {
       "id": "7",
-      "title": "White Gold Plated Princess",
-      "price": 9.99,
-      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-      "category": "jewelery",
-      "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      "title": "Dell XPS 13 Laptop",
+      "price": 1299.99,
+      "description": "Work and play with speed, performance, and a stunning display with the Dell XPS 13 Laptop. Perfect for professionals and enthusiasts alike.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61AUPUN1IsL._AC_SL1500_.jpg",
       "rating": {
-        "rate": 3,
-        "count": 400
+        "rate": 4.6
       }
     },
     {
       "id": "8",
-      "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
-      "price": 10.99,
-      "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-      "category": "jewelery",
-      "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+      "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
+      "price": 349.99,
+      "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/81Skzr0uuLL._AC_SX569_.jpg",
       "rating": {
-        "rate": 1.9,
-        "count": 100
+        "rate": 4.9
       }
     },
     {
       "id": "9",
-      "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-      "price": 64,
-      "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+      "title": "Fitbit Charge 4 Fitness and Activity Tracker",
+      "price": 149.95,
+      "description": "Track workouts, heart rate, distance, calories burned, and more with Fitbit Charge 4 Fitness and Activity Tracker. Stay motivated and achieve your fitness goals.",
       "category": "electronics",
-      "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+      "image": "https://fakestoreapi.com/img/71Swueo5hIL._AC_SX466_.jpg",
       "rating": {
-        "rate": 3.3,
-        "count": 203
+        "rate": 4.5
       }
     },
     {
       "id": "10",
-      "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-      "price": 109,
-      "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+      "title": "GoPro HERO9 Black",
+      "price": 449.99,
+      "description": "Capture stunning 5K video and vibrant photos with GoPro HERO9 Black. With HyperSmooth 3.0 stabilization and a front display, it's the ultimate action camera.",
       "category": "electronics",
-      "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+      "image": "https://fakestoreapi.com/img/61pimc1uDYL._AC_SL1500_.jpg",
       "rating": {
         "rate": 2.9,
         "count": 470
@@ -388,7 +384,7 @@
       "id": "36",
       "title": "Hyaluronic Acid Serum",
       "description": "L'OrÃ©al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
-      "price": 19,
+      "price": "121",
       "rating": {
         "rate": 4,
         "count": 34
@@ -400,7 +396,7 @@
       "id": "37",
       "title": "Retinol Serum",
       "description": "A lightweight, quick-absorbing serum that targets visible signs of aging",
-      "price": 15,
+      "price": "10",
       "rating": {
         "rate": 4,
         "count": 34
@@ -430,9 +426,12 @@
         "count": 21
       },
       "category": "skincare",
-      "image": "https://cdn.dummyjson.com/product-images/40/1.jpg"
+      "image": "https://cdn.dummyjson.com/product-images/40/1.jpg",
+        "rate": 4.8
+      
     }
   ],
+ 
   "users": [
     {
       "id": "1",
@@ -449,7 +448,7 @@
       "phonenumber": "9876543210"
     },
     {
-      "id": "3",
+      "id": "user555",
       "username": "exampleUser2",
       "email": "user2@example.com",
       "password": "hashedPassword",
@@ -458,132 +457,56 @@
   ],
   "orders": [
     {
-      "orderId": "order1",
-      "userId": "1",
-      "products": "product1",
-      "total": 200,
-      "address": {
-        "street": "123 Main Street",
-        "City": "asc",
-        "State": "hyd",
-        "Zip Code": 2121,
-        "Country": "india"
-      },
-      "date": "2024-03-01T12:00:00Z",
-      "status": false,
-      "id": "2e2b"
-    },
-    {
-      "orderId": "order2",
-      "userId": "2",
-      "products": "product2",
-      "total": 150,
-      "address": {
-        "street": "456 Oak Avenue",
-        "City": "xyz",
-        "State": "hyd",
-        "Zip Code": 2122,
-        "Country": "india"
-      },
-      "date": "2024-03-02T14:30:00Z",
-      "status": true,
-      "id": "a002"
-    },
-    {
-      "orderId": "order3",
-      "userId": "3",
-      "products": "product3",
-      "total": 180,
-      "address": {
-        "street": "789 Pine Street",
-        "City": "abc",
-        "State": "hyd",
-        "Zip Code": 2123,
-        "Country": "india"
-      },
-      "date": "2024-03-03T10:45:00Z",
-      "status": false,
-      "id": "5988"
-    },
-    {
-      "orderId": "order4",
-      "userId": "1",
-      "products": "product1",
-      "total": 220,
-      "address": {
-        "street": "101 Elm Street",
-        "City": "def",
-        "State": "hyd",
-        "Zip Code": 2124,
-        "Country": "india"
-      },
-      "date": "2024-03-04T18:20:00Z",
-      "status": true,
-      "id": "9e21"
-    },
-    {
-      "orderId": "order5",
-      "userId": "2",
-      "products": "product2",
-      "total": 250,
-      "address": {
-        "street": "246 Maple Avenue",
-        "City": "lmn",
-        "State": "hyd",
-        "Zip Code": 2125,
-        "Country": "india"
-      },
-      "date": "2024-03-05T09:00:00Z",
-      "status": false,
-      "id": "3ecd"
-    },
-    {
-      "orderId": "order6",
-      "userId": "1",
-      "products": "product3",
-      "total": 230,
-      "address": {
-        "street": "369 Cedar Street",
-        "City": "pqr",
-        "State": "hyd",
-        "Zip Code": 2126,
-        "Country": "india"
-      },
-      "date": "2024-03-06T12:45:00Z",
-      "status": false,
-      "id": "bf05"
-    },
-    {
-      "orderId": "order7",
-      "userId": "3",
-      "products": "product1",
-      "total": 200,
-      "address": {
-        "street": "492 Walnut Avenue",
-        "City": "uvw",
-        "State": "hyd",
-        "Zip Code": 2127,
-        "Country": "india"
-      },
-      "date": "2024-03-07T07:30:00Z",
-      "status": false,
-      "id": "47e5"
-    },
-    {
-      "orderId": "order8",
-      "userId": "2",
-      "products": "product2",
-      "total": 180,
-      "address": {
-        "street": "595 Birch Street",
-        "City": "opq",
-        "State": "hyd",
-        "Zip Code": 2128,
-        "Country": "india"
-      },
-      "date": "2024-03-08T16:20:00Z",
-      "status": false,
-      "id": "d266"
+      "id": "0770",
+      "userid": "1",
+      "name": "Surabhi",
+      "address": [
+        "Goluwala Niwadan, Village Goluwala",
+        "335802",
+        "hanumangarh",
+        "Rajasthan",
+        "India"
+      ],
+      "date": "2024-03-29T08:02:34.918Z",
+      "allProducts": [
+        {
+          "id": 1,
+          "title": "Samsung 55-Inch 4K UHD Smart TV",
+          "price": 799.99,
+          "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
+          "category": "homeappliances",
+          "image": "https://media.istockphoto.com/id/1453241155/photo/curious-cat-sitting-while-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=AMYu9_ks9-slttX22iCxBwVtTswk9K1U9oDH09wWwVM=",
+          "rating": {
+            "rate": 4.8
+          },
+          "quantity": 5
+        },
+        {
+          "id": 5,
+          "title": "Amazon Echo (3rd Gen)",
+          "price": 99.99,
+          "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
+          "category": "electronics",
+          "image": "https://media.istockphoto.com/id/1293763250/photo/cute-kitten-licking-glass-table-with-copy-space.webp?b=1&s=170667a&w=0&k=20&c=f0VoM2wiDR3iZVTC0n-WK4cfstZEfbDh33lWc2KRbFM=",
+          "rating": {
+            "rate": 4.7
+          },
+          "quantity": 8
+        },
+        {
+          "id": 8,
+          "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
+          "price": 349.99,
+          "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
+          "category": "electronics",
+          "image": "https://media.istockphoto.com/id/1483360428/photo/cute-young-tabby-cat-playing-in-a-garden.webp?b=1&s=170667a&w=0&k=20&c=dw4l18FO9_MDnWPyD6flSoUYim3p52m2_PcCNVWFz_4=",
+          "rating": {
+            "rate": 4.9
+          },
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 0
     },
     {
       "orderId": "order9",
@@ -594,7 +517,7 @@
         "street": "678 Cherry Avenue",
         "City": "rst",
         "State": "hyd",
-        "Zip Code": 2129,
+        "ZipCode": 2129,
         "Country": "india"
       },
       "date": "2024-03-09T11:10:00Z",
@@ -610,7 +533,7 @@
         "street": "753 Pineapple Street",
         "City": "ijk",
         "State": "hyd",
-        "Zip Code": 2130,
+        "ZipCode": 2130,
         "Country": "india"
       },
       "date": "2024-03-10T08:00:00Z",
@@ -622,80 +545,7 @@
     {
       "id": "1",
       "user_id": "1",
-      "products": [
-        {
-          "id": "6",
-          "title": "Solid Gold Petite Micropave ",
-          "price": 168,
-          "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-          "category": "jewelery",
-          "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-          "rating": {
-            "rate": 3.9,
-            "count": 70
-          }
-        },
-        {
-          "id": "7",
-          "title": "White Gold Plated Princess",
-          "price": 9.99,
-          "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-          "category": "jewelery",
-          "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-          "rating": {
-            "rate": 3,
-            "count": 400
-          }
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "user_id": "2",
-      "products": [
-        {
-          "id": "10",
-          "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-          "price": 109,
-          "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
-          "category": "electronics",
-          "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
-          "rating": {
-            "rate": 2.9,
-            "count": 470
-          }
-        },
-        {
-          "id": "13",
-          "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-          "price": 599,
-          "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
-          "category": "electronics",
-          "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
-          "rating": {
-            "rate": 2.9,
-            "count": 250
-          }
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "user_id": 3,
-      "products": [
-        {
-          "id": "14",
-          "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
-          "price": 999.99,
-          "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
-          "category": "electronics",
-          "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
-          "rating": {
-            "rate": 2.2,
-            "count": 140
-          }
-        }
-      ]
+      "products": []
     }
   ]
 }
