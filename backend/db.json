@@ -2,6 +2,11 @@
   "products": [
     {
       "id": "1",
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": "10",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "title": "Samsung 55-Inch 4K UHD Smart TV",
       "price": 799.99,
       "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
@@ -107,6 +112,321 @@
       "category": "electronics",
       "image": "https://fakestoreapi.com/img/61pimc1uDYL._AC_SL1500_.jpg",
       "rating": {
+        "rate": 2.9,
+        "count": 470
+      }
+    },
+    {
+      "id": "11",
+      "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+      "price": 109,
+      "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+      "rating": {
+        "rate": 4.8,
+        "count": 319
+      }
+    },
+    {
+      "id": "12",
+      "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+      "price": 114,
+      "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+      "rating": {
+        "rate": 4.8,
+        "count": 400
+      }
+    },
+    {
+      "id": "13",
+      "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+      "price": 599,
+      "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+      "rating": {
+        "rate": 2.9,
+        "count": 250
+      }
+    },
+    {
+      "id": "14",
+      "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+      "price": 999.99,
+      "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+      "rating": {
+        "rate": 2.2,
+        "count": 140
+      }
+    },
+    {
+      "id": "15",
+      "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+      "price": 56.99,
+      "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+      "rating": {
+        "rate": 2.6,
+        "count": 235
+      }
+    },
+    {
+      "id": "16",
+      "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+      "price": 29.95,
+      "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+      "rating": {
+        "rate": 2.9,
+        "count": 340
+      }
+    },
+    {
+      "id": "17",
+      "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+      "price": 39.99,
+      "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+      "rating": {
+        "rate": 3.8,
+        "count": 679
+      }
+    },
+    {
+      "id": "18",
+      "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+      "price": 9.85,
+      "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 130
+      }
+    },
+    {
+      "id": "19",
+      "title": "Opna Women's Short Sleeve Moisture",
+      "price": 7.95,
+      "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+      "rating": {
+        "rate": 4.5,
+        "count": 146
+      }
+    },
+    {
+      "id": "20",
+      "title": "DANVOUY Womens T Shirt Casual Cotton Short",
+      "price": 12.99,
+      "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+      "rating": {
+        "rate": 3.6,
+        "count": 145
+      }
+    },
+    {
+      "id": "22",
+      "title": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "rating": {
+        "rate": 3.6,
+        "count": 145
+      },
+      "category": "smartphones",
+      "image": "https://cdn.dummyjson.com/product-images/22/1.jpg"
+    },
+    {
+      "id": "23",
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1249,
+      "rating": {
+        "rate": 3.6,
+        "count": 14
+      },
+      "category": "smartphones",
+      "image": "https://cdn.dummyjson.com/product-images/23/1.jpg"
+    },
+    {
+      "id": "24",
+      "title": "OPPOF19",
+      "description": "OPPO F19 is officially announced on April 2021.",
+      "price": 280,
+      "rating": {
+        "rate": 4.6,
+        "count": 45
+      },
+      "category": "smartphones",
+      "image": "https://cdn.dummyjson.com/product-images/24/1.jpg"
+    },
+    {
+      "id": "27",
+      "title": "Samsung Galaxy Book",
+      "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
+      "price": 1499,
+      "rating": {
+        "rate": 4.6,
+        "count": 14
+      },
+      "category": "laptops",
+      "image": "https://cdn.dummyjson.com/product-images/27/1.jpg"
+    },
+    {
+      "id": "28",
+      "title": "Microsoft Surface Laptop 4",
+      "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
+      "price": 1499,
+      "rating": {
+        "rate": 4.6,
+        "count": 14
+      },
+      "category": "laptops",
+      "image": "https://cdn.dummyjson.com/product-images/28/1.jpg"
+    },
+    {
+      "id": "29",
+      "title": "Infinix INBOOK",
+      "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+      "price": 1099,
+      "rating": {
+        "rate": 3.6,
+        "count": 14
+      },
+      "category": "laptops",
+      "image": "https://cdn.dummyjson.com/product-images/29/1.jpg"
+    },
+    {
+      "id": "30",
+      "title": "HP Pavilion 15-DK1056WM",
+      "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+      "price": 1099,
+      "rating": {
+        "rate": 3.6,
+        "count": 14
+      },
+      "category": "laptops",
+      "image": "https://cdn.dummyjson.com/product-images/30/1.jpg"
+    },
+    {
+      "id": "31",
+      "title": "perfume Oil",
+      "description": "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
+      "price": 13,
+      "rating": {
+        "rate": 3.6,
+        "count": 14
+      },
+      "category": "fragrances",
+      "image": "https://cdn.dummyjson.com/product-images/31/1.jpg"
+    },
+    {
+      "id": "32",
+      "title": "Brown Perfume",
+      "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
+      "price": 40,
+      "rating": {
+        "rate": 3.6,
+        "count": 14
+      },
+      "category": "fragrances",
+      "image": "https://cdn.dummyjson.com/product-images/32/1.jpg"
+    },
+    {
+      "id": "33",
+      "title": "Fog Scent Xpressio Perfume",
+      "description": "Product details of Best Fog Scent Xpressio Perfume 100ml For Men cool long lasting perfumes for Men",
+      "price": 13,
+      "rating": {
+        "rate": 3.6,
+        "count": 14
+      },
+      "category": "fragrances",
+      "image": "https://cdn.dummyjson.com/product-images/33/1.jpg"
+    },
+    {
+      "id": "34",
+      "title": "Non-Alcoholic Concentrated Perfume Oil",
+      "description": "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Non-Alcoholic Concentrated Perfume Oil",
+      "price": 120,
+      "rating": {
+        "rate": 4,
+        "count": 34
+      },
+      "category": "fragrances",
+      "image": "https://cdn.dummyjson.com/product-images/34/1.jpg"
+    },
+    {
+      "id": "35",
+      "title": "Eau De Perfume Spray",
+      "description": "Genuine  Al-Rehab spray perfume from UAE/Saudi Arabia/Yemen High Quality",
+      "price": 30,
+      "rating": {
+        "rate": 4,
+        "count": 34
+      },
+      "category": "fragrances",
+      "image": "https://cdn.dummyjson.com/product-images/35/1.jpg"
+    },
+    {
+      "id": "36",
+      "title": "Hyaluronic Acid Serum",
+      "description": "L'OrÃ©al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
+      "price": "121",
+      "rating": {
+        "rate": 4,
+        "count": 34
+      },
+      "category": "skincare",
+      "image": "https://cdn.dummyjson.com/product-images/36/1.jpg"
+    },
+    {
+      "id": "37",
+      "title": "Retinol Serum",
+      "description": "A lightweight, quick-absorbing serum that targets visible signs of aging",
+      "price": "10",
+      "rating": {
+        "rate": 4,
+        "count": 34
+      },
+      "category": "skincare",
+      "image": "https://cdn.dummyjson.com/product-images/37/1.jpg"
+    },
+    {
+      "id": "39",
+      "title": "Hydrating Facial Cleanser",
+      "description": "CeraVe Hydrating Facial Cleanser Moisturizing Non-Foaming Face Wash with Hyaluronic Acid, Ceramides",
+      "price": 14,
+      "rating": {
+        "rate": 4,
+        "count": 34
+      },
+      "category": "skincare",
+      "image": "https://cdn.dummyjson.com/product-images/39/1.jpg"
+    },
+    {
+      "id": "40",
+      "title": "Vitamin C Serum",
+      "description": "L’Oreal Paris Revitalift Derm Intensives Vitamin C Face Serum visibly boosts skin’s youthful radiance in 1 week.",
+      "price": 17,
+      "rating": {
+        "rate": 3,
+        "count": 21
+      },
+      "category": "skincare",
+      "image": "https://cdn.dummyjson.com/product-images/40/1.jpg"
         "rate": 4.8
       }
     }
@@ -198,6 +518,20 @@
   ],
   "orders": [
     {
+      "orderId": "order1",
+      "userId": "1",
+      "products": "product1",
+      "total": 200,
+      "address": {
+        "street": "123 Main Street",
+        "City": "asc",
+        "State": "hyd",
+        "ZipCode": 2121,
+        "Country": "india"
+      },
+      "date": "2024-03-01T12:00:00Z",
+      "status": true,
+      "id": "2e2b"
       "orderId": "order123",
       "userId": "user123",
       "productId": "product456",
@@ -213,6 +547,116 @@
       "id": "bbc7"
     },
     {
+      "orderId": "order2",
+      "userId": "2",
+      "products": "product2",
+      "total": 150,
+      "address": {
+        "street": "456 Oak Avenue",
+        "City": "xyz",
+        "State": "hyd",
+        "ZipCode": 2122,
+        "Country": "india"
+      },
+      "date": "2024-03-01T14:30:00Z",
+      "status": true,
+      "id": "a002"
+    },
+    {
+      "orderId": "order3",
+      "userId": "3",
+      "products": "product3",
+      "total": 180,
+      "address": {
+        "street": "789 Pine Street",
+        "City": "abc",
+        "State": "hyd",
+        "ZipCode": 2123,
+        "Country": "india"
+      },
+      "date": "2024-03-03T10:45:00Z",
+      "status": false,
+      "id": "5988"
+    },
+    {
+      "orderId": "order4",
+      "userId": "1",
+      "products": "product1",
+      "total": 220,
+      "address": {
+        "street": "101 Elm Street",
+        "City": "def",
+        "State": "hyd",
+        "ZipCode": 2124,
+        "Country": "india"
+      },
+      "date": "2024-03-04T18:20:00Z",
+      "status": true,
+      "id": "9e21"
+    },
+    {
+      "orderId": "order5",
+      "userId": "2",
+      "products": "product2",
+      "total": 250,
+      "address": {
+        "street": "246 Maple Avenue",
+        "City": "lmn",
+        "State": "hyd",
+        "ZipCode": 2125,
+        "Country": "india"
+      },
+      "date": "2024-03-05T09:00:00Z",
+      "status": false,
+      "id": "3ecd"
+    },
+    {
+      "orderId": "order6",
+      "userId": "1",
+      "products": "product3",
+      "total": 230,
+      "address": {
+        "street": "369 Cedar Street",
+        "City": "pqr",
+        "State": "hyd",
+        "ZipCode": 2126,
+        "Country": "india"
+      },
+      "date": "2024-03-06T12:45:00Z",
+      "status": false,
+      "id": "bf05"
+    },
+    {
+      "orderId": "order7",
+      "userId": "3",
+      "products": "product1",
+      "total": 200,
+      "address": {
+        "street": "492 Walnut Avenue",
+        "City": "uvw",
+        "State": "hyd",
+        "ZipCode": 2127,
+        "Country": "india"
+      },
+      "date": "2024-03-07T07:30:00Z",
+      "status": false,
+      "id": "47e5"
+    },
+    {
+      "orderId": "order8",
+      "userId": "2",
+      "products": "product2",
+      "total": 180,
+      "address": {
+        "street": "595 Birch Street",
+        "City": "opq",
+        "State": "hyd",
+        "ZipCode": 2128,
+        "Country": "india"
+      },
+      "date": "2024-03-07T16:20:00Z",
+      "status": false,
+      "id": "d266"
       "id": "a131",
       "userid": "1",
       "name": "Surabhi",
@@ -317,6 +761,43 @@
       "totalAmount": 0
     },
     {
+      "orderId": "order9",
+      "userId": "1",
+      "products": "product3",
+      "total": 210,
+      "address": {
+        "street": "678 Cherry Avenue",
+        "City": "rst",
+        "State": "hyd",
+        "ZipCode": 2129,
+        "Country": "india"
+      },
+      "date": "2024-03-09T11:10:00Z",
+      "status": false,
+      "id": "acc7"
+    },
+    {
+      "orderId": "order10",
+      "userId": "2",
+      "products": "product1",
+      "total": 240,
+      "address": {
+        "street": "753 Pineapple Street",
+        "City": "ijk",
+        "State": "hyd",
+        "ZipCode": 2130,
+        "Country": "india"
+      },
+      "date": "2024-03-10T08:00:00Z",
+      "status": false,
+      "id": "5209"
+    }
+  ],
+  "carts": [
+    {
+      "id": "1",
+      "user_id": "1",
+      "products": [
       "id": "f4c9",
       "userid": "1",
       "name": "hanumangarh",
