@@ -1,5 +1,5 @@
 import axios from "axios";
-import {  AddProduct, DeleteProduct, DeleteUser, FetchCarts, FetchOrder, FetchProduct, FetchUsers, UpdateOrder, UpdateProduct } from "../actionTypes/actionTypes_Products";
+import {  AddProduct, DeleteProduct, DeleteUser, FetchCarts, FetchOrder, FetchProduct, FetchUsers, UpdateOrder, UpdateProduct } from "../actionTypes/actionTypes";
 import {  ProdData } from "../utils/adminUtils";
 import {  Dispatch } from "redux";
 

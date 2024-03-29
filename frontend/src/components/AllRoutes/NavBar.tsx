@@ -1,8 +1,12 @@
 import { Flex } from '@chakra-ui/react'
 import {NavLink} from 'react-router-dom'
-
+interface Links{
+    to: string;
+    displayText: string;
+}
 const NavBar = () => {
-    const listOfLinks = [
+   
+    const listOfLinks: Links[] = [
         {
             to:"/",
             displayText: "Home"
@@ -29,8 +33,8 @@ const NavBar = () => {
         }
     ]
 
-    const defaultStyle = {color:"black"}
-    const activeStyle = {color:"red"}
+    const defaultStyle : {color: string} = {color:"black"}
+    const activeStyle : {color: string} = {color:"red"}
 
     return (
 

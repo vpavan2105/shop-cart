@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { useAppDispatch } from "../../redux/utils/adminUtils"
+import { useAppDispatch } from "../../redux/utils/Product_Utils"
 import { fetchDataProduct, fetchOrdersData, fetchUsersData } from "../../redux/actions/actionAdmin"
 import DashBoardAdmin from "../../components/Admin/DashBoardAdmin"
 
@@ -12,7 +12,8 @@ useEffect(()=>{
 },[])
   return (
     <div>
-    <DashBoardAdmin/>
+    {/* <DashBoardAdmin/> */}
+    <h2>demo dashboard</h2>
     </div>
   )
 }

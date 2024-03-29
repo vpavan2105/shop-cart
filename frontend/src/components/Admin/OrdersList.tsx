@@ -1,8 +1,9 @@
 import { Box, SimpleGrid } from '@chakra-ui/react'
 
 import { OrderCard } from './OrderCard'
+import { useAppSelector } from '../../redux/utils/Product_Utils';
+import { OrderData } from '../../redux/utils/adminUtils'
 
-import { OrderData, useAppSelector } from '../../redux/utils/adminUtils'
 
 const OrdersList = () => {
 

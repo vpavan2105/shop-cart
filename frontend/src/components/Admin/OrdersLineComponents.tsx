@@ -1,6 +1,7 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { OrderData, useAppSelector } from '../../redux/utils/adminUtils';
+import { OrderData } from '../../redux/utils/adminUtils';
+import {useAppSelector} from '../../redux/utils/Product_Utils'
 
 
 const OrderLineComponents: React.FC = () => {

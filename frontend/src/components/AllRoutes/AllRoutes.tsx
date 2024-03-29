@@ -6,10 +6,18 @@ import Orders from '../../pages/Orders'
 import Contacts from '../../pages/Contacts'
 import { Login } from '../../pages/Login'
 import PrivateRoute from '../PrivateRoute'
+import DashBoard from '../../pages/Admin/DashBoard'
+import OrdersAdmin from '../../pages/Admin/OrdersAdmin'
+import ProductsAdmin from '../../pages/Admin/ProductsAdmin'
+import { UsersAdmin } from '../../pages/Admin/UsersAdmin'
+import { useState } from 'react'
+
 
 const AllRoutes = () => {
+  const [isAuth, setIsAuth] = useState(false)
   return (
-    <Routes>
+    <>
+    {!isAuth? (<Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/products' element={<Products/>} />
         <Route path='/cart' element={
@@ -19,7 +27,16 @@ const AllRoutes = () => {
         <Route path='/orders' element={<Orders/>} />
         <Route path='/contact' element={<Contacts/>} />
         <Route path='/login' element={<Login/>} />
-    </Routes>
+    </Routes>) : (<Routes>
+      <Route path='/' element={<DashBoard/>} />
+        <Route path='/ordersadmin' element={<OrdersAdmin/>} />
+        <Route path='/productsadmin' element={<ProductsAdmin/>} />
+        <Route path='/usersadmin' element={<UsersAdmin/>} />
+    </Routes>) }
+    
+
+    
+    </>
   )
 }
 

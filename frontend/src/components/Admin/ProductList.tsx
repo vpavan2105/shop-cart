@@ -3,10 +3,11 @@ import {ProductCard} from "./ProductCard";
 import { Box, Button, SimpleGrid, useDisclosure } from "@chakra-ui/react";
 
 import { ReactElement, useState } from "react";
-import {  ProdData, useAppDispatch, useAppSelector,  } from "../../redux/utils/adminUtils";
+import {  ProdData  } from "../../redux/utils/adminUtils";
 import { deleteDataProduct } from "../../redux/actions/actionAdmin";
 import { ProductUpdate } from "./ProductUpdate";
 import Pagination from "./Pagination";
+import { useAppSelector, useAppDispatch } from '../../redux/utils/Product_Utils';
 
 const ProductList:React.FC = () :ReactElement=> {
 
