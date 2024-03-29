@@ -43,10 +43,6 @@ const SubCategories: React.FC<SubCategoriesProps> = ({
     subCategories = Fashion;
   }
 
-  // useEffect(() =>{
-  //   dispatch()
-  // },[])
-
   return (
     <>
     <Card position="absolute" top="47px" zIndex="1" p={2}>
@@ -57,9 +53,6 @@ const SubCategories: React.FC<SubCategoriesProps> = ({
           </NavLink>
         ))}
     </Card>
-    {/* {selectedSubcategory && (
-        <FilteredProducts category={selectedSubcategory} />
-      )} */}
     </>
   );
 };

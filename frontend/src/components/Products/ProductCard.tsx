@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { Box, Button, Card, Center, Divider, Flex, Heading, Image, Text, useToast } from "@chakra-ui/react";
-import { addToCart, url } from "../../redux/actions/actions";
+import { addToCart } from "../../redux/actions/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import SingleProductPage from "./SingleProductCard";
-import { Product, useAppDispatch, useAppSelector } from "../../redux/utils/Product_Utils";
-import { RootState } from "../../redux/store";
-
-
+import { Product, useAppDispatch } from "../../redux/utils/Product_Utils";
 
 
 export interface ProductCardProps {

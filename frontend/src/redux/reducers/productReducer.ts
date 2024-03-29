@@ -1,6 +1,6 @@
 
 import { IProductState } from "../utils/adminUtils"
-import {  AddProduct, DeleteProduct, FetchProduct, UpdateProduct } from '../actionTypes'
+import {  AddProduct, DeleteProduct, FetchProduct, UpdateProduct } from '../actionTypes/actionTypes_Products'
 import { PayloadAction } from "@reduxjs/toolkit"
 
 

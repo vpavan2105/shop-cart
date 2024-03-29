@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Flex, HStack, useColorModeValue } from "@chakra-ui/react";
-// import { useSelector, useDispatch } from "react-redux";
-// import { RootState } from "../../redux/reducers/ProductReducer";
-// import { fetchCategories } from "../../redux/actions/actions";
 import SubCategories from "./SubCategories";
 import { useAppDispatch } from "../../redux/utils/Product_Utils";
 import { fetchProducts } from "../../redux/actions/actions";
@@ -43,9 +40,6 @@ export const NavLink = ({ children, onclick }: Props) => {
 
 const ProductNav: React.FC<ProductNavProps> = () => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
-  // const categories = useSelector(
-  //   (state: RootState) => state.category
-  // );
   const dispatch = useAppDispatch();
 
   const handleMouseEnter = (category: string) => {
@@ -55,10 +49,6 @@ const ProductNav: React.FC<ProductNavProps> = () => {
   const handleMouseLeave = () => {
     setIsHovered(null);
   };
-
-  // useEffect(() => {
-  //   dispatch(fetchCategories());
-  // }, [dispatch]);
 
   return (
     <>

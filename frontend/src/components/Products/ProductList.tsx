@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
-
+import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 import { ProductCard } from "./ProductCard";
 import { CardSkeleton } from "./Skeleton";
 import { fetchProducts } from "../../redux/actions/actions";
