@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      "price": 109.95,
+      "price": "10",
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
@@ -388,7 +388,7 @@
       "id": "36",
       "title": "Hyaluronic Acid Serum",
       "description": "L'OrÃ©al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
-      "price": 19,
+      "price": "121",
       "rating": {
         "rate": 4,
         "count": 34
@@ -400,7 +400,7 @@
       "id": "37",
       "title": "Retinol Serum",
       "description": "A lightweight, quick-absorbing serum that targets visible signs of aging",
-      "price": 15,
+      "price": "10",
       "rating": {
         "rate": 4,
         "count": 34
@@ -466,11 +466,11 @@
         "street": "123 Main Street",
         "City": "asc",
         "State": "hyd",
-        "Zip Code": 2121,
+        "ZipCode": 2121,
         "Country": "india"
       },
       "date": "2024-03-01T12:00:00Z",
-      "status": false,
+      "status": true,
       "id": "2e2b"
     },
     {
@@ -482,10 +482,10 @@
         "street": "456 Oak Avenue",
         "City": "xyz",
         "State": "hyd",
-        "Zip Code": 2122,
+        "ZipCode": 2122,
         "Country": "india"
       },
-      "date": "2024-03-02T14:30:00Z",
+      "date": "2024-03-01T14:30:00Z",
       "status": true,
       "id": "a002"
     },
@@ -498,7 +498,7 @@
         "street": "789 Pine Street",
         "City": "abc",
         "State": "hyd",
-        "Zip Code": 2123,
+        "ZipCode": 2123,
         "Country": "india"
       },
       "date": "2024-03-03T10:45:00Z",
@@ -514,7 +514,7 @@
         "street": "101 Elm Street",
         "City": "def",
         "State": "hyd",
-        "Zip Code": 2124,
+        "ZipCode": 2124,
         "Country": "india"
       },
       "date": "2024-03-04T18:20:00Z",
@@ -530,7 +530,7 @@
         "street": "246 Maple Avenue",
         "City": "lmn",
         "State": "hyd",
-        "Zip Code": 2125,
+        "ZipCode": 2125,
         "Country": "india"
       },
       "date": "2024-03-05T09:00:00Z",
@@ -546,7 +546,7 @@
         "street": "369 Cedar Street",
         "City": "pqr",
         "State": "hyd",
-        "Zip Code": 2126,
+        "ZipCode": 2126,
         "Country": "india"
       },
       "date": "2024-03-06T12:45:00Z",
@@ -562,7 +562,7 @@
         "street": "492 Walnut Avenue",
         "City": "uvw",
         "State": "hyd",
-        "Zip Code": 2127,
+        "ZipCode": 2127,
         "Country": "india"
       },
       "date": "2024-03-07T07:30:00Z",
@@ -578,10 +578,10 @@
         "street": "595 Birch Street",
         "City": "opq",
         "State": "hyd",
-        "Zip Code": 2128,
+        "ZipCode": 2128,
         "Country": "india"
       },
-      "date": "2024-03-08T16:20:00Z",
+      "date": "2024-03-07T16:20:00Z",
       "status": false,
       "id": "d266"
     },
@@ -594,7 +594,7 @@
         "street": "678 Cherry Avenue",
         "City": "rst",
         "State": "hyd",
-        "Zip Code": 2129,
+        "ZipCode": 2129,
         "Country": "india"
       },
       "date": "2024-03-09T11:10:00Z",
@@ -610,7 +610,7 @@
         "street": "753 Pineapple Street",
         "City": "ijk",
         "State": "hyd",
-        "Zip Code": 2130,
+        "ZipCode": 2130,
         "Country": "india"
       },
       "date": "2024-03-10T08:00:00Z",

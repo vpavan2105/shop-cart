@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "@chakra-ui/react";
 import { NavLink } from "./ProductNav";
-import { RootState } from "../../redux/reducers/ProductReducer";
-import FilteredProducts from "./FilterProduccts";
+
 import { addToFilteredProducts } from "../../redux/actions/actions";
 import { useAppDispatch, useAppSelector } from "../../redux/utils/Product_Utils";
+import { RootState } from "../../redux/store";
+
 
 
 export const Fashion = [

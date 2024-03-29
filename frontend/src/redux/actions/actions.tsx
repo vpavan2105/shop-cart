@@ -1,7 +1,8 @@
 import axios from 'axios';
+
+import { ADD_TO_CART, FETCH_CATEGORIES, FETCH_PRODUCTS, PRODUCTS_LOADING } from '../actionTypes.tsx';
 import { Dispatch } from 'redux';
-import { Product } from '../../components/Products/ProductCard';
-import { ADD_TO_CART, ADD_TO_FILTERED_PRODUCTS, FETCH_CATEGORIES, FETCH_PRODUCTS, PRODUCTS_LOADING } from '../actionTypes';
+import { Product } from '../utils/Product_Utils';
 
 
 export const url:string = "http://localhost:8000/products";

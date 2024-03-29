@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
-import { useSelector, useDispatch } from "react-redux";
-import { Product, ProductCard } from "./ProductCard";
+
+import { ProductCard } from "./ProductCard";
 import { CardSkeleton } from "./Skeleton";
 import { fetchProducts } from "../../redux/actions/actions";
-import { useAppDispatch } from "../../redux/utils/Product_Utils";
+import { Product, useAppDispatch, useAppSelector } from "../../redux/utils/Product_Utils";
 import { RootState } from "../../redux/store";
 
 const MAX_DESCRIPTION_LENGTH: number = 40;
@@ -12,8 +12,8 @@ const MAX_TITLE_LENGTH: number = 30;
 const PER_PAGE: number = 10;
 
 const ProductList: React.FC = () => {
-  const products = useSelector((state: RootState) => state.product.products);
-  const loading = useSelector((state: RootState) => state.product.loading);
+  const products = useAppSelector((state: RootState) => state.product.products);
+  const loading = useAppSelector((state: RootState) => state.product.loading);
   const [page, setPage] = useState<number>(1);
   const dispatch = useAppDispatch();
 

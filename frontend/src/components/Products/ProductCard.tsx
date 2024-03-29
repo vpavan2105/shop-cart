@@ -4,22 +4,11 @@ import { addToCart, url } from "../../redux/actions/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import SingleProductPage from "./SingleProductCard";
-import { useAppDispatch, useAppSelector } from "../../redux/utils/Product_Utils";
+import { Product, useAppDispatch, useAppSelector } from "../../redux/utils/Product_Utils";
 import { RootState } from "../../redux/store";
 
 
-export interface Product {
-  id: string;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
+
 
 export interface ProductCardProps {
   prod: Product;
@@ -30,7 +19,7 @@ export interface ProductCardProps {
 export const ProductCard: React.FC<ProductCardProps> = ({ prod, truncateDescription, truncateTitle }: ProductCardProps) => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
   const dispatch = useAppDispatch();
-  const isAuth = useAppSelector((state:RootState) => state.auth);
+  // const isAuth = useAppSelector((state:RootState) => state.auth);
   const toast = useToast();
 
   const handleBuy = () => {
@@ -40,7 +29,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ prod, truncateDescript
   };
 
   const handleCart = () => {
-    if(isAuth){
+    if(false){
       setCartItems([...cartItems, prod]);
       dispatch(addToCart(prod));
       console.log("product added to cart");

@@ -8,10 +8,11 @@ import {
   Flex,
   useToast,
 } from "@chakra-ui/react";
-import { Product } from "./ProductCard";
+
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/actions/actions";
 import { RootState } from "../../redux/store";
+import { Product, useAppDispatch } from "../../redux/utils/Product_Utils";
 
 interface SingleProductPageProps {
   product: Product;
@@ -21,8 +22,8 @@ const SingleProductPage: React.FC<SingleProductPageProps> = ({
   product,
 }: SingleProductPageProps) => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
-  const dispatch = useDispatch();
-  const isAuth = useSelector((state: RootState) => state.auth);
+  const dispatch = useAppDispatch();
+  // const isAuth = useSelector((state: RootState) => state.auth);
   const toast = useToast();
   const handleBuy = () => {
     setTimeout(() => {
@@ -31,7 +32,7 @@ const SingleProductPage: React.FC<SingleProductPageProps> = ({
   };
 
   const handleCart = () => {
-    if (isAuth) {
+    if (false) {
       setCartItems([...cartItems, product]);
       dispatch(addToCart(product));
       console.log("product added to cart");

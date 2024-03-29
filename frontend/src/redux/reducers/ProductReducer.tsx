@@ -1,11 +1,8 @@
-import { combineReducers } from 'redux';
-import { Product } from '../../components/Products/ProductCard';
-import {FETCH_PRODUCTS, LOGIN_SUCCESS, LOGOUT, PRODUCTS_LOADING } from '../actionTypes';
 
-export interface ProductState {
-  products: Product[];
-  loading: boolean;
-}
+import {FETCH_PRODUCTS,  PRODUCTS_LOADING } from '../actionTypes.tsx';
+import {  ProductState } from '../utils/Product_Utils';
+
+
 
 // export interface CategoryState {
 //   categories: string[];
@@ -79,17 +76,19 @@ export const productReducer = (state = initialProductState, action: any) => {
 // };
 
 
-const initialAuthState: boolean = false;
+// export const initialAuthState: AuthState = {
+//   auth:false
+// };
 
-export const authReducer = (state = initialAuthState, action: any) => {
-  switch (action.type) {
-    case LOGIN_SUCCESS:
-      return true;
-    case LOGOUT:
-      return false;
-    default:
-      return state;
-  }
-};
+// export const authReducer = (state = initialAuthState, action: any) => {
+//   switch (action.type) {
+//     case LOGIN_SUCCESS:
+//       return true;
+//     case LOGOUT:
+//       return false;
+//     default:
+//       return state;
+//   }
+// };
 
 // export default rootReducer;
