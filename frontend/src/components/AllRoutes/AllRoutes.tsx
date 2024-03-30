@@ -18,25 +18,32 @@ const AllRoutes = () => {
   const [isAuth, setIsAuth] = useState(false)
   return (
     <>
-    {!isAuth? (<Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/products' element={<Products/>} />
-        <Route path='/products/:id' element={<SingleProductPage/>} />
-        <Route path='/cart' element={
-        <PrivateRoute>
-            <Cart/>
-        </PrivateRoute>} />
-        <Route path='/orders' element={<Orders/>} />
-        <Route path='/contact' element={<Contacts/>} />
-        <Route path='/login' element={<Login/>} />
-    </Routes>) : (<Routes>
+    {isAuth? 
+    (<Routes>
       <Route path='/' element={<DashBoard/>} />
         <Route path='/ordersadmin' element={<OrdersAdmin/>} />
         <Route path='/productsadmin' element={<ProductsAdmin/>} />
         <Route path='/usersadmin' element={<UsersAdmin/>} />
-    </Routes>) }
+    </Routes>) 
+    : 
+    (<Routes>
+      <Route path='/' element={<Home/>} />
+      <Route path='/products' element={<Products/>} />
+      <Route path='/products/:id' element={<SingleProductPage/>} />
+      <Route path='/cart' element={
+      <PrivateRoute>
+          <Cart/>
+      </PrivateRoute>} />
+      <Route path='/orders' element={
+      <PrivateRoute>
+          <Orders/>
+      </PrivateRoute>} />
+      <Route path='/contact' element={<Contacts/>} />
+      <Route path='/login' element={<Login/>} />
+  </Routes>)}
     </>
   )
 }
 
 export default AllRoutes
+
