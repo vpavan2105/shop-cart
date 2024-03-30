@@ -1,7 +1,7 @@
 import { Box, Button, Input, Textarea } from "@chakra-ui/react";
 import  { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import { ProdData } from "../../redux/utils/adminUtils";
 import { addDataProduct } from "../../redux/actions/actionAdmin";

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../App.css";
+import "../home.css";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -70,7 +70,7 @@ function Home() {
               alt=""
             />
             <div>
-              {" "}
+          
               <h2>Staples</h2>
               <p>Delivery within 24 hours</p>
             </div>
