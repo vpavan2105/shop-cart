@@ -7,11 +7,6 @@
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "title": "Samsung 55-Inch 4K UHD Smart TV",
-      "price": 799.99,
-      "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
-      "category": "homeappliances",
-      "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
       "rating": {
         "rate": 4.8
       }
@@ -427,11 +422,9 @@
       },
       "category": "skincare",
       "image": "https://cdn.dummyjson.com/product-images/40/1.jpg",
-        "rate": 4.8
-      
+      "rate": 4.8
     }
   ],
- 
   "users": [
     {
       "id": "1",
@@ -457,9 +450,9 @@
   ],
   "orders": [
     {
-      "id": "0770",
-      "userid": "1",
-      "name": "Surabhi",
+      "id": "5e41",
+      "userid": "3",
+      "name": "Bhutu",
       "address": [
         "Goluwala Niwadan, Village Goluwala",
         "335802",
@@ -467,7 +460,7 @@
         "Rajasthan",
         "India"
       ],
-      "date": "2024-03-29T08:02:34.918Z",
+      "date": "3/30/2024, 3:25:47 AM",
       "allProducts": [
         {
           "id": 1,
@@ -479,7 +472,7 @@
           "rating": {
             "rate": 4.8
           },
-          "quantity": 5
+          "quantity": 3
         },
         {
           "id": 5,
@@ -491,7 +484,107 @@
           "rating": {
             "rate": 4.7
           },
-          "quantity": 8
+          "quantity": 2
+        },
+        {
+          "id": 8,
+          "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
+          "price": 349.99,
+          "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
+          "category": "electronics",
+          "image": "https://media.istockphoto.com/id/1483360428/photo/cute-young-tabby-cat-playing-in-a-garden.webp?b=1&s=170667a&w=0&k=20&c=dw4l18FO9_MDnWPyD6flSoUYim3p52m2_PcCNVWFz_4=",
+          "rating": {
+            "rate": 4.9
+          },
+          "quantity": 3
+        }
+      ],
+      "totalAmount": 3649.92,
+      "status": false
+    },
+    {
+      "id": "5e41",
+      "userid": "1",
+      "name": "Bhutu",
+      "address": [
+        "Goluwala Niwadan, Village Goluwala",
+        "335802",
+        "hanumangarh",
+        "Rajasthan",
+        "India"
+      ],
+      "date": "3/30/2024, 3:25:47 AM",
+      "allProducts": [
+        {
+          "id": 1,
+          "title": "Samsung 55-Inch 4K UHD Smart TV",
+          "price": 799.99,
+          "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
+          "category": "homeappliances",
+          "image": "https://media.istockphoto.com/id/1453241155/photo/curious-cat-sitting-while-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=AMYu9_ks9-slttX22iCxBwVtTswk9K1U9oDH09wWwVM=",
+          "rating": {
+            "rate": 4.8
+          },
+          "quantity": 3
+        },
+        {
+          "id": 5,
+          "title": "Amazon Echo (3rd Gen)",
+          "price": 99.99,
+          "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
+          "category": "electronics",
+          "image": "https://media.istockphoto.com/id/1293763250/photo/cute-kitten-licking-glass-table-with-copy-space.webp?b=1&s=170667a&w=0&k=20&c=f0VoM2wiDR3iZVTC0n-WK4cfstZEfbDh33lWc2KRbFM=",
+          "rating": {
+            "rate": 4.7
+          },
+          "quantity": 2
+        },
+        {
+          "id": 8,
+          "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
+          "price": 349.99,
+          "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
+          "category": "electronics",
+          "image": "https://media.istockphoto.com/id/1483360428/photo/cute-young-tabby-cat-playing-in-a-garden.webp?b=1&s=170667a&w=0&k=20&c=dw4l18FO9_MDnWPyD6flSoUYim3p52m2_PcCNVWFz_4=",
+          "rating": {
+            "rate": 4.9
+          },
+          "quantity": 3
+        }
+      ],
+      "totalAmount": 3649.92,
+      "status": false
+    }
+  ],
+  "carts": [
+    {
+      "id": "1",
+      "user_id": "1",
+      "totalAmount": 0,
+      "products": [
+        {
+          "id": 1,
+          "title": "Samsung 55-Inch 4K UHD Smart TV",
+          "price": 799.99,
+          "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
+          "category": "homeappliances",
+          "image": "https://media.istockphoto.com/id/1453241155/photo/curious-cat-sitting-while-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=AMYu9_ks9-slttX22iCxBwVtTswk9K1U9oDH09wWwVM=",
+          "rating": {
+            "rate": 4.8
+          },
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "title": "Amazon Echo (3rd Gen)",
+          "price": 99.99,
+          "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
+          "category": "electronics",
+          "image": "https://media.istockphoto.com/id/1293763250/photo/cute-kitten-licking-glass-table-with-copy-space.webp?b=1&s=170667a&w=0&k=20&c=f0VoM2wiDR3iZVTC0n-WK4cfstZEfbDh33lWc2KRbFM=",
+          "rating": {
+            "rate": 4.7
+          },
+          "quantity": 1
         },
         {
           "id": 8,
@@ -505,47 +598,69 @@
           },
           "quantity": 1
         }
+      ]
+    },
+    {
+      "id": "2",
+      "user_id": "2",
+      "totalAmount": 799,
+      "products": [
+        {
+          "id": 1,
+          "title": "Samsung 55-Inch 4K UHD Smart TV",
+          "price": 799.99,
+          "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
+          "category": "homeappliances",
+          "image": "https://media.istockphoto.com/id/1453241155/photo/curious-cat-sitting-while-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=AMYu9_ks9-slttX22iCxBwVtTswk9K1U9oDH09wWwVM=",
+          "rating": {
+            "rate": 4.8
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "user_id": "3",
+      "products": [
+        {
+          "id": 1,
+          "title": "Samsung 55-Inch 4K UHD Smart TV",
+          "price": 799.99,
+          "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
+          "category": "homeappliances",
+          "image": "https://media.istockphoto.com/id/1453241155/photo/curious-cat-sitting-while-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=AMYu9_ks9-slttX22iCxBwVtTswk9K1U9oDH09wWwVM=",
+          "rating": {
+            "rate": 4.8
+          },
+          "quantity": 3
+        },
+        {
+          "id": 5,
+          "title": "Amazon Echo (3rd Gen)",
+          "price": 99.99,
+          "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
+          "category": "electronics",
+          "image": "https://media.istockphoto.com/id/1293763250/photo/cute-kitten-licking-glass-table-with-copy-space.webp?b=1&s=170667a&w=0&k=20&c=f0VoM2wiDR3iZVTC0n-WK4cfstZEfbDh33lWc2KRbFM=",
+          "rating": {
+            "rate": 4.7
+          },
+          "quantity": 2
+        },
+        {
+          "id": 8,
+          "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
+          "price": 349.99,
+          "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
+          "category": "electronics",
+          "image": "https://media.istockphoto.com/id/1483360428/photo/cute-young-tabby-cat-playing-in-a-garden.webp?b=1&s=170667a&w=0&k=20&c=dw4l18FO9_MDnWPyD6flSoUYim3p52m2_PcCNVWFz_4=",
+          "rating": {
+            "rate": 4.9
+          },
+          "quantity": 3
+        }
       ],
-      "totalAmount": 0
-    },
-    {
-      "orderId": "order9",
-      "userId": "1",
-      "products": "product3",
-      "total": 210,
-      "address": {
-        "street": "678 Cherry Avenue",
-        "City": "rst",
-        "State": "hyd",
-        "ZipCode": 2129,
-        "Country": "india"
-      },
-      "date": "2024-03-09T11:10:00Z",
-      "status": false,
-      "id": "acc7"
-    },
-    {
-      "orderId": "order10",
-      "userId": "2",
-      "products": "product1",
-      "total": 240,
-      "address": {
-        "street": "753 Pineapple Street",
-        "City": "ijk",
-        "State": "hyd",
-        "ZipCode": 2130,
-        "Country": "india"
-      },
-      "date": "2024-03-10T08:00:00Z",
-      "status": false,
-      "id": "5209"
-    }
-  ],
-  "carts": [
-    {
-      "id": "1",
-      "user_id": "1",
-      "products": []
+      "totalAmount": 3649.92
     }
   ]
 }
