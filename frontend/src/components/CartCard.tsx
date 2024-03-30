@@ -18,6 +18,7 @@ interface CartData {
   id: string;
   user_id: string;
   products: Product[];
+  totalAmount:number
 }
 enum IncDec{
   inc,
@@ -25,12 +26,11 @@ enum IncDec{
 }
 function CartCard(): ReactElement {
   const [cartProduct, setCartProduct] = useState<CartData | null>(null);
-  const [totalPrice, setTotalPrice]=useState<number>(0);
   // const u_id=localStorage.getItem()
   
   // getting cart data from server
   useEffect(() => {
-    fetch("http://localhost:3001/carts/2")
+    fetch("http://localhost:3001/carts/3")
       .then((res) => res.json())
       .then((data: CartData) => {
         setCartProduct(data);
@@ -40,20 +40,9 @@ function CartCard(): ReactElement {
       });
   }, [cartProduct]);
 
-  //calculating total price
-  useEffect(()=>{
-    if(cartProduct)
-    {
-      let sumOfPrice:number=0;
-      for (const product of cartProduct.products) {
-        sumOfPrice += product.price * product.quantity;
-      }
-     let roundSum=parseFloat(sumOfPrice.toFixed(2));
-      setTotalPrice(roundSum);
-    }
-  },[cartProduct])
   //Handling each product increment and decrement
   const handleIncOrDec = (p_id: number,val:number) => {
+   
     async function updateData(cart_id: string) {
       try {
         // Get all cart details of an user using cartId
@@ -68,7 +57,6 @@ function CartCard(): ReactElement {
           productsArray.forEach(product => {
             if(product.id === p_id) {
               product.quantity += 1;
-              
             }
           });
         }
@@ -83,29 +71,35 @@ function CartCard(): ReactElement {
         //If the quantity will be zero then that product will be removed from the array
         productsArray = productsArray.filter(product => product.quantity > 0);
 
-        // Update cart details of the user using cartId
-        let updateResult = await fetch(`http://localhost:3001/carts/${cart_id}`, {
+
+    // Recalculate totalAmount after changing product quantity
+    let newTotalAmount = productsArray.reduce(
+      (total, product) => total + product.price * product.quantity,
+      0
+    );
+    newTotalAmount=parseFloat(newTotalAmount.toFixed(2)); //rounding to 2 decimal places
+        // Update cart details of the user using cart_id
+        await fetch(`http://localhost:3001/carts/${cart_id}`, {
           method: 'PATCH',
           body: JSON.stringify({
-            products:productsArray
+            products:productsArray,
+            totalAmount:newTotalAmount
           }),
           headers: {
             "Content-type": "application/json"
           }
         });
-        console.log(updateResult);
       }
-      
-      
       catch (err) {
         console.error(err);
       }
     }
 
-    updateData("2");
+    updateData("3"); //invoking updateData
   };
 
   const handleEmpty=(cart_id:number|string)=>{
+   
     async function emptyProductArray() {
       try{
         await fetch(`http://localhost:3001/carts/${cart_id}`, {
@@ -139,7 +133,7 @@ function CartCard(): ReactElement {
                 <img width="200px" src={product.image} alt={product.title} />
                 <h3>{product.title}</h3>
                 <p>Price:{product.price}</p>
-                <p>Description:{product.description}</p>
+                <p>{product.description}</p>
                 <div>
                   <button
                     onClick={() => {
@@ -160,7 +154,7 @@ function CartCard(): ReactElement {
           </div>
         )}
       </div>
-      <h2>Total : {totalPrice}</h2>
+      <h2>Total : {cartProduct?.totalAmount}</h2>
       {cartProduct && <FcEmptyTrash onClick={()=>{handleEmpty(cartProduct.id)}}/>}
       
       <button>Proceed to Checkout</button>
@@ -169,5 +163,3 @@ function CartCard(): ReactElement {
 }
 
 export default CartCard;
-
-
