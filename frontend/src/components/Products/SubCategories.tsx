@@ -3,19 +3,19 @@ import { Card } from "@chakra-ui/react";
 import { NavLink } from "./ProductNav";
 
 import { addToFilteredProducts } from "../../redux/actions/actions";
-import { useAppDispatch, useAppSelector } from "../../redux/utils/Product_Utils";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../redux/utils/Product_Utils";
 import { RootState } from "../../redux/store";
 
-
-
 export const Fashion = [
-    "men's clothing",
-    "women's clothing",
-    "jewelery",
-    "fragrances",
-    "shoes",
-  ];
-
+  "men's clothing",
+  "women's clothing",
+  "jewelery",
+  "fragrances",
+  "shoes",
+];
 
 interface SubCategoriesProps {
   category: string;
@@ -45,14 +45,14 @@ const SubCategories: React.FC<SubCategoriesProps> = ({
 
   return (
     <>
-    <Card position="absolute" top="47px" zIndex="1" p={2}>
-      {category === "Fashion" &&
-        Fashion.map((link) => (
-          <NavLink key={link} onclick={() => handleSubcategoryClick(link)}>
-            {link}
-          </NavLink>
-        ))}
-    </Card>
+      <Card position="absolute" top="70px" zIndex="1" p={2}>
+        {category === "Fashion" &&
+          Fashion.map((link) => (
+            <NavLink key={link} onclick={() => handleSubcategoryClick(link)}>
+              {link}
+            </NavLink>
+          ))}
+      </Card>
     </>
   );
 };
