@@ -1,7 +1,12 @@
+import ProductList from "../components/Products/ProductList"
+import ProductNav from "../components/Products/ProductNav"
 
 const Products = () => {
   return (
-    <div>Products</div>
+    <>
+    <ProductNav />
+    <ProductList />
+    </>
   )
 }
 
