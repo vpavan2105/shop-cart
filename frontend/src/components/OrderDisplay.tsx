@@ -1,14 +1,13 @@
 import { ReactElement, useState, useEffect } from "react";
 import {
   Heading,
-  Divider,
   SimpleGrid,
   Card,
-  CardFooter,
-  CardHeader,
   CardBody,
-  Button,
+  Image,
   Text,
+  Button,
+  Divider
 } from "@chakra-ui/react";
 interface Location {
   address: string;
@@ -71,12 +70,32 @@ export function OrderDisplay(): ReactElement {
     <Heading as="h2" size="3xl">
       Your Orders
     </Heading>
-   
-  </>
-
-
-
-
-    
+    {orders && orders.map((order) => (
+      <div key={order.id}>
+        {order.allProducts.length > 0 && (
+          <SimpleGrid>
+            <Card>
+            {order.allProducts.map((product) => (
+                <CardBody>
+                <Image src={product.image} alt={product.title} display="inline" width={100}/>
+                <span >{product.title}</span>
+                  <Text>₹ {product.price}</Text>
+                </CardBody>
+                
+            ))}
+            <Button>Total - {order.totalAmount}</Button>
+            </Card>
+          </SimpleGrid>
+        )}
+        
+        {order.allProducts.length === 0 && (
+          <Text>No products found for this order.</Text>
+        )}
+        <Divider my={8} color="red" />
+      </div>
+    ))}
+  </>    
   );
 }
+
+
