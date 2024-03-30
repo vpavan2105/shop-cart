@@ -11,6 +11,7 @@ import OrdersAdmin from '../../pages/Admin/OrdersAdmin'
 import ProductsAdmin from '../../pages/Admin/ProductsAdmin'
 import { UsersAdmin } from '../../pages/Admin/UsersAdmin'
 import { useState } from 'react'
+import SingleProductPage from '../Products/SingleProductCard'
 
 
 const AllRoutes = () => {
@@ -20,6 +21,7 @@ const AllRoutes = () => {
     {!isAuth? (<Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/products' element={<Products/>} />
+        <Route path='/products/:id' element={<SingleProductPage/>} />
         <Route path='/cart' element={
         <PrivateRoute>
             <Cart/>
@@ -33,9 +35,6 @@ const AllRoutes = () => {
         <Route path='/productsadmin' element={<ProductsAdmin/>} />
         <Route path='/usersadmin' element={<UsersAdmin/>} />
     </Routes>) }
-    
-
-    
     </>
   )
 }
