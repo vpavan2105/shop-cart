@@ -44,53 +44,6 @@ interface CartData {
   totalAmount: number;
 }
 
-// export const ProductCard: React.FC<ProductCardProps> = ({
-//   prod,
-//   truncateDescription,
-//   truncateTitle,
-// }: ProductCardProps) => {
-//   const [cartItems, setCartItems] = useState<Product[]>([]);
-//   const dispatch = useAppDispatch();
-//   const navigate = useNavigate();
-//   // const isAuth = useAppSelector((state:RootState) => state.auth);
-//   const toast = useToast();
-
-//   const handleBuy = () => {
-//     setTimeout(() => {
-//       console.log("moved to payment page");
-//     }, 500);
-//   };
-
-//   const handleCart = () => {
-//     if (false) {
-//       setCartItems([...cartItems, prod]);
-//       dispatch(addToCart(prod));
-//       console.log("product added to cart");
-//       toast({
-//         title: "Successfully Added",
-//         description: "You added one product to cart.",
-//         status: "success",
-//         duration: 700,
-//         isClosable: true,
-//         position: "top",
-//       });
-//     } else {
-//       toast({
-//         title: "Unable to Add",
-//         description: "You are not loggedin yet.",
-//         status: "error",
-//         duration: 900,
-//         isClosable: true,
-//         position: "top",
-//       });
-//     }
-//   };
-
-//   const handleProductClick = () => {
-//     console.log("clicked..");
-//     navigate(`/products/${prod.id}`);
-//   };
-
 export const ProductCard: React.FC<ProductCardProps> = ({
   prod,
   truncateDescription,
