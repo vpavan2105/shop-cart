@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
-import { Product, IncDec } from "./CartList";
+import { ProductDetails, IncDec } from "./CartList";
 import {Box} from "@chakra-ui/react";
 
 type CartCartProps = {
-  product: Product;
+  product: ProductDetails;
   handleIncOrDec: (p_id: number, val: number) => void;
 };
 

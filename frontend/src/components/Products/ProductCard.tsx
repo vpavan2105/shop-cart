@@ -16,94 +16,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import { Product } from "../../redux/utils/Product_Utils";
 import { useNavigate } from "react-router-dom";
-
+import {CartUrl} from '../../ApiUrls';
+import {CartData,ProductDetails} from '../CartList'
 export interface ProductCardProps {
   prod: Product;
   truncateDescription: (description: string) => string;
   truncateTitle: (title: string) => string;
 }
 
-//ip
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-  };
-  quantity: number;
-}
 
-interface CartData {
-  id: string;
-  user_id: string;
-  products: Product[];
-  totalAmount: number;
-}
 
-// export const ProductCard: React.FC<ProductCardProps> = ({
-//   prod,
-//   truncateDescription,
-//   truncateTitle,
-// }: ProductCardProps) => {
-//   const [cartItems, setCartItems] = useState<Product[]>([]);
-//   const dispatch = useAppDispatch();
-//   const navigate = useNavigate();
-//   // const isAuth = useAppSelector((state:RootState) => state.auth);
-//   const toast = useToast();
 
-//   const handleBuy = () => {
-//     setTimeout(() => {
-//       console.log("moved to payment page");
-//     }, 500);
-//   };
 
-//   const handleCart = () => {
-//     if (false) {
-//       setCartItems([...cartItems, prod]);
-//       dispatch(addToCart(prod));
-//       console.log("product added to cart");
-//       toast({
-//         title: "Successfully Added",
-//         description: "You added one product to cart.",
-//         status: "success",
-//         duration: 700,
-//         isClosable: true,
-//         position: "top",
-//       });
-//     } else {
-//       toast({
-//         title: "Unable to Add",
-//         description: "You are not loggedin yet.",
-//         status: "error",
-//         duration: 900,
-//         isClosable: true,
-//         position: "top",
-//       });
-//     }
-//   };
-
-//   const handleProductClick = () => {
-//     console.log("clicked..");
-//     navigate(`/products/${prod.id}`);
-//   };
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   prod,
   truncateDescription,
   truncateTitle,
 }: ProductCardProps) => {
-  const [cartItems, setCartItems] = useState<Product[]>([]);
+  const [cartItems, setCartItems] = useState<ProductDetails[]>([]);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   // const isAuth = useAppSelector((state:RootState) => state.auth);
   const toast = useToast();
 
   const userId = "5"; //ip
-  const cartUrl = "http://localhost:3001/carts";
+  const cartUrl = CartUrl;
   const handleBuy = () => {
     setTimeout(() => {
       console.log("moved to payment page");

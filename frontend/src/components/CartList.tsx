@@ -1,8 +1,8 @@
 import { ReactElement, useEffect, useState } from "react";
 import { FcEmptyTrash } from "react-icons/fc";
 import CartCard from "./CartCard";
-
-export interface Product {
+import {CartUrl} from '../ApiUrls';
+export interface ProductDetails {
   id: number;
   title: string;
   price: number;
@@ -18,7 +18,7 @@ export interface Product {
 export interface CartData {
   id: string;
   user_id: string;
-  product: Product[];
+  product: ProductDetails[];
   totalAmount: number;
 }
 export enum IncDec {
@@ -28,8 +28,7 @@ export enum IncDec {
 function CartList(): ReactElement {
   const [cartProduct, setCartProduct] = useState<CartData | null>(null);
 
-  const cartUrl = "http://localhost:3001/carts";
-  // const cartUrl="https://shop-cart-x0xf.onrender.com/carts";
+  const cartUrl=CartUrl;
   const u_id = 5;
   // getting cart data from server
   useEffect(() => {
