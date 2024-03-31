@@ -4,6 +4,7 @@ import { useAppSelector } from '../../redux/utils/Product_Utils';
 
 const AreaChartComponent = () => {
     const products = useAppSelector(state => state.products.productsData);
+console.log(products);
 
     const categoryCounts: Record<string, number> = products.reduce((acc, product) => {
         acc[product.category] = (acc[product.category] || 0) + 1;

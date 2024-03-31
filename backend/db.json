@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      "price": "10",
+      "price": 10,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
@@ -14,23 +14,23 @@
     {
       "id": "2",
       "title": "Breville BES870XL Barista Express Espresso Machine",
-      "price": 599.95,
+      "price": "566.95",
       "description": "Create cafe-quality coffee at home with the Breville Barista Express Espresso Machine. Enjoy rich espresso and customizable flavors.",
       "category": "kitchen",
-      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "image": "https://m.media-amazon.com/images/I/41R0OMqpRgL._SX300_SY300_QL70_FMwebp_.jpg",
       "rating": {
-        "rate": 4.5
+        "rate": "4.0"
       }
     },
     {
       "id": "3",
-      "title": "Sony PlayStation 5 Console",
+      "title": "Sony High Speed SSD",
       "price": 499.99,
       "description": "Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D audio, and an all-new generation of incredible PlayStation games.",
       "category": "electronics",
       "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
       "rating": {
-        "rate": 4.9
+        "rate": "2.9"
       }
     },
     {
@@ -39,29 +39,18 @@
       "price": 249.99,
       "description": "Enjoy superior sound quality and active noise cancellation with Apple AirPods Pro. Designed for a comfortable and customizable fit.",
       "category": "electronics",
-      "image": "https://fakestoreapi.com/img/71MHT4wG6RL._AC_SL1500_.jpg",
+      "image": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694672652/Croma%20Assets/Entertainment/Wireless%20Earbuds/Images/301165_xzuxl0.png",
       "rating": {
-        "rate": 4.7
-      }
-    },
-    {
-      "id": "5",
-      "title": "Amazon Echo (3rd Gen)",
-      "price": 99.99,
-      "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
-      "category": "electronics",
-      "image": "https://fakestoreapi.com/img/61eqZe4R1zL._AC_SL1000_.jpg",
-      "rating": {
-        "rate": 4.7
+        "rate": "4.0"
       }
     },
     {
       "id": "6",
-      "title": "Samsung Galaxy S20 Ultra",
+      "title": "Samsung Galaxy S24 Ultra",
       "price": 1199.99,
       "description": "Experience the power of 5G connectivity and revolutionary camera features with the Samsung Galaxy S20 Ultra. Capture stunning photos and videos in high resolution.",
       "category": "electronics",
-      "image": "https://fakestoreapi.com/img/61n1zKqo1BL._AC_SL1000_.jpg",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRCjyekLTGxFsl4qRLxSG1Z-mqNJWIzPgRkGKmbrbqdmOmpH6D2Rh8z-rRBfO2o1wfXa-uRmj_LDp0YsbFNCB6kCLfvZ3ts",
       "rating": {
         "rate": 4.8
       }
@@ -72,7 +61,7 @@
       "price": 1299.99,
       "description": "Work and play with speed, performance, and a stunning display with the Dell XPS 13 Laptop. Perfect for professionals and enthusiasts alike.",
       "category": "electronics",
-      "image": "https://fakestoreapi.com/img/61AUPUN1IsL._AC_SL1500_.jpg",
+      "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9315/media-gallery/notebook-xps-9315-nt-blue-gallery-3.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=575&qlt=100,1&resMode=sharp2&size=575,402&chrss=full",
       "rating": {
         "rate": 4.6
       }
@@ -83,7 +72,7 @@
       "price": 349.99,
       "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
       "category": "electronics",
-      "image": "https://fakestoreapi.com/img/81Skzr0uuLL._AC_SX569_.jpg",
+      "image": "https://m.media-amazon.com/images/I/61Jl6XHrIqL._SX679_.jpg",
       "rating": {
         "rate": 4.9
       }
@@ -94,7 +83,7 @@
       "price": 149.95,
       "description": "Track workouts, heart rate, distance, calories burned, and more with Fitbit Charge 4 Fitness and Activity Tracker. Stay motivated and achieve your fitness goals.",
       "category": "electronics",
-      "image": "https://fakestoreapi.com/img/71Swueo5hIL._AC_SX466_.jpg",
+      "image": "https://m.media-amazon.com/images/I/311ThQv0JoL._SX300_SY300_QL70_FMwebp_.jpg",
       "rating": {
         "rate": 4.5
       }
@@ -105,7 +94,7 @@
       "price": 449.99,
       "description": "Capture stunning 5K video and vibrant photos with GoPro HERO9 Black. With HyperSmooth 3.0 stabilization and a front display, it's the ultimate action camera.",
       "category": "electronics",
-      "image": "https://fakestoreapi.com/img/61pimc1uDYL._AC_SL1500_.jpg",
+      "image": "https://m.media-amazon.com/images/I/61wsvCGXqnL._SX679_.jpg",
       "rating": {
         "rate": 2.9,
         "count": 470
@@ -241,43 +230,43 @@
         "count": 145
       },
       "category": "smartphones",
-      "image": "https://cdn.dummyjson.com/product-images/22/1.jpg"
+      "image": "data:image/jpeg;base64,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"
     },
     {
       "id": "23",
-      "title": "Samsung Universe 9",
-      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "title": "Samsung Galaxy Z Fold 4",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe with fold.",
       "price": 1249,
       "rating": {
         "rate": 3.6,
         "count": 14
       },
       "category": "smartphones",
-      "image": "https://cdn.dummyjson.com/product-images/23/1.jpg"
+      "image": "https://images.samsung.com/uk/smartphones/galaxy-z-fold4/buy/05_Color-Selection_Basic-Color/Q4_color-selection_MO_graygreen.png?imwidth=720"
     },
     {
       "id": "24",
-      "title": "OPPOF19",
-      "description": "OPPO F19 is officially announced on April 2021.",
+      "title": "OPPOF19 PRO",
+      "description": "OPPO F19 Pro is officially announced on April 2021.",
       "price": 280,
       "rating": {
         "rate": 4.6,
         "count": 45
       },
       "category": "smartphones",
-      "image": "https://cdn.dummyjson.com/product-images/24/1.jpg"
+      "image": "https://images.jdmagicbox.com/quickquotes/images_main/f19-pro-ram-8-gb-256-gb-fluid-black-270695746-6g4wo.png"
     },
     {
       "id": "27",
-      "title": "Samsung Galaxy Book",
-      "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
+      "title": "Samsung Galaxy Book 4 Pro",
+      "description": "Samsung Galaxy Book 4 Pro Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
       "price": 1499,
       "rating": {
         "rate": 4.6,
         "count": 14
       },
       "category": "laptops",
-      "image": "https://cdn.dummyjson.com/product-images/27/1.jpg"
+      "image": "https://m.media-amazon.com/images/I/71j3LRbPr2L._AC_UY327_FMwebp_QL65_.jpg"
     },
     {
       "id": "28",
@@ -289,7 +278,7 @@
         "count": 14
       },
       "category": "laptops",
-      "image": "https://cdn.dummyjson.com/product-images/28/1.jpg"
+      "image": "data:image/jpeg;base64,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"
     },
     {
       "id": "29",
@@ -391,7 +380,7 @@
       "id": "37",
       "title": "Retinol Serum",
       "description": "A lightweight, quick-absorbing serum that targets visible signs of aging",
-      "price": "10",
+      "price": 10,
       "rating": {
         "rate": 4,
         "count": 34
@@ -450,7 +439,7 @@
   ],
   "orders": [
     {
-      "id": "5e41",
+      "id": "1",
       "userid": "3",
       "name": "Bhutu",
       "address": [
@@ -500,10 +489,10 @@
         }
       ],
       "totalAmount": 3649.92,
-      "status": false
+      "status": true
     },
     {
-      "id": "5e41",
+      "id": "2",
       "userid": "1",
       "name": "Bhutu",
       "address": [
@@ -513,7 +502,7 @@
         "Rajasthan",
         "India"
       ],
-      "date": "3/30/2024, 3:25:47 AM",
+      "date": "4/30/2024, 3:25:47 AM",
       "allProducts": [
         {
           "id": 1,
@@ -560,7 +549,7 @@
     {
       "id": "1",
       "user_id": "1",
-      "totalAmount": 1249.97,
+      "totalAmount": 0,
       "products": [
         {
           "id": 1,

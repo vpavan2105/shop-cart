@@ -8,6 +8,7 @@ import { orderReducer } from "./reducers/orderReducer";
 import { cartReducer } from "./reducers/cartReducer";
 import {  ProductState } from "./utils/Product_Utils";
 import { productReducer } from "./reducers/User_Product_Reducer.tsx";
+import { productReducerAdmin } from "./reducers/productReducer.ts";
 interface IRoot{
     products:IProductState|{};
     users:IUserState|{};
@@ -17,7 +18,7 @@ interface IRoot{
     // auth:AuthState;
 }
 const rootReducer = combineReducers<IRoot>({
-    products:productReducer,
+    products:productReducerAdmin,
     users:userReducer,
     orders:orderReducer,
     carts:cartReducer,

@@ -12,10 +12,12 @@ import ProductsAdmin from '../../pages/Admin/ProductsAdmin'
 import { UsersAdmin } from '../../pages/Admin/UsersAdmin'
 import { useState } from 'react'
 import SingleProductPage from '../Products/SingleProductCard'
+import { SingleOrderPage } from '../Admin/SingleOrderPage'
+import { SignleUserCard } from '../Admin/SignleUserCard'
 
 
 const AllRoutes = () => {
-  const [isAuth] = useState(false)
+  const [isAuth, setIsAuth] = useState(true)
   return (
     <>
     {!isAuth? (<Routes>
@@ -34,6 +36,8 @@ const AllRoutes = () => {
         <Route path='/ordersadmin' element={<OrdersAdmin/>} />
         <Route path='/productsadmin' element={<ProductsAdmin/>} />
         <Route path='/usersadmin' element={<UsersAdmin/>} />
+        <Route path='usersadmin/:id' element={<SignleUserCard/>}/>
+        <Route path='ordersadmin/:id' element={<SingleOrderPage/>}/>
     </Routes>) }
     </>
   )
