@@ -24,7 +24,7 @@ console.log(product);
       </Box>
       <Text mt={2}>{product.category}</Text>
       <Text mt={2}>${product.price}</Text>
-      <Text mt={2}>Rating: {product.rating.rate} ({product.rating.count} reviews)</Text>
+      <Text mt={2}>Rating: {product.rating.rate} </Text>
       <Button onClick={() => editProduct(product)} leftIcon={<FontAwesomeIcon icon={faEdit} />}>
         Edit
       </Button>

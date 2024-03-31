@@ -7,9 +7,9 @@ export interface ProdData{
   category: string;
   image: string;
   rating: {
-    rate: number;
-    count: number;
+    rate: number|string;
   };
+  quantity?:number
 }
 
 
@@ -52,20 +52,21 @@ export interface ICartState{
   isError: boolean
 }
 
-export interface Address{
-  street: string;
-  City: string;
-  State: string;
-  ZipCode: number;
-  Country: string;
-}
+// export interface Address{
+//   street: string;
+//   City: string;
+//   State: string;
+//   ZipCode: number;
+//   Country: string;
+// }
 
 export interface OrderData{
   orderId: string;
-  userId: string;
-  products: string;
-  total: number;
-  address: Address;
+  userid: string;
+  name:string;
+  allProducts: ProdData[];
+  totalAmount: number;
+  address: [];
   date: string; 
   status: boolean;
   id?: any;

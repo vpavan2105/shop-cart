@@ -1,7 +1,7 @@
 import { Box, Button, Input, Textarea } from "@chakra-ui/react";
 import  { useState } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import { ProdData } from "../../redux/utils/adminUtils";
 import { addDataProduct } from "../../redux/actions/actionAdmin";
@@ -16,7 +16,7 @@ const initialState:ProdData = {
   image: "",
   rating: {
     rate: 0,
-    count: 0,
+ 
   },
 };
 
@@ -30,12 +30,11 @@ const ProductInput = () => {
   };
   const handleInputChange = (e:React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    if (name === "rate" || name === "count") {
+    if (name === "rate") {
       setUpdateProduct((prev) => ({
         ...prev,
         rating: {
-          ...prev.rating,
-          [name]: value,
+          [name]: value
         },
       }));
       console.log("update");
@@ -86,14 +85,6 @@ const ProductInput = () => {
       name="rate"
       placeholder="Enter rating"
       value={updateProduct.rating?.rate}
-      onChange={handleInputChange}
-      mb={2}
-    />
-    <Input
-      type="number"
-      name="count"
-      placeholder="Enter count"
-      value={updateProduct.rating?.count}
       onChange={handleInputChange}
       mb={2}
     />

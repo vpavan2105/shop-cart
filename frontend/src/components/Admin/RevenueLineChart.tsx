@@ -4,27 +4,24 @@ import { OrderData } from '../../redux/utils/adminUtils';
 import {useAppSelector} from '../../redux/utils/Product_Utils'
 
 
-const OrderLineComponents: React.FC = () => {
+const RevenueLineComponents: React.FC = () => {
   const orders:OrderData[] = useAppSelector(state => state.orders.ordersData);
 
-  const validOrders = orders.filter((order:any) => order.date instanceof Date);
-  orders.forEach((order:any) => {
-    order.date = new Date(order.date as string);
-  });
-  // Sort valid orders by date
 
-  // Count number of orders for each date
-  const ordersByDate = validOrders.reduce((acc: any, order: any) => {
+  const ordersByDate = orders.reduce((acc: any, order: any) => {
     const dateStr = new Date(order.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-    acc[dateStr] = (acc[dateStr] || 0) + 1; // Increment count for each date
+    acc[dateStr] = (acc[dateStr] || 0) + order.totalAmount; 
     return acc;
 }, {});
 
   // Convert ordersByDate object into an array of objects with date and order count
+  console.log(ordersByDate);
+  
   const data = Object.keys(ordersByDate).map(date => ({
     date,
-    orders: ordersByDate[date]
+    revenue: ordersByDate[date]
   }));
+console.log(data);
 
   return (
     <ResponsiveContainer width="100%" height={400}>
@@ -34,10 +31,10 @@ const OrderLineComponents: React.FC = () => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="orders" stroke="#63E6BE"strokeWidth={2}  activeDot={{ r: 8 }} />
+        <Line type="monotone" dataKey="revenue" stroke="#63E6BE"strokeWidth={2}  activeDot={{ r: 8 }} />
       </LineChart>
     </ResponsiveContainer>
   );
 };
 
-export default OrderLineComponents;
+export default RevenueLineComponents;
