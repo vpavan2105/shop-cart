@@ -8,7 +8,7 @@ const OrdersAdmin = () => {
   const dispatch = useAppDispatch();
 useEffect(()=>{
     dispatch(fetchOrdersData());
-})
+},[])
   return (
     <div>
       <OrdersList/>
