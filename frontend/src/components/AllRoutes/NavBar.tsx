@@ -1,11 +1,12 @@
-import {Flex} from '@chakra-ui/react'
+
+import { useState } from 'react';
 import {NavLink} from 'react-router-dom'
 interface Links{
     to: string;
     displayText: string;
 }
 const NavBar = () => {
-   
+    const [isActive,setIsActive] = useState<boolean>(false);
     const listOfLinks: Links[] = [
         {
             to:"/",
@@ -38,20 +39,21 @@ const NavBar = () => {
 
     return (
 
-        <>
-        <Flex
-        as="nav"
-        align="center"
-        justify="space-between"
-        padding="1rem"
-        bg="blue.300"
-        >
+        <div className='navbar'>
+         <div className={`hamburger-menu ${isActive? "active" : null}`} onClick={()=>{setIsActive(prev=>!prev) }} >
+          <span className='bar'></span>
+          <span className='bar'></span>
+          <span className='bar'></span>
+         
+        </div>
+        <div className={`navbar-inner ${isActive? "active" : null}`}>
             {listOfLinks.map((link)=>{
-                return(<NavLink style={({isActive})=> isActive?activeStyle:defaultStyle}
+                return(<NavLink  onClick={()=>{setIsActive(prev=>!prev) }} style={({isActive})=> isActive?activeStyle:defaultStyle}
                     key={link.to} to={link.to}>{link.displayText}</NavLink>)
             })}
-        </Flex>
-        </>
+            
+        </div>
+        </div>
         
     )
 }

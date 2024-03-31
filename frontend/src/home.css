@@ -1,0 +1,78 @@
+.home{
+    height: auto;
+    width: 100%;
+    /* border: 1px solid; */
+  }
+  .img{
+    /* margin-top:20PX ; */
+    height: 550px;
+    width: 100%;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .box{
+      border-radius: 20px;
+    position: relative; /* Set position relative to enable absolute positioning */
+      width: 200px; /* Set width of container */
+      height: 300px; /* Set height of container */
+      gap: 10px;
+      background-image: url('https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e570738029a725e686_Furniture-min.png'); /* Set the background image */
+      background-size: cover; /* Cover the entire container with the background image */
+      color: blanchedalmond;
+      background-position: center;
+  }
+  .box>h3{
+    text-align: center;
+  }
+  
+  .box2{
+    background-image: url('https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e52d6553668075697e_hand%20bag-min.png'); /* Set the background image */
+  
+   
+  }
+  .box3{
+    background-image: url('https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e460afc22b7ea53520_books-min.png')
+  }
+  .box4{
+    background-image: url('https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e754ac2e32897cb53b_tech-min.png');
+  }
+  .box5{
+    background-image: url('https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e64b769118272f244f_sneakers-min.png');
+  }
+  .box6{
+    background-image: url('https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e71eb4ad6d07e7568f_travel-min.png');
+  }
+  
+  
+  .boxes{
+    margin-top: 40px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .category{
+    margin: 10px;
+  }
+  .category>h2{
+      font-weight: bold;
+      /* margin-left: 30px; */
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin-top: 40px;
+     
+     
+  }
+  
+  .product>h2{
+    font-weight: bold;
+    /* margin-left: 30px; */
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 40px;
+   
+   
+  }

@@ -9,7 +9,6 @@ const AdminNavBar = () => {
     <NavLink to="/productsadmin">Products</NavLink>
     <NavLink to="/usersadmin">Users</NavLink>
     </>
-    
   )
 }
 
