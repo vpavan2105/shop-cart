@@ -24,10 +24,26 @@ export interface ProductCardProps {
   truncateTitle: (title: string) => string;
 }
 
+//ip
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+  };
+  quantity: number;
+}
 
-
-
-
+interface CartData {
+  id: string;
+  user_id: string;
+  products: Product[];
+  totalAmount: number;
+}
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   prod,

@@ -10,34 +10,45 @@ import DashBoard from '../../pages/Admin/DashBoard'
 import OrdersAdmin from '../../pages/Admin/OrdersAdmin'
 import ProductsAdmin from '../../pages/Admin/ProductsAdmin'
 import { UsersAdmin } from '../../pages/Admin/UsersAdmin'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import SingleProductPage from '../Products/SingleProductCard'
+import Logout from '../Logout'
+import { AuthContext } from '../../contexts/AuthContextProvider'
+import SignUp from '../../pages/SignUp'
 import { SingleOrderPage } from '../Admin/SingleOrderPage'
 import { SignleUserCard } from '../Admin/SignleUserCard'
 
 
 const AllRoutes = () => {
-  const [isAuth, setIsAuth] = useState(true)
+  const {isAdmin} = useContext(AuthContext)
   return (
     <>
-    {true? (<Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/products' element={<Products/>} />
-        <Route path='/products/:id' element={<SingleProductPage/>} />
-        <Route path='/cart' element={
-        <PrivateRoute>
-            <Cart/>
-        </PrivateRoute>} />
-        <Route path='/orders' element={<Orders/>} />
-        <Route path='/contact' element={<Contacts/>} />
-        <Route path='/login' element={<Login/>} />
-    </Routes>) : (<Routes>
+    {isAdmin?
+    (<Routes>
       <Route path='/' element={<DashBoard/>} />
         <Route path='/ordersadmin' element={<OrdersAdmin/>} />
         <Route path='/productsadmin' element={<ProductsAdmin/>} />
         <Route path='/usersadmin' element={<UsersAdmin/>} />
+        <Route path='/ordersadmin/:id' element={<SingleOrderPage/>}/>
         <Route path='usersadmin/:id' element={<SignleUserCard/>}/>
-        <Route path='ordersadmin/:id' element={<SingleOrderPage/>}/>
+    </Routes>) 
+    :
+    (<Routes>
+      <Route path='/' element={<Home/>} />
+      <Route path='/products' element={<Products/>} />
+      <Route path='/products/:id' element={<SingleProductPage/>} />
+      <Route path='/cart' element={
+      <PrivateRoute>
+          <Cart/>
+      </PrivateRoute>} />
+      <Route path='/orders' element={
+      <PrivateRoute>
+          <Orders/>
+      </PrivateRoute>} />
+      <Route path='/contact' element={<Contacts/>} />
+      <Route path='/login' element={<Login/>} />
+      <Route path='/logout' element={<Logout />} />
+      <Route path='/signup' element={<SignUp />}/>
     </Routes>) }
     </>
   )
