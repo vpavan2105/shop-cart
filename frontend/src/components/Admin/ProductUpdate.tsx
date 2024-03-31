@@ -22,13 +22,14 @@ interface ProductUpdateProps{
    productDetails:ProdData|{}
 }
 export function ProductUpdate({isOpen,onClose,productDetails}:ProductUpdateProps) {
+console.log(productDetails);
 
     const [updateProduct,setUpdateProduct] = useState<ProdData>(productDetails);
     const dispatch = useAppDispatch();
     const handleInputChange = (e:React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) => {
      
        const {name,value} = e.target;
-      if(name === "rate" || name === "count"){
+      if(name === "rate" ){
         setUpdateProduct(prev=>({
           ...prev,rating:{
             ...prev.rating,[name]:value
@@ -85,9 +86,9 @@ export function ProductUpdate({isOpen,onClose,productDetails}:ProductUpdateProps
                 mb={2} 
               />
               <Input
-                type="number"
-                name='count'
-                value={updateProduct.rating?.count}
+                type="text"
+                name='image'
+                value={updateProduct.image}
                 onChange={handleInputChange}
                 mb={2} 
               />

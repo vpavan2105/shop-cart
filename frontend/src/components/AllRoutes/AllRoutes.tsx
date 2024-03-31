@@ -15,6 +15,8 @@ import SingleProductPage from '../Products/SingleProductCard'
 import Logout from '../Logout'
 import { AuthContext } from '../../contexts/AuthContextProvider'
 import SignUp from '../../pages/SignUp'
+import { SingleOrderPage } from '../Admin/SingleOrderPage'
+import { SignleUserCard } from '../Admin/SignleUserCard'
 
 
 const AllRoutes = () => {

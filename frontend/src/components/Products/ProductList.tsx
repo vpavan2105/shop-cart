@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import { Button, Flex, Stack, Text } from "@chakra-ui/react";
 import { ProductCard } from "./ProductCard";
 import { CardSkeleton } from "./Skeleton";
 import { fetchProducts } from "../../redux/actions/actions";
@@ -11,7 +11,9 @@ const MAX_TITLE_LENGTH: number = 30;
 const PER_PAGE: number = 10;
 
 const ProductList: React.FC = () => {
+  // @ts-ignore
   const products = useAppSelector((state: RootState) => state.product.products);
+  // @ts-ignore
   const loading = useAppSelector((state: RootState) => state.product.loading);
   const [page, setPage] = useState<number>(1);
   const dispatch = useAppDispatch();
@@ -50,7 +52,7 @@ const ProductList: React.FC = () => {
 
   return (
     <>
-      <Heading>Product page</Heading>
+      {/*<Heading>Product page</Heading>*/}
       <Flex mt="4" justifyContent="center">
         <Text fontSize="20px" p={1} fontWeight="bold">Pages : </Text>
         {Array.from(

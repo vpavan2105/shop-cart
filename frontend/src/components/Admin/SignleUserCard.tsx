@@ -18,7 +18,7 @@ if(Object.keys(cartUser).length === 0) return <div>Loading...</div>
 
   return (
     <div>
-     {cartUser.user_id}
+     {cartUser.userid}
      {cartUser.products.map((prod,index)=>{
      return (
         <div key={index}>

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Box, Button, Flex, HStack, useColorModeValue } from "@chakra-ui/react";
+import React, {useState} from "react";
+import {Box, Button, Flex, HStack, useColorModeValue} from "@chakra-ui/react";
 import SubCategories from "./SubCategories";
 import {useAppDispatch, useAppSelector} from "../../redux/utils/Product_Utils";
 import {addToFilteredProducts, fetchProducts} from "../../redux/actions/actions";
@@ -42,8 +42,14 @@ export const NavLink = ({ children, onclick }: Props) => {
 const ProductNav: React.FC<ProductNavProps> = () => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
   const dispatch = useAppDispatch();
+
+  // @ts-ignore
   const selectedCategory: any = useAppSelector(
-      (state: RootState) => state.category
+      (state: RootState) => {
+        // @ts-ignore
+        const {category} = state;
+        return category;
+      }
   );
 
   const handleMouseEnter = (category: string) => {
@@ -54,8 +60,8 @@ const ProductNav: React.FC<ProductNavProps> = () => {
     setIsHovered(null);
   };
 
-  const handleClick = () => {
-    dispatch(addToFilteredProducts(selectedCategory))
+  const handleClick = (category: string) => {
+    dispatch(addToFilteredProducts(category))
   }
 
   return (
@@ -70,7 +76,7 @@ const ProductNav: React.FC<ProductNavProps> = () => {
                   onMouseEnter={() => handleMouseEnter(category)}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <NavLink onclick={() => handleClick}>{category}</NavLink>
+                  <NavLink onclick={() => handleClick(category)}>{category}</NavLink>
                   {isHovered === category && (
                     <SubCategories category={category} />
                   )}
