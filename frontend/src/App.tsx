@@ -1,19 +1,18 @@
 
-// import { useState } from 'react'
-import './App.css'
-import { Home } from './pages/Home'
-// import AllRoutes from './components/AllRoutes/AllRoutes'
-// import NavBar from './components/AllRoutes/NavBar'
-// import AdminNavBar from './components/AllRoutes/AdminNavBar'
+import { useContext, useState } from 'react'
+// import './App.css'
+import AllRoutes from './components/AllRoutes/AllRoutes'
+import NavBar from './components/AllRoutes/NavBar'
+import AdminNavBar from './components/AllRoutes/AdminNavBar'
+import { AuthContext } from './contexts/AuthContextProvider'
 
 function App() {
-
+  const{isAdmin} = useContext(AuthContext)
 
   return (
     <>
-    {/* {isAuth? <AdminNavBar/> : <NavBar/> }
-    <AllRoutes/> */}
-    <Home/>
+    {isAdmin? <AdminNavBar/> : <NavBar/> }
+    <AllRoutes/>
     </>
   )
 }
