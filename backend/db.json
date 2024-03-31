@@ -8,13 +8,13 @@
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "rating": {
-        "rate": 4.8
+        "rate": "4.0"
       }
     },
     {
       "id": "2",
       "title": "Breville BES870XL Barista Express Espresso Machine",
-      "price": "566.95",
+      "price": 566.95,
       "description": "Create cafe-quality coffee at home with the Breville Barista Express Espresso Machine. Enjoy rich espresso and customizable flavors.",
       "category": "kitchen",
       "image": "https://m.media-amazon.com/images/I/41R0OMqpRgL._SX300_SY300_QL70_FMwebp_.jpg",
@@ -489,7 +489,7 @@
         }
       ],
       "totalAmount": 3649.92,
-      "status": false
+      "status": true
     },
     {
       "id": "2",
