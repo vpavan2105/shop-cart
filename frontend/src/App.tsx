@@ -26,20 +26,20 @@
 
 
 import './App.css'
-import CartList from './components/CartList'
-// import { OrderList } from './components/OrderList'
-// import { OrderDisplay } from './components/OrderDisplay'
-// import ProductList from './components/Products/ProductList'
-// import SingleProductPage from './components/Products/SingleProductCard'
+import { Home } from './pages/Home'
+import {useState} from "react";
+import AllRoutes from './components/AllRoutes/AllRoutes'
+import NavBar from './components/AllRoutes/NavBar'
+import AdminNavBar from './components/AllRoutes/AdminNavBar'
+
 function App() {
+  const [isAuth, setIsAuth] = useState(true);
+
   return (
     <>
-   <CartList/>
-   {/* <OrderList></OrderList> */}
-   {/* <OrderDisplay></OrderDisplay> */}
-   {/* <ProductList /> */}
-   {/* <SingleProductPage /> */}
-  
+    {isAuth? <AdminNavBar/> : <NavBar/> }
+    <AllRoutes/>
+    {/*<Home/>*/}
     </>
   )
 }

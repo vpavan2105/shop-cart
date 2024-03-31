@@ -8,7 +8,7 @@
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "rating": {
-        "rate": 4.8
+        "rate": "4.0"
       }
     },
     {
@@ -489,7 +489,7 @@
         }
       ],
       "totalAmount": 3649.92,
-      "status": false
+      "status": true
     },
     {
       "id": "2",

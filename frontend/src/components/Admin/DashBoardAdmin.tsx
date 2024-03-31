@@ -1,17 +1,19 @@
 import { useAppSelector } from "../../redux/utils/Product_Utils";
 import { Box, Flex, Heading,Text, useBreakpointValue } from "@chakra-ui/react"
-import OrderLineComponents from "./OrdersLineComponents";
+
 import AreaChartComponent from "./AreaChartCompoent";
 import { faBookmark, faHouseUser, faMoneyCheck, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import RevenueLineComponents from "./RevenueLineChart";
 
 const DashBoardAdmin = () => {
     const users:number = useAppSelector(state=>state.users.usersData).length
+    const {isLoadingFetch} = useAppSelector(state=>state.products)
     const orders:number = useAppSelector(state=>state.orders.ordersData).length
-    const revenue :number= useAppSelector(state=>state.orders.ordersData).reduce((acc, curr) => acc + curr.total, 0);
-    console.log(revenue)
+    const revenue :number= useAppSelector(state=>state.orders.ordersData).reduce((acc, curr) => acc + curr.totalAmount, 0);
+    console.log(revenue,orders)
     const cardWidth = useBreakpointValue({ base: "100%", sm: "30%", md: "30%", lg: "30%" });
-
+if(isLoadingFetch) return <div>loading...</div>
   return (
     <Box className="dashboard-container" p={4}>
       <Heading mb={3} mt={3} p={2} >
@@ -42,7 +44,7 @@ const DashBoardAdmin = () => {
           <AreaChartComponent />
         </Box>
         <Box width={{ base: "100%", md: "50%" }}>
-          <OrderLineComponents />
+          <RevenueLineComponents />
         </Box>
       </Flex>
     </Box>

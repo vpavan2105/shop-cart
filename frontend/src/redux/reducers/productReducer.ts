@@ -16,12 +16,15 @@ const initialState : IProductState = {
     isErrorDelete:false,
 }
 
-export const productReducer = (state:IProductState = initialState, {type, payload}:PayloadAction<any>):IProductState => {
-
+export const productReducerAdmin = (state:IProductState = initialState, {type, payload}:PayloadAction<any>):IProductState => {
+    console.log("product reducer..");
+    
     switch(type){
         case FetchProduct.FETCH_PRODUCT_LOADING : return {...state,isLoadingFetch:true}
-        case FetchProduct.FETCH_PRODUCT_SUCCESS : return {...state,isLoadingFetch:false,productsData:payload}
-        case FetchProduct.FETCH_PRODUCT__ERROR  : return {...state,isErrorFetch:false,productsData:[],isLoadingFetch:false}
+        case FetchProduct.FETCH_PRODUCT_SUCCESS : {console.log(payload);
+        
+            return {...state,isLoadingFetch:false,productsData:payload}}
+        case FetchProduct.FETCH_PRODUCT__ERROR  : return {...state,isErrorFetch:false,isLoadingFetch:false}
 
         case AddProduct.ADD_PRODUCT_LOADING : return {...state,isLoadingAdd:true}
         case AddProduct.ADD_PRODUCT_SUCCESS: return {...state,isLoadingAdd:false,productsData:[...state.productsData,payload]}

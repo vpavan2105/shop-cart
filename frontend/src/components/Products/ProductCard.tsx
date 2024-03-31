@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Button,
@@ -11,11 +11,10 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
-import { addToCart, url } from "../../redux/actions/actions";
+// import { addToCart, url } from "../../redux/actions/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
-import SingleProductPage from "./SingleProductCard";
-import { Product, useAppDispatch } from "../../redux/utils/Product_Utils";
+import { Product } from "../../redux/utils/Product_Utils";
 import { useNavigate } from "react-router-dom";
 
 export interface ProductCardProps {
@@ -266,7 +265,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             >
               <Text mt={2}>
                 {" "}
-                <span>&#8377; </span>
+                <span>&#36; </span>
                 {prod.price}
               </Text>
               <Text

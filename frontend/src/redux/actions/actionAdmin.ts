@@ -3,16 +3,16 @@ import {  AddProduct, DeleteProduct, DeleteUser, FetchCarts, FetchOrder, FetchPr
 import {  ProdData } from "../utils/adminUtils";
 import {  Dispatch } from "redux";
 
-const BaseUrl:string = `http://localhost:3000/products`;
-const UsersUrl:string = `http://localhost:3000/users`;
-const CartUrl:string = `http://localhost:3000/carts`;
-const OrderUrl:string = `http://localhost:3000/orders`;
+export const BaseUrl:string = `http://localhost:3000/products`;
+export const UsersUrl:string = `http://localhost:3000/users`;
+export const CartUrl:string = `http://localhost:3000/carts`;
+export const OrderUrl:string = `http://localhost:3000/orders`;
 
 export const fetchDataProduct = () =>  (dispatch:Dispatch)  => {
       dispatch({type:FetchProduct.FETCH_PRODUCT_LOADING})
       axios.get(BaseUrl)
       .then((res)=>{
-        console.log(res.data);
+        // console.log(res.data);
         dispatch({type:FetchProduct.FETCH_PRODUCT_SUCCESS,payload:res.data})
       })
       .catch((error)=>{
