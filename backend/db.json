@@ -568,109 +568,23 @@
   ],
   "carts": [
     {
-      "id": "1",
-      "user_id": "1",
-      "totalAmount": 0,
-      "products": [
+      "id": "5",
+      "totalAmount": 3401.7,
+      "user_id": "5",
+      "product": [
         {
-          "id": 1,
-          "title": "Samsung 55-Inch 4K UHD Smart TV",
-          "price": 799.99,
-          "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
-          "category": "homeappliances",
-          "image": "https://media.istockphoto.com/id/1453241155/photo/curious-cat-sitting-while-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=AMYu9_ks9-slttX22iCxBwVtTswk9K1U9oDH09wWwVM=",
+          "id": "2",
+          "title": "Breville BES870XL Barista Express Espresso Machine",
+          "price": 566.95,
+          "description": "Create cafe-quality coffee at home with the Breville Barista Express Espresso Machine. Enjoy rich espresso and customizable flavors.",
+          "category": "kitchen",
+          "image": "https://m.media-amazon.com/images/I/41R0OMqpRgL._SX300_SY300_QL70_FMwebp_.jpg",
           "rating": {
-            "rate": 4.8
+            "rate": "4.0"
           },
-          "quantity": 1
-        },
-        {
-          "id": 5,
-          "title": "Amazon Echo (3rd Gen)",
-          "price": 99.99,
-          "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
-          "category": "electronics",
-          "image": "https://media.istockphoto.com/id/1293763250/photo/cute-kitten-licking-glass-table-with-copy-space.webp?b=1&s=170667a&w=0&k=20&c=f0VoM2wiDR3iZVTC0n-WK4cfstZEfbDh33lWc2KRbFM=",
-          "rating": {
-            "rate": 4.7
-          },
-          "quantity": 1
-        },
-        {
-          "id": 8,
-          "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
-          "price": 349.99,
-          "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
-          "category": "electronics",
-          "image": "https://media.istockphoto.com/id/1483360428/photo/cute-young-tabby-cat-playing-in-a-garden.webp?b=1&s=170667a&w=0&k=20&c=dw4l18FO9_MDnWPyD6flSoUYim3p52m2_PcCNVWFz_4=",
-          "rating": {
-            "rate": 4.9
-          },
-          "quantity": 1
+          "quantity": 6
         }
       ]
-    },
-    {
-      "id": "2",
-      "user_id": "2",
-      "totalAmount": 799,
-      "products": [
-        {
-          "id": 1,
-          "title": "Samsung 55-Inch 4K UHD Smart TV",
-          "price": 799.99,
-          "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
-          "category": "homeappliances",
-          "image": "https://media.istockphoto.com/id/1453241155/photo/curious-cat-sitting-while-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=AMYu9_ks9-slttX22iCxBwVtTswk9K1U9oDH09wWwVM=",
-          "rating": {
-            "rate": 4.8
-          },
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "user_id": "3",
-      "products": [
-        {
-          "id": 1,
-          "title": "Samsung 55-Inch 4K UHD Smart TV",
-          "price": 799.99,
-          "description": "Experience stunning clarity with this 4K UHD Smart TV from Samsung. Enjoy vibrant colors and exceptional detail in every scene.",
-          "category": "homeappliances",
-          "image": "https://media.istockphoto.com/id/1453241155/photo/curious-cat-sitting-while-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=AMYu9_ks9-slttX22iCxBwVtTswk9K1U9oDH09wWwVM=",
-          "rating": {
-            "rate": 4.8
-          },
-          "quantity": 3
-        },
-        {
-          "id": 5,
-          "title": "Amazon Echo (3rd Gen)",
-          "price": 99.99,
-          "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
-          "category": "electronics",
-          "image": "https://media.istockphoto.com/id/1293763250/photo/cute-kitten-licking-glass-table-with-copy-space.webp?b=1&s=170667a&w=0&k=20&c=f0VoM2wiDR3iZVTC0n-WK4cfstZEfbDh33lWc2KRbFM=",
-          "rating": {
-            "rate": 4.7
-          },
-          "quantity": 2
-        },
-        {
-          "id": 8,
-          "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
-          "price": 349.99,
-          "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
-          "category": "electronics",
-          "image": "https://media.istockphoto.com/id/1483360428/photo/cute-young-tabby-cat-playing-in-a-garden.webp?b=1&s=170667a&w=0&k=20&c=dw4l18FO9_MDnWPyD6flSoUYim3p52m2_PcCNVWFz_4=",
-          "rating": {
-            "rate": 4.9
-          },
-          "quantity": 3
-        }
-      ],
-      "totalAmount": 3649.92
     }
   ]
 }
