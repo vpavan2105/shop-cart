@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Box,
   Button,
@@ -18,43 +18,47 @@ import { Product } from "../../redux/utils/Product_Utils";
 import { useNavigate } from "react-router-dom";
 import {CartUrl} from '../../ApiUrls';
 import {CartData,ProductDetails} from '../CartList'
+import { useAppDispatch } from "../../redux/utils/Product_Utils";
+import { AuthContext, LogUserDetails } from "../../contexts/AuthContextProvider";
 export interface ProductCardProps {
   prod: Product;
   truncateDescription: (description: string) => string;
   truncateTitle: (title: string) => string;
 }
 
-//ip
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-  };
-  quantity: number;
-}
+// //ip
+// interface Product {
+//   id: number;
+//   title: string;
+//   price: number;
+//   description: string;
+//   category: string;
+//   image: string;
+//   rating: {
+//     rate: number;
+//   };
+//   quantity: number;
+// }
 
-interface CartData {
-  id: string;
-  user_id: string;
-  products: Product[];
-  totalAmount: number;
-}
+// interface CartData {
+//   id: string;
+//   user_id: string;
+//   products: Product[];
+//   totalAmount: number;
+// }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   prod,
   truncateDescription,
   truncateTitle,
 }: ProductCardProps) => {
-  const [cartItems, setCartItems] = useState<ProductDetails[]>([]);
+  const [cartItems, setCartItems] = React.useState<ProductDetails[]>([]);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   // const isAuth = useAppSelector((state:RootState) => state.auth);
+  const auth = useContext(AuthContext);
   const toast = useToast();
+
 
   const userId = "5"; //ip
   const cartUrl = CartUrl;
@@ -66,6 +70,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   //Add to cart button functionality
   const handleCart = async () => {
+    // console.log("Log:", auth.userLoggedIn.isAuth);
+    if(!auth.userLoggedIn.isAuth) return navigate(`/login`);
     try {
       async function getCartData() {
         let res = await fetch(`${cartUrl}/${userId}`);

@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { FormControl, FormLabel, Input, Button } from "@chakra-ui/react";
 import { v4 as uuidv4 } from "uuid";
-
+import { CartUrl } from "../ApiUrls";
 interface Product {
   id: number;
   title: string;
@@ -21,7 +21,7 @@ export function OrderList(): ReactElement {
   const [cartProduct, setCartProduct] = useState<Product[] | null>(null);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   // get userid from local storage
-  let user_id = 3; //here hardcoded
+  let user_id = 5; //here hardcoded
   const name = useRef<HTMLInputElement>(null);
   const address = useRef<HTMLInputElement>(null);
   const pincode = useRef<HTMLInputElement>(null);
@@ -29,7 +29,7 @@ export function OrderList(): ReactElement {
   const state = useRef<HTMLInputElement>(null);
   const country = useRef<HTMLInputElement>(null);
 
- const cartUrl='http://localhost:3001/carts';
+ const cartUrl=CartUrl;
 
   useEffect(() => {
     // Calling postData function after totalPrice calculation
