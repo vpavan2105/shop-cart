@@ -1,23 +1,6 @@
-import { ReactElement, createContext, useState } from "react";
+import { ReactElement, createContext, useEffect, useState } from "react"
 
-// export const AuthContext = createContext();
-// ip
-export const AuthContext = createContext<{
-  userLoggedIn: LogUserDetails;
-  setUserLoggedIn: (user: LogUserDetails) => void;
-  isAdmin: boolean;
-  setIsAdmin: (isAdmin: boolean) => void;
-}>({
-  userLoggedIn: {
-    id: "",
-    username: "",
-    isAuth: false,
-    email: "",
-  },
-  setUserLoggedIn: () => {},
-  isAdmin: false,
-  setIsAdmin: () => {},
-});
+export const AuthContext = createContext();
 
 interface Props {
   children: ReactElement; // Use ReactElement to specify a single React element as children
@@ -30,29 +13,37 @@ export interface LogUserDetails {
   email: string;
 }
 
-const AuthContextProvider: React.FC<Props> = ({ children }) => {
-  const [userLoggedIn, setUserLoggedIn] = useState<LogUserDetails>({
-      id: "",
+const AuthContextProvider: React.FC<Props>= ({children}) => {
+    
+    
+    const[isLoginLocal, setIsLoginLocal] = useState(false)
+    const[isAdmin, setIsAdmin] = useState(false)
+    const [userLoggedIn, setUserLoggedIn] = useState<LogUserDetails>({
+      id:  "",
       username: "",
       isAuth: false,
       email: "",
   });
 
-  //ip
-  // const [userLoggedIn, setUserLoggedIn] = useState<LogUserDetails>({
-  //   id: "1",
-  //   username: "exampleUser",
-  //   isAuth: true,
-  //   email: "user@example.com",
-  // });
+  console.log(userLoggedIn);
+  
 
-  const [isAdmin, setIsAdmin] = useState(false);
+    useEffect(() => {
+      const loggedinUserId = localStorage.getItem('isLoginLocal');
+      // console.log(loggedinUserId);
+      
+      if (loggedinUserId) {
+        
+        setUserLoggedIn((prev)=>{
+          return {...prev, id:loggedinUserId, isAuth:true}
+        })
+      }
+    }, []);
 
+    
   return (
-    <AuthContext.Provider
-      value={{ userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin }}
-    >
-      {children}
+    <AuthContext.Provider value={{userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin, isLoginLocal, setIsLoginLocal}}>
+         {children}
     </AuthContext.Provider>
   );
 };
