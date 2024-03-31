@@ -435,6 +435,27 @@
       "email": "user2@example.com",
       "password": "hashedPassword",
       "phonenumber": "9998887777"
+    },
+    {
+      "id": "41ed",
+      "username": "testUser",
+      "email": "test@gamil.com",
+      "password": "741258963",
+      "phonenumber": "1234567890"
+    },
+    {
+      "id": "fb57",
+      "username": "userb",
+      "email": "b@gmail.com",
+      "password": "654789321",
+      "phonenumber": "1254789632"
+    },
+    {
+      "id": "a172",
+      "username": "eve.holt@reqres.in",
+      "email": "c@gmail.com",
+      "password": "sdsd2452136",
+      "phonenumber": "789654123"
     }
   ],
   "orders": [
