@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import {NavLink} from 'react-router-dom'
-interface Links{
+export interface Links{
     to: string;
     displayText: string;
 }

@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      "price": "10",
+      "price": 10,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
@@ -14,7 +14,7 @@
     {
       "id": "2",
       "title": "Breville BES870XL Barista Express Espresso Machine",
-      "price": 599.95,
+      "price": "577.95",
       "description": "Create cafe-quality coffee at home with the Breville Barista Express Espresso Machine. Enjoy rich espresso and customizable flavors.",
       "category": "kitchen",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
@@ -41,18 +41,7 @@
       "category": "electronics",
       "image": "https://fakestoreapi.com/img/71MHT4wG6RL._AC_SL1500_.jpg",
       "rating": {
-        "rate": 4.7
-      }
-    },
-    {
-      "id": "5",
-      "title": "Amazon Echo (3rd Gen)",
-      "price": 99.99,
-      "description": "Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and others. With Amazon Echo, you can also listen to Audible audiobooks, radio stations, news briefs, and more.",
-      "category": "electronics",
-      "image": "https://fakestoreapi.com/img/61eqZe4R1zL._AC_SL1000_.jpg",
-      "rating": {
-        "rate": 4.7
+        "rate": "4.0"
       }
     },
     {
@@ -391,7 +380,7 @@
       "id": "37",
       "title": "Retinol Serum",
       "description": "A lightweight, quick-absorbing serum that targets visible signs of aging",
-      "price": "10",
+      "price": 10,
       "rating": {
         "rate": 4,
         "count": 34
@@ -450,7 +439,7 @@
   ],
   "orders": [
     {
-      "id": "5e41",
+      "id": "1",
       "userid": "3",
       "name": "Bhutu",
       "address": [
@@ -500,10 +489,10 @@
         }
       ],
       "totalAmount": 3649.92,
-      "status": false
+      "status": true
     },
     {
-      "id": "5e41",
+      "id": "2",
       "userid": "1",
       "name": "Bhutu",
       "address": [
@@ -513,7 +502,7 @@
         "Rajasthan",
         "India"
       ],
-      "date": "3/30/2024, 3:25:47 AM",
+      "date": "4/30/2024, 3:25:47 AM",
       "allProducts": [
         {
           "id": 1,

@@ -1,14 +1,46 @@
 import { NavLink } from "react-router-dom"
+import { Links } from "./NavBar"
+import { useState } from "react";
 
 const AdminNavBar = () => {
+  const [isActive,setIsActive] = useState<boolean>(false);
+
+  const listOfLinks:Links[]=[
+    {
+       to:"/",
+       displayText:"Dashboard"
+    },
+    {
+      to:"/ordersadmin",
+      displayText:"Orders"
+    },
+    {
+      to:"/productsadmin",
+      displayText:"Products"
+    },
+    {
+      to:"/usersadmin",
+      displayText:"Users"
+    }
+  ]
+  const defaultStyle : {color: string} = {color:"black"}
+    const activeStyle : {color: string} = {color:"red"}
 
   return (
-    <>
-    <NavLink to="/">Dashboard</NavLink>
-    <NavLink to="/ordersadmin">Orders</NavLink>
-    <NavLink to="/productsadmin">Products</NavLink>
-    <NavLink to="/usersadmin">Users</NavLink>
-    </>
+    <div className='navbar'>
+       <div className={`hamburger-menu ${isActive? "active" : null}`} onClick={()=>{setIsActive(prev=>!prev) }} >
+          <span className='bar'></span>
+          <span className='bar'></span>
+          <span className='bar'></span>
+        </div>
+        <div className={`navbar-inner ${isActive? "active" : null}`}>
+            {listOfLinks.map((link)=>{
+                return(<NavLink  onClick={()=>{setIsActive(prev=>!prev) }} style={({isActive})=> isActive?activeStyle:defaultStyle}
+                    key={link.to} to={link.to}>{link.displayText}</NavLink>)
+            })}
+            
+        </div>
+    </div>
     
   )
 }
