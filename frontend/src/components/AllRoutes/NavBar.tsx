@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react'
+import {Flex} from '@chakra-ui/react'
 import {NavLink} from 'react-router-dom'
 interface Links{
     to: string;
@@ -50,7 +50,6 @@ const NavBar = () => {
                 return(<NavLink style={({isActive})=> isActive?activeStyle:defaultStyle}
                     key={link.to} to={link.to}>{link.displayText}</NavLink>)
             })}
-            
         </Flex>
         </>
         

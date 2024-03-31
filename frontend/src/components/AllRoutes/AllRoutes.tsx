@@ -15,7 +15,7 @@ import SingleProductPage from '../Products/SingleProductCard'
 
 
 const AllRoutes = () => {
-  const [isAuth, setIsAuth] = useState(false)
+  const [isAuth] = useState(false)
   return (
     <>
     {!isAuth? (<Routes>
