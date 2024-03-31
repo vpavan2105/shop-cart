@@ -14,12 +14,12 @@
     {
       "id": "2",
       "title": "Breville BES870XL Barista Express Espresso Machine",
-      "price": "577.95",
+      "price": "566.95",
       "description": "Create cafe-quality coffee at home with the Breville Barista Express Espresso Machine. Enjoy rich espresso and customizable flavors.",
       "category": "kitchen",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "rating": {
-        "rate": 4.5
+        "rate": "4.0"
       }
     },
     {
@@ -30,7 +30,7 @@
       "category": "electronics",
       "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
       "rating": {
-        "rate": 4.9
+        "rate": "2.9"
       }
     },
     {
@@ -549,7 +549,7 @@
     {
       "id": "1",
       "user_id": "1",
-      "totalAmount": 1249.97,
+      "totalAmount": 0,
       "products": [
         {
           "id": 1,
