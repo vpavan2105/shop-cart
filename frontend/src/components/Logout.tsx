@@ -4,8 +4,11 @@ import { AuthContext } from '../contexts/AuthContextProvider'
 import { useNavigate } from 'react-router';
 
 const Logout = () => {
-    const {userLoggedIn, setUserLoggedIn} = useContext(AuthContext);
+    const {userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin} = useContext(AuthContext);
     const navigate = useNavigate();
+    console.log("check logout");
+    
+
     useEffect(()=>{
         setUserLoggedIn({
             id: "",
@@ -13,9 +16,14 @@ const Logout = () => {
             isAuth: false,
             email: "",
         })
+        setIsAdmin(false)
     },[])
 
-    navigate("/")
+    useEffect(()=>{
+      navigate("/")
+    },[userLoggedIn.isAuth, isAdmin])
+
+    
   return (
     <></>
   )
