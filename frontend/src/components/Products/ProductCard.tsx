@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Button, Card, Center, Divider, Flex, Heading, Image, Text, useToast } from "@chakra-ui/react";
-import { addToCart, url } from "../../redux/actions/actions";
+// import { addToCart, url } from "../../redux/actions/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
-import SingleProductPage from "./SingleProductCard";
-import { Product, useAppDispatch } from "../../redux/utils/Product_Utils";
+import { Product } from "../../redux/utils/Product_Utils";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -15,8 +14,8 @@ export interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ prod, truncateDescription, truncateTitle }: ProductCardProps) => {
-  const [cartItems, setCartItems] = useState<Product[]>([]);
-  const dispatch = useAppDispatch();
+  // const [cartItems, setCartItems] = useState<Product[]>([]);
+  // const dispatch = useAppDispatch();
   const navigate = useNavigate();
   // const isAuth = useAppSelector((state:RootState) => state.auth);
   const toast = useToast();
@@ -28,19 +27,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({ prod, truncateDescript
   };
 
   const handleCart = () => {
-    if(false){
-      setCartItems([...cartItems, prod]);
-      dispatch(addToCart(prod));
-      console.log("product added to cart");
-      toast({
-        title: "Successfully Added",
-        description: "You added one product to cart.",
-        status: "success",
-        duration: 700,
-        isClosable: true,
-        position: "top",
-      });
-    } else {
+    // if(false){
+    //   setCartItems([...cartItems, prod]);
+    //   dispatch(addToCart(prod));
+    //   console.log("product added to cart");
+    //   toast({
+    //     title: "Successfully Added",
+    //     description: "You added one product to cart.",
+    //     status: "success",
+    //     duration: 700,
+    //     isClosable: true,
+    //     position: "top",
+    //   });
+    // } else {
       toast({
         title: "Unable to Add",
         description: "You are not loggedin yet.",
@@ -49,7 +48,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ prod, truncateDescript
         isClosable: true,
         position: "top",
       })
-    }
+    // }
   };
 
   const handleProductClick = () => {
@@ -95,7 +94,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ prod, truncateDescript
             >
               <Text mt={2}>
                 {" "}
-                <span>&#8377; </span>
+                <span>&#36; </span>
                 {prod.price}
               </Text>
               <Text

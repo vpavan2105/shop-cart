@@ -28,31 +28,32 @@ const SubCategories: React.FC<SubCategoriesProps> = ({
     null
   );
   const dispatch = useAppDispatch();
-  const selectedCategory: any = useAppSelector(
-    (state: RootState) => state.category
-  );
+  // const selectedCategory: any = useAppSelector(
+  //   (state: RootState) => state.category
+  // );
 
   const handleSubcategoryClick = (subcategory: string) => {
     setSelectedSubcategory(subcategory);
     dispatch(addToFilteredProducts(subcategory));
   };
 
-  let subCategories: string[] = [];
-
-  if (selectedCategory === "Fashion") {
-    subCategories = Fashion;
-  }
+  // let subCategories: string[] = [];
+  //
+  // if (selectedCategory === "Fashion") {
+  //   subCategories = Fashion;
+  // }
 
   return (
     <>
-      <Card position="absolute" top="70px" zIndex="1" p={2}>
-        {category === "Fashion" &&
-          Fashion.map((link) => (
-            <NavLink key={link} onclick={() => handleSubcategoryClick(link)}>
-              {link}
-            </NavLink>
-          ))}
-      </Card>
+      {category === "Fashion" && (
+          <Card position="absolute" top="80px" zIndex="1" p={2}>
+            {Fashion.map((link) => (
+                <NavLink key={link} onclick={() => handleSubcategoryClick(link)}>
+                  {link}
+                </NavLink>
+            ))}
+          </Card>
+      )}
     </>
   );
 };
