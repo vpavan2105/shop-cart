@@ -17,6 +17,7 @@ const Logout = () => {
             email: "",
         })
         setIsAdmin(false)
+        localStorage.removeItem("isLoginLocal")
     },[])
 
     useEffect(()=>{

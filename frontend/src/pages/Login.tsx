@@ -2,10 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/AuthContextProvider";
 import axios from "axios";
 import { Box, Heading, useToast } from '@chakra-ui/react'
-import { Navigate, useNavigate } from "react-router";
-import { useForm } from 'react-hook-form';
+import { useNavigate } from "react-router";
 import { Button, Input, Stack } from '@chakra-ui/react';
 import { FaUser, FaLock } from 'react-icons/fa';
+import { UserUrl } from "../ApiUrls";
 
 
 function Login(){
@@ -20,7 +20,7 @@ function Login(){
     // console.log(isAuth);
     
     useEffect(()=>{
-        axios.get("http://localhost:3000/users")
+        axios.get(UserUrl)
         .then((response)=>
         // console.log(response.data))
         setUserData(response.data))
@@ -64,37 +64,39 @@ function Login(){
                 duration: 2000,
                 isClosable: true,
               })
-
-            return;
-            
+            return; 
           }
 
           if(email == "admin@gmail.com"){
             setIsAdmin(true);
             navigate("/")
+            // return
+          }
+          else{
+            let flag: boolean = false;
+            userData.map((user)=>{
+                if(user.email == email){
+                    setUserLoggedIn((prev)=>{
+                        return {...prev, id:user.id, username: user.username, isAuth: true, email:email}
+                    })
+                    localStorage.setItem('isLoginLocal', user.id);
+                    flag = true;
+                    navigate('/')
+                    setIsLoginLocal(true);
+                }
+            })
+            if(!flag){
+                toast({
+                    title: 'Email and Password incorrect',
+                    description: "Enter correct email and password",
+                    status: 'error',
+                    duration: 2000,
+                    isClosable: true,
+                })
+            }
           }
 
-        let flag: boolean = false;
-        userData.map((user)=>{
-            if(user.email == email){
-                setUserLoggedIn((prev)=>{
-                    return {...prev, id:user.id, username: user.username, isAuth: true, email:email}
-                })
-                localStorage.setItem('isLoginLocal', user.id);
-                flag = true;
-                navigate('/')
-                setIsLoginLocal(true);
-            }
-        })
-        if(!flag){
-            toast({
-                title: 'Email and Password incorrect',
-                description: "Enter correct email and password",
-                status: 'error',
-                duration: 2000,
-                isClosable: true,
-              })
-        }
+        
     }
     useEffect(()=>{
         console.log(userLoggedIn);
