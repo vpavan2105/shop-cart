@@ -21,6 +21,10 @@ const AdminNavBar = () => {
     {
       to:"/usersadmin",
       displayText:"Users"
+    },
+    {
+      to:"/logout",
+      displayText:"Logout"
     }
   ]
   const defaultStyle : {color: string} = {color:"black"}

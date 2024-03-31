@@ -10,7 +10,11 @@ interface Props {
 const PrivateRoute: React.FC<Props> = ({children}) => {
     const {userLoggedIn} = useContext(AuthContext)
 
-    if(!userLoggedIn.isAuth){
+    console.log(userLoggedIn.isAuth);
+
+    const isAuth = localStorage.getItem("isLoginLocal")
+    
+    if(!isAuth){
         return(<Navigate to="/login" />)
     }
 

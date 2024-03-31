@@ -1,4 +1,4 @@
-import { ReactElement, createContext, useState } from "react"
+import { ReactElement, createContext, useEffect, useState } from "react"
 
 export const AuthContext = createContext();
 
@@ -15,16 +15,34 @@ interface Props {
 
 const AuthContextProvider: React.FC<Props>= ({children}) => {
     
-    const [userLoggedIn, setUserLoggedIn] = useState<LogUserDetails>({
-        id: "",
-        username: "",
-        isAuth: false,
-        email: "",
-    });
+    
+    const[isLoginLocal, setIsLoginLocal] = useState(false)
     const[isAdmin, setIsAdmin] = useState(false)
+    const [userLoggedIn, setUserLoggedIn] = useState<LogUserDetails>({
+      id:  "",
+      username: "",
+      isAuth: false,
+      email: "",
+  });
+
+  console.log(userLoggedIn);
+  
+
+    useEffect(() => {
+      const loggedinUserId = localStorage.getItem('isLoginLocal');
+      // console.log(loggedinUserId);
+      
+      if (loggedinUserId) {
+        
+        setUserLoggedIn((prev)=>{
+          return {...prev, id:loggedinUserId, isAuth:true}
+        })
+      }
+    }, []);
+
     
   return (
-    <AuthContext.Provider value={{userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin}}>
+    <AuthContext.Provider value={{userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin, isLoginLocal, setIsLoginLocal}}>
          {children}
     </AuthContext.Provider>
   )

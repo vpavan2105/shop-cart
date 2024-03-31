@@ -1,8 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/AuthContextProvider";
 import axios from "axios";
-import { useToast } from '@chakra-ui/react'
+import { Box, Heading, useToast } from '@chakra-ui/react'
 import { Navigate, useNavigate } from "react-router";
+import { useForm } from 'react-hook-form';
+import { Button, Input, Stack } from '@chakra-ui/react';
+import { FaUser, FaLock } from 'react-icons/fa';
+
 
 function Login(){
 
@@ -12,7 +16,7 @@ function Login(){
     const toast = useToast()
     const navigate = useNavigate()
 
-    const {userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin} = useContext(AuthContext);
+    const {userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin, isLoginLocal, setIsLoginLocal} = useContext(AuthContext);
     // console.log(isAuth);
     
     useEffect(()=>{
@@ -20,6 +24,8 @@ function Login(){
         .then((response)=>
         // console.log(response.data))
         setUserData(response.data))
+
+        
     },[])
 
     
@@ -68,15 +74,27 @@ function Login(){
             navigate("/")
           }
 
+        let flag: boolean = false;
         userData.map((user)=>{
             if(user.email == email){
                 setUserLoggedIn((prev)=>{
                     return {...prev, id:user.id, username: user.username, isAuth: true, email:email}
                 })
+                localStorage.setItem('isLoginLocal', user.id);
+                flag = true;
                 navigate('/')
+                setIsLoginLocal(true);
             }
         })
-
+        if(!flag){
+            toast({
+                title: 'Email and Password incorrect',
+                description: "Enter correct email and password",
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+              })
+        }
     }
     useEffect(()=>{
         console.log(userLoggedIn);
@@ -87,30 +105,67 @@ function Login(){
 
 
     return(
-        <>
-        <h2>Welcome to login page</h2>
-        <form onSubmit={handleLogin}>
-            <label htmlFor="email">Email:</label>
-            <input
-             type="text" 
-             id="email"
-             value={email} 
-             onChange={(e)=>setEmail(e.target.value)}
-             />
-             <br />
-            <label htmlFor="password">Password:</label>
-            <input
-            type="password" 
-            id="password"
-            value={password}
-            onChange={(e)=> setPassword(e.target.value)}
-            />
-            <br />
-            <button type="submit">Login</button>
-        </form>
+        // <>
+        // <h2>Welcome to login page</h2>
+        // <form onSubmit={handleLogin}>
+        //     <label htmlFor="email">Email:</label>
+        //     <input
+        //      type="text" 
+        //      id="email"
+        //      value={email} 
+        //      onChange={(e)=>setEmail(e.target.value)}
+        //      />
+        //      <br />
+        //     <label htmlFor="password">Password:</label>
+        //     <input
+        //     type="password" 
+        //     id="password"
+        //     value={password}
+        //     onChange={(e)=> setPassword(e.target.value)}
+        //     />
+        //     <br />
+        //     <button type="submit">Login</button>
+        // </form>
 
-        <button onClick={()=> navigate("/signup")}>Create new Account</button>
-        </>
+        // <button onClick={()=> navigate("/signup")}>Create new Account</button>
+        // </>
+        <Box maxW="md" mx="auto" mt={8} p={4} borderWidth="1px" borderRadius="md" boxShadow="md">
+      <Heading mb={4} textAlign="center" fontSize="xl">
+        Welcome to login page
+      </Heading>
+      <form onSubmit={handleLogin}>
+        <Stack spacing={4}>
+          <Box>
+            <Input
+              type="text"
+              id="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+             
+            />
+          </Box>
+          <Box>
+            <Input
+              type="password"
+              id="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              
+            />
+          </Box>
+          <Button type="submit" colorScheme="blue" size="md" w="100%">
+            Login
+          </Button>
+        </Stack>
+      </form>
+      <Box mt={4} textAlign="center">
+        <Button variant="link" color="blue.500" onClick={()=> navigate("/signup")}>
+          Create new Account
+        </Button>
+      </Box>
+    </Box>
     )
 }
 
