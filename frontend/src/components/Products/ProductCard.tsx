@@ -1,11 +1,21 @@
 import React from "react";
-import { Box, Button, Card, Center, Divider, Flex, Heading, Image, Text, useToast } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Card,
+  Center,
+  Divider,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
 // import { addToCart, url } from "../../redux/actions/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import { Product } from "../../redux/utils/Product_Utils";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 export interface ProductCardProps {
   prod: Product;
@@ -13,47 +23,200 @@ export interface ProductCardProps {
   truncateTitle: (title: string) => string;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ prod, truncateDescription, truncateTitle }: ProductCardProps) => {
-  // const [cartItems, setCartItems] = useState<Product[]>([]);
-  // const dispatch = useAppDispatch();
+//ip
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+  };
+  quantity: number;
+}
+
+interface CartData {
+  id: string;
+  user_id: string;
+  products: Product[];
+  totalAmount: number;
+}
+
+// export const ProductCard: React.FC<ProductCardProps> = ({
+//   prod,
+//   truncateDescription,
+//   truncateTitle,
+// }: ProductCardProps) => {
+//   const [cartItems, setCartItems] = useState<Product[]>([]);
+//   const dispatch = useAppDispatch();
+//   const navigate = useNavigate();
+//   // const isAuth = useAppSelector((state:RootState) => state.auth);
+//   const toast = useToast();
+
+//   const handleBuy = () => {
+//     setTimeout(() => {
+//       console.log("moved to payment page");
+//     }, 500);
+//   };
+
+//   const handleCart = () => {
+//     if (false) {
+//       setCartItems([...cartItems, prod]);
+//       dispatch(addToCart(prod));
+//       console.log("product added to cart");
+//       toast({
+//         title: "Successfully Added",
+//         description: "You added one product to cart.",
+//         status: "success",
+//         duration: 700,
+//         isClosable: true,
+//         position: "top",
+//       });
+//     } else {
+//       toast({
+//         title: "Unable to Add",
+//         description: "You are not loggedin yet.",
+//         status: "error",
+//         duration: 900,
+//         isClosable: true,
+//         position: "top",
+//       });
+//     }
+//   };
+
+//   const handleProductClick = () => {
+//     console.log("clicked..");
+//     navigate(`/products/${prod.id}`);
+//   };
+
+export const ProductCard: React.FC<ProductCardProps> = ({
+  prod,
+  truncateDescription,
+  truncateTitle,
+}: ProductCardProps) => {
+  const [cartItems, setCartItems] = useState<Product[]>([]);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   // const isAuth = useAppSelector((state:RootState) => state.auth);
   const toast = useToast();
 
+  const userId = "5"; //ip
+  const cartUrl = "http://localhost:3001/carts";
   const handleBuy = () => {
     setTimeout(() => {
       console.log("moved to payment page");
     }, 500);
   };
 
-  const handleCart = () => {
-    // if(false){
-    //   setCartItems([...cartItems, prod]);
-    //   dispatch(addToCart(prod));
-    //   console.log("product added to cart");
-    //   toast({
-    //     title: "Successfully Added",
-    //     description: "You added one product to cart.",
-    //     status: "success",
-    //     duration: 700,
-    //     isClosable: true,
-    //     position: "top",
-    //   });
-    // } else {
-      toast({
-        title: "Unable to Add",
-        description: "You are not loggedin yet.",
-        status: "error",
-        duration: 900,
-        isClosable: true,
-        position: "top",
-      })
-    // }
+  //Add to cart button functionality
+  const handleCart = async () => {
+    try {
+      async function getCartData() {
+        let res = await fetch(`${cartUrl}/${userId}`);
+
+        if (!res.ok) {
+          await fetch(`${cartUrl}`, {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              id: userId,
+              totalAmount: prod.price,
+              user_id: userId,
+              product: [
+                {
+                  id: prod.id,
+                  title: prod.title,
+                  price: prod.price,
+                  description: prod.description,
+                  category: prod.category,
+                  image: prod.image,
+                  rating: prod.rating,
+                  quantity: 1,
+                },
+              ],
+            }),
+          });
+          console.log("New cart created with add to cart product");
+          return;
+        }
+
+        let data = await res.json();
+
+        const isProductAlreadyInCart = data.product.some(
+          (item: Product) => item.id === prod.id
+        );
+
+        if (isProductAlreadyInCart) {
+          toast({
+            title: "Unable to the Add Product",
+            description:
+              "Product is already in the cart. Please navigate to cart and increase quantity.",
+            status: "warning",
+            duration: 7000,
+            isClosable: true,
+            position: "top",
+          });
+          return; // Exit function if product is already in cart
+        }
+
+        try {
+          let res1 = await fetch(`${cartUrl}/${userId}`, {
+            method: "PATCH",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              product: [
+                ...data.product,
+                {
+                  id: prod.id,
+                  title: prod.title,
+                  price: prod.price,
+                  description: prod.description,
+                  category: prod.category,
+                  image: prod.image,
+                  rating: prod.rating,
+                  quantity: 1,
+                },
+              ],
+              totalAmount: +parseFloat(data.totalAmount + prod.price).toFixed(
+                2
+              ),
+            }),
+          });
+
+          if (res1.ok) {
+            toast({
+              title: "Product is added to the cart",
+              description:
+                "The selected product has been successfully added to your cart.",
+              status: "success",
+              duration: 7000,
+              isClosable: true,
+              position: "top",
+            });
+          }
+        } catch (err: any) {
+          toast({
+            title: "Unable to Add the Product",
+            description: err.message,
+            status: "error",
+            duration: 7000,
+            isClosable: true,
+            position: "top",
+          });
+        }
+      }
+
+      await getCartData();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleProductClick = () => {
     console.log("clicked..");
-    navigate(`/products/${prod.id}`)
+    navigate(`/products/${prod.id}`);
   };
 
   return (
@@ -63,11 +226,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({ prod, truncateDescript
       marginBottom="10px"
     >
       <Card p={3} height="100%">
-        <Flex direction={['column']} height='40%'>
-          <Image src={prod.image} height="100px" objectFit="contain" onClick={handleProductClick} />
+        <Flex direction={["column"]} height="40%">
+          <Image
+            src={prod.image}
+            height="100px"
+            objectFit="contain"
+            onClick={handleProductClick}
+          />
           <Box p={2}>
             <Center>
-              <Heading fontSize={{ base: "sm", sm: "md", md: "lg" }} onClick={handleProductClick}>
+              <Heading
+                fontSize={{ base: "sm", sm: "md", md: "lg" }}
+                onClick={handleProductClick}
+              >
                 {truncateTitle(prod.title)}
               </Heading>
             </Center>
@@ -143,4 +314,3 @@ export const ProductCard: React.FC<ProductCardProps> = ({ prod, truncateDescript
     </Box>
   );
 };
-
