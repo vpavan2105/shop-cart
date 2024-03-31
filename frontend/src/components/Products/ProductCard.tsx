@@ -16,6 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import { Product } from "../../redux/utils/Product_Utils";
 import { useNavigate } from "react-router-dom";
+import {CartUrl} from "../../ApiUrls.tsx";
 
 export interface ProductCardProps {
   prod: Product;
@@ -49,14 +50,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   truncateDescription,
   truncateTitle,
 }: ProductCardProps) => {
-  const [cartItems, setCartItems] = useState<Product[]>([]);
-  const dispatch = useAppDispatch();
+  // const [cartItems, setCartItems] = useState<Product[]>([]);
+  // const dispatch = useAppDispatch();
   const navigate = useNavigate();
   // const isAuth = useAppSelector((state:RootState) => state.auth);
   const toast = useToast();
 
   const userId = "5"; //ip
-  const cartUrl = "http://localhost:3001/carts";
+  // const cartUrl = "http://localhost:3001/carts";
   const handleBuy = () => {
     setTimeout(() => {
       console.log("moved to payment page");
@@ -67,10 +68,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const handleCart = async () => {
     try {
       async function getCartData() {
-        let res = await fetch(`${cartUrl}/${userId}`);
+        let res = await fetch(`${CartUrl}/${userId}`);
 
         if (!res.ok) {
-          await fetch(`${cartUrl}`, {
+          await fetch(`${CartUrl}`, {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({
@@ -115,7 +116,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         }
 
         try {
-          let res1 = await fetch(`${cartUrl}/${userId}`, {
+          let res1 = await fetch(`${CartUrl}/${userId}`, {
             method: "PATCH",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({

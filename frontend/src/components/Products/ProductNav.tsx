@@ -16,7 +16,7 @@ export const Links = [
   "Fashion",
   "electronics",
   "Furniture",
-  "Home & Kitchen",
+  "kitchen",
   "Luggage & Bags",
 ];
 

@@ -21,10 +21,10 @@ const AuthContextProvider: React.FC<Props>= ({children}) => {
         isAuth: false,
         email: "",
     });
-    const[isAdmin, setIsAdmin] = useState(false)
-    
+    const[isAdmin, setIsAdmin] = useState(false);
+
   return (
-    <AuthContext.Provider value={{userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin}}>
+    <AuthContext.Provider value={{userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin }}>
          {children}
     </AuthContext.Provider>
   )

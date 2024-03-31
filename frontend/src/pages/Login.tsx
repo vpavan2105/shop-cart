@@ -3,6 +3,7 @@ import { AuthContext } from "../contexts/AuthContextProvider";
 import axios from "axios";
 import { useToast } from '@chakra-ui/react'
 import { Navigate, useNavigate } from "react-router";
+import {UserUrl} from "../ApiUrls.tsx";
 
 function Login(){
 
@@ -14,15 +15,15 @@ function Login(){
 
     const {userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin} = useContext(AuthContext);
     // console.log(isAuth);
-    
+
     useEffect(()=>{
-        axios.get("http://localhost:3000/users")
+        axios.get(UserUrl)
         .then((response)=>
         // console.log(response.data))
         setUserData(response.data))
     },[])
 
-    
+
 
     const validateEmail = (email) => {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -60,7 +61,7 @@ function Login(){
               })
 
             return;
-            
+
           }
 
           if(email == "admin@gmail.com"){
@@ -81,8 +82,8 @@ function Login(){
     useEffect(()=>{
         console.log(userLoggedIn);
         console.log(isAdmin);
-        
-        
+
+
     },[userLoggedIn, isAdmin])
 
 
@@ -92,15 +93,15 @@ function Login(){
         <form onSubmit={handleLogin}>
             <label htmlFor="email">Email:</label>
             <input
-             type="text" 
+             type="text"
              id="email"
-             value={email} 
+             value={email}
              onChange={(e)=>setEmail(e.target.value)}
              />
              <br />
             <label htmlFor="password">Password:</label>
             <input
-            type="password" 
+            type="password"
             id="password"
             value={password}
             onChange={(e)=> setPassword(e.target.value)}
