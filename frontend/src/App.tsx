@@ -26,7 +26,7 @@
 
 
 import './App.css'
-import { Home } from './pages/Home'
+
 import {useState} from "react";
 import AllRoutes from './components/AllRoutes/AllRoutes'
 import NavBar from './components/AllRoutes/NavBar'
@@ -39,7 +39,6 @@ function App() {
     <>
     {isAuth? <AdminNavBar/> : <NavBar/> }
     <AllRoutes/>
-    {/*<Home/>*/}
     </>
   )
 }
