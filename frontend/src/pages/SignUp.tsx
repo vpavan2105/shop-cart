@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router';
 import { Button, Input, Box, Heading } from '@chakra-ui/react';
 import { FaUser, FaEnvelope, FaPhone, FaLock } from 'react-icons/fa';
+import { UserUrl } from '../ApiUrls';
 
 const SignUp = () => {
   const[userDetails, setUserDetails ] = useState({
@@ -24,7 +25,7 @@ const SignUp = () => {
   function handleSubmit(e){
     e.preventDefault();
     console.log(userDetails);
-    axios.post("http://localhost:3000/users", userDetails) 
+    axios.post(UserUrl, userDetails) 
     .then((response)=> console.log(response.data))
     .catch((error)=> console.error("error occured", error))
 

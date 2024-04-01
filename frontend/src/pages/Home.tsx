@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-
 import "../home.css";
-
-import "../App.css";
+import {Footer} from './Footer';
 
 
 function Home() {
   const [data, setData] = useState([]);
+  const [product,setProduct]=useState([]);
+  const [best,setBest]=useState([])
+  const [sell,setSell]=useState([])
+
 
   useEffect(() => {
     fetch("http://localhost:8080/products?_limit=4")
@@ -15,15 +17,43 @@ function Home() {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    fetch("http://localhost:8080/products?_sort=price&_limit=4")
+      .then((res) => res.json())
+      .then((res) => setProduct(res))
+      .catch((err) => console.log(err));
+  }, []);
+  useEffect(() => {
+    fetch("http://localhost:8080/products?_sort=title&_limit=8")
+      .then((res) => res.json())
+      .then((res) => setBest(res))
+      .catch((err) => console.log(err));
+  }, []);
+  useEffect(() => {
+    fetch("http://localhost:8080/products?_sort=description&_limit=4")
+      .then((res) => res.json())
+      .then((res) => setSell(res))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <>
-      <div className="home">
+      {/* <div className="home">
         <img
           src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           className="img"
           alt=""
         />
-      </div>
+      </div> */}
+      <div className="sofa">
+        <img src="https://media.designcafe.com/wp-content/uploads/2021/04/15173304/trending-sofa-designs-for-your-home.jpg" alt="" />
+    </div>
+    <div className="discount-box">
+      <h2>Get 5% Cash Back On $200</h2>
+      <p>Shopping is a bit of a relaxing hobby for me,
+ which is sometimes troubling for the bank balance.</p>
+ <button className="lbtn">Learn more</button>
+    </div>
+    
       <div className="category">
         <h2>Shop Our Top Categories</h2>
 
@@ -54,11 +84,11 @@ function Home() {
         <div className="main-box">
           {data.map((product) => (
             <div className="card">
-              <img src={product.image} /> <br />
-              <h4>{product.title}</h4> <br />
-              <h3>$ {product.price}</h3> <br />
-              <p>{product.category}</p> <br />
-              <button className="btn1">Add To Cart</button>
+              <img src={product.image} /> 
+              <h4>{product.title}</h4>
+              <h3>$ {product.price}</h3> 
+              <p>{product.category}</p> 
+             
             </div>
           ))}
         </div>
@@ -74,7 +104,7 @@ function Home() {
               alt=""
             />
             <div>
-
+          
               <h2>Staples</h2>
               <p>Delivery within 24 hours</p>
             </div>
@@ -191,8 +221,119 @@ function Home() {
         </div>
       </div>
       </div>
+
+      <div className="popular">
+        <h2>Weekly Popular Products</h2>
+        <div className="main-box">
+          {product.map((product) => (
+            <div className="card">
+              <img src={product.image} /> 
+              <h4>{product.title}</h4>
+              <h3>$ {product.price}</h3> 
+              <p>{product.category}</p> 
+             
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="Sofa-img">
+    <div className="sofa">
+        <img src="https://media.designcafe.com/wp-content/uploads/2021/04/15173304/trending-sofa-designs-for-your-home.jpg" alt="" />
+    </div>
+    <div className="discount-box">
+      <h2>Get 5% Cash Back On $200</h2>
+      <p>Shopping is a bit of a relaxing hobby for me,
+ which is sometimes troubling for the bank balance.</p>
+ <button className="lbtn">Learn more</button>
+    </div>
+     </div>
+  
+      <div className="Best-deal">
+        <h2>Todays Best Deals For You!</h2>
+
+        <div className="main-box">
+          {best.map((product) => (
+            <div className="card">
+              <img src={product.image} /> 
+              <h4>{product.title}</h4>
+              <h3>$ {product.price}</h3> 
+              <p>{product.category}</p> 
+             
+            </div>
+          ))}
+        </div>
+      </div>
+
+     <div className="cash-back">
+      <div className="get-1">
+     <h2>Get 5% Cash Back</h2>
+     <p>on Shopcart.com</p>
+     <button className="lbtn">learn more</button>
+      </div>
+      <div className="get-2">
+         <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e768e3260571e48a0c_visa%20card-min.png" alt="" />
+        </div>
+     </div>
+   <div className="most-sell">
+    <h2>Most Selling Products</h2>
+    <div className="main-box">
+          {sell.map((product) => (
+            <div className="card">
+              <img src={product.image} /> 
+              <h4>{product.title}</h4>
+              <h3>$ {product.price}</h3> 
+              <p>{product.category}</p> 
+              
+            </div>
+          ))}
+        </div>
+   </div>
+
+   <div className="tre-product">
+    <h2>Trending Products For You!</h2>
+    <div className="tproduct">
+      <div className="pr-1 style">
+        <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e6cd3678e82164f755_furniture%20village-min.png" alt="" />
+        <h3>Furniture Village</h3>
+       <p>Delivery with in 24 hours</p>
+       <button >shop now</button>
+      </div>
+      <div className="pr-2 style">
+   <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e6037f3b456acf2024_Fashion%20world-min.png" alt="" />
+     <h3>Fashion World</h3>
+     <p>Delivery with in 24 hours</p>
+     <button >shop now</button>
+      </div>
+    </div>
+   </div>
+  <div className="service">
+    <h2>Services To Help You Shop</h2>
+<div className="ser-box">
+  <div className="sbox">
+    <h2>Frequently Asked Questions</h2>
+    <h3>Updates on safe Shopping in our Stores</h3>
+      <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e55b939fea169c0292_faq-min.png" alt="" />
+  </div>
+  <div className="sbox">
+<h2>Online Payment Process</h2>
+<h3>Updates on safe Shopping in our Stores</h3>
+<img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e6707380718425e697_onlie%20payment-min.png" alt="" />
+  </div>
+  <div className="sbox">
+<h2>Home Delivery Options</h2>
+<h3>Updates on safe Shopping in our Stores</h3>
+<img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e544663ba3d0fd2bb8_home%20delivery-min.png" alt="" />
+  </div>
+</div>
+  </div>
+ <Footer/>
+
+
+  
+
     </>
   );
 }
 
 export { Home };
+

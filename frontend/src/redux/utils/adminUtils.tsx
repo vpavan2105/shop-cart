@@ -61,7 +61,7 @@ export interface ICartState{
 // }
 
 export interface OrderData{
-  orderId: string;
+
   userid: string;
   name:string;
   allProducts: ProdData[];

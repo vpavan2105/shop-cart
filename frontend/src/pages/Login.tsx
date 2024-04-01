@@ -68,10 +68,18 @@ function Login(){
           }
 
           if(email == "admin@gmail.com"){
-            setIsAdmin(true);
+            userData.map((user)=>{
+            setUserLoggedIn((prev)=>{
+              return {...prev, id:user.id, username: user.username, isAuth: true, email:email}
+                   })
+            localStorage.setItem('isLoginLocal', JSON.stringify({id: user.id, isAdmin: true, isUser: false}));
+            setIsAdmin(prev=>!prev);
             navigate("/")
-            // return
-          }
+           
+          })
+       }
+      
+
           else{
             let flag: boolean = false;
             userData.map((user)=>{
@@ -79,8 +87,11 @@ function Login(){
                     setUserLoggedIn((prev)=>{
                         return {...prev, id:user.id, username: user.username, isAuth: true, email:email}
                     })
-                    localStorage.setItem('isLoginLocal', user.id);
+                    localStorage.setItem('isLoginLocal', JSON.stringify({id: user.id, isAdmin: false, isUser: true}));
                     flag = true;
+                    console.log(flag);
+                    
+                    setIsAdmin(prev=>!prev);
                     navigate('/')
                     setIsLoginLocal(true);
                 }

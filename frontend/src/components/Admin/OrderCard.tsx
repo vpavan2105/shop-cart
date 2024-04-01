@@ -1,39 +1,63 @@
 import {  Button, Flex, Heading,Text } from '@chakra-ui/react'
 import { OrderData } from '../../redux/utils/adminUtils';
 
-import { useAppSelector} from '../../redux/utils/Product_Utils'
+import { useAppDispatch, useAppSelector} from '../../redux/utils/Product_Utils'
 
 import { Link } from 'react-router-dom';
+import { updateOrderData } from '../../redux/actions/actionAdmin';
 
 
-const OrderCard = ({order,toggleStatusOrder}:{order:OrderData,toggleStatusOrder:(order:OrderData)=>void}) => {
-    const {isLoadingUpdate} = useAppSelector(state=>state.orders)
-  
-    const statusColor = order.status ? 'skyblue' : 'yellow';
+const OrderCard = ({order}:{order:OrderData}) => {
+
+    const dispatch = useAppDispatch();
+    const toggleStatusOrder = (order:OrderData) => {
+        const payload = {
+            status:!order.status
+        }
+        dispatch(updateOrderData(payload,order.id))
+    }
+    const statusColor = order.status ? 'green.200' : 'yellow.200';
   return (
     <Flex
     flexDir={'column'}
     boxShadow={'lg'}
     p={3}
+    fontFamily={'sans-serif'}
     gap={3}
     w={['100%', '300px']} // Responsive width
-    bgColor={statusColor}
+    bgColor={'gray.100'} // Background color for the entire order item
+    borderRadius={'md'} // Rounded corners
+    _hover={{
+        bgColor: 'gray.200', // Background color on hover
+    }}
+    color={'gray.800'} // Text color
 >
-    <Heading>{order.orderId} {order.userid}</Heading>
-    <Text>{order.name}</Text>
+
+    <Text fontSize={['sm', 'md']}>User : {order.name}</Text>
+    <Heading size={'sm'}>Products</Heading>
     {order.allProducts.map((prod, index) => (
-        <Heading key={index} size={'md'}>{prod.title}</Heading>
+        <Text key={index} fontSize={['sm', 'md']} >
+            {prod.title}
+        </Text>
     ))}
-    <Heading size={'sm'}>Total Price: {order.totalAmount}</Heading>
-    <Heading size={'md'}>{order.date}</Heading>
-    <Button onClick={()=>toggleStatusOrder(order)} isLoading={isLoadingUpdate} loadingText="Updating...">
-        {order.status ? "Successful" : "On Progress"}
+    <Text fontSize={['sm', 'md']} fontWeight={'bold'}>
+        Total Price: {order.totalAmount}
+    </Text>
+    <Text fontSize={['sm', 'md']}>Date : {order.date}</Text>
+    <Button
+        fontSize={['sm', 'md']}
+        onClick={() => toggleStatusOrder(order)}
+        bgColor={statusColor}
+        color={'white'} // Button text color
+    >
+        {order.status ? 'Successful' : 'On Progress'}
     </Button>
     <Link to={`/ordersadmin/${order.id}`}>
-        <Button>Show More</Button>
+        <Button fontSize={['sm', 'md']} color={'blue'} border={'1px solid'}>Show More</Button>
     </Link>
 </Flex>
   )
 }
 
 export  {OrderCard}
+
