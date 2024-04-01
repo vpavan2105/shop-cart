@@ -17,6 +17,8 @@ import { AuthContext } from '../../contexts/AuthContextProvider'
 import SignUp from '../../pages/SignUp'
 import { SingleOrderPage } from '../Admin/SingleOrderPage'
 import { SignleUserCard } from '../Admin/SignleUserCard'
+import CartList from '../CartList'
+import { OrderList } from '../OrderList'
 
 
 const AllRoutes = () => {
@@ -31,15 +33,17 @@ const AllRoutes = () => {
         <Route path='/usersadmin' element={<UsersAdmin/>} />
         <Route path='/ordersadmin/:id' element={<SingleOrderPage/>}/>
         <Route path='usersadmin/:id' element={<SignleUserCard/>}/>
+        <Route path='/logout' element={<Logout />} />
     </Routes>) 
     :
     (<Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/products' element={<Products/>} />
       <Route path='/products/:id' element={<SingleProductPage/>} />
+      <Route path="/order-list" element={<OrderList/>} />
       <Route path='/cart' element={
       <PrivateRoute>
-          <Cart/>
+          <CartList/>
       </PrivateRoute>} />
       <Route path='/orders' element={
       <PrivateRoute>
