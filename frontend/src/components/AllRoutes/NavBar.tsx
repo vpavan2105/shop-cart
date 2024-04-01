@@ -1,12 +1,16 @@
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {NavLink} from 'react-router-dom'
-export interface Links{
+import { AuthContext } from '../../contexts/AuthContextProvider';
+interface Links{
     to: string;
     displayText: string;
 }
 const NavBar = () => {
     const [isActive,setIsActive] = useState<boolean>(false);
+    const {userLoggedIn}  = useContext(AuthContext);
+    // console.log(userLoggedIn);
+    
     const listOfLinks: Links[] = [
         {
             to:"/",
@@ -28,7 +32,10 @@ const NavBar = () => {
             to:"/contact",
             displayText: "Contact Us"
         },
-        {
+        userLoggedIn.isAuth ?{
+            to:"/logout",
+            displayText:"Logout"
+        } :{
             to:"/login",
             displayText:"Login"
         }

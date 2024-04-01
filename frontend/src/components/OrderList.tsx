@@ -29,13 +29,15 @@ export function OrderList(): ReactElement {
   const state = useRef<HTMLInputElement>(null);
   const country = useRef<HTMLInputElement>(null);
 
- 
+ const cartUrl='http://localhost:3001/carts';
 
   useEffect(() => {
     // Calling postData function after totalPrice calculation
     if (cartProduct !== null) {
       console.log(cartProduct);
       postData(cartProduct);
+      handleEmpty(user_id);
+
     }
   }, [totalPrice]);
 
@@ -46,7 +48,7 @@ export function OrderList(): ReactElement {
     //getCartProductData function for fetching cartdetails of the user and extract the product array
     async function getCartProductData() {
       try {
-        let res = await fetch(`http://localhost:3001/carts/${user_id}`);
+        let res = await fetch(`${cartUrl}/${user_id}`);
         let data = await res.json();
         setCartProduct(data.products);  //extracting the product array
         setTotalPrice(data.totalAmount)
@@ -88,6 +90,30 @@ export function OrderList(): ReactElement {
       console.error("Error creating order:", error);
     }
   }
+
+
+  //Send POST request to make empty product array
+  const handleEmpty = (u_id: number | string) => {
+    async function emptyProductArray() {
+      try {
+        await fetch(`${cartUrl}/${u_id}`, {
+          method: "PUT",
+          body: JSON.stringify({
+            products: [],
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    emptyProductArray();
+  };
+ 
+
+
   return (
     <>
       <FormControl>
