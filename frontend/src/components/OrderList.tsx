@@ -1,7 +1,13 @@
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { FormControl, FormLabel, Input, Button } from "@chakra-ui/react";
 import { v4 as uuidv4 } from "uuid";
-
+import { CartUrl } from "../ApiUrls";
+import { useContext } from "react";
+import { OrderUrl } from "../ApiUrls";
+import {
+  AuthContext,
+  LogUserDetails,
+} from './../contexts/AuthContextProvider';
 interface Product {
   id: number;
   title: string;
@@ -21,7 +27,9 @@ export function OrderList(): ReactElement {
   const [cartProduct, setCartProduct] = useState<Product[] | null>(null);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   // get userid from local storage
-  let user_id = 3; //here hardcoded
+  const auth = useContext(AuthContext);
+  let user_id = auth.userLoggedIn.id;
+  let O_Url:any = OrderUrl;
   const name = useRef<HTMLInputElement>(null);
   const address = useRef<HTMLInputElement>(null);
   const pincode = useRef<HTMLInputElement>(null);
@@ -29,7 +37,7 @@ export function OrderList(): ReactElement {
   const state = useRef<HTMLInputElement>(null);
   const country = useRef<HTMLInputElement>(null);
 
- const cartUrl='http://localhost:3001/carts';
+ const cartUrl=CartUrl;
 
   useEffect(() => {
     // Calling postData function after totalPrice calculation
@@ -65,13 +73,13 @@ export function OrderList(): ReactElement {
       uuidv4(); //generate a UUID for the order ID
       const currentDate = new Date(); // get the current date and time
       const formattedDate = currentDate.toLocaleString(); // Convert the current date and time to a string representation
-      await fetch("http://localhost:3001/orders", {
+      await fetch(`${O_Url}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userid: "3",
+          userid:user_id ,
           name: name.current?.value,
           address: [
             address.current?.value,
