@@ -1,7 +1,7 @@
-
+import { OrderDisplay } from "../components/OrderDisplay"
 const Orders = () => {
   return (
-    <div>Orders</div>
+   <OrderDisplay/>
   )
 }
 

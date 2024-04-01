@@ -3,15 +3,15 @@ import { ReactElement, createContext, useEffect, useState } from "react"
 export const AuthContext = createContext();
 
 interface Props {
-    children: ReactElement; // Use ReactElement to specify a single React element as children
-  }
+  children: ReactElement; // Use ReactElement to specify a single React element as children
+}
 
-  export interface LogUserDetails{
-    id: string;
-    username: string;
-    isAuth: boolean;
-    email: string;
-  }
+export interface LogUserDetails {
+  id: string;
+  username: string;
+  isAuth: boolean;
+  email: string;
+}
 
 const AuthContextProvider: React.FC<Props>= ({children}) => {
     
@@ -45,7 +45,7 @@ const AuthContextProvider: React.FC<Props>= ({children}) => {
     <AuthContext.Provider value={{userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin, isLoginLocal, setIsLoginLocal}}>
          {children}
     </AuthContext.Provider>
-  )
-}
+  );
+};
 
-export default AuthContextProvider
+export default AuthContextProvider;
