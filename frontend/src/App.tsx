@@ -7,8 +7,8 @@ import AdminNavBar from './components/AllRoutes/AdminNavBar'
 import { AuthContext } from './contexts/AuthContextProvider'
 
 function App() {
-  // const{isAdmin} = useContext(AuthContext)
-  let isAdmin = false;
+  const{isAdmin} = useContext(AuthContext)
+  // let isAdmin = false;
 
   return (
     <>

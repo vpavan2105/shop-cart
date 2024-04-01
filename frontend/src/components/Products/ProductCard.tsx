@@ -217,7 +217,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               alignItems="center"
               justifyContent="space-between"
             >
-              <Text mt={2}>
+              <Text mt={2} color="blue.500">
                 {" "}
                 <span>&#36; </span>
                 {prod.price}
