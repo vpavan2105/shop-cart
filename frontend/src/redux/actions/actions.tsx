@@ -4,7 +4,6 @@ import { Dispatch } from 'redux';
 import { Product } from '../utils/Product_Utils';
 import {ProductUrl} from "../../ApiUrls.tsx";
 
-
 export const fetchProducts = () => async (dispatch: Dispatch) => {
   try {
     dispatch({ type: PRODUCTS_LOADING });
