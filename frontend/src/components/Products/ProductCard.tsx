@@ -16,10 +16,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import { Product } from "../../redux/utils/Product_Utils";
 import { useNavigate } from "react-router-dom";
-import {CartUrl} from '../../ApiUrls';
-import {CartData,ProductDetails} from '../CartList'
+import { CartUrl } from "../../ApiUrls";
+import { CartData, ProductDetails } from "../CartList";
 import { useAppDispatch } from "../../redux/utils/Product_Utils";
-import { AuthContext, LogUserDetails } from "../../contexts/AuthContextProvider";
+import {
+  AuthContext,
+  LogUserDetails,
+} from "../../contexts/AuthContextProvider";
 export interface ProductCardProps {
   prod: Product;
   truncateDescription: (description: string) => string;
@@ -59,8 +62,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const auth = useContext(AuthContext);
   const toast = useToast();
 
+  const userId = auth.userLoggedIn.id; //ip
 
-  const userId = "5"; //ip
   const cartUrl = CartUrl;
   const handleBuy = () => {
     setTimeout(() => {
@@ -70,12 +73,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   //Add to cart button functionality
   const handleCart = async () => {
-    // console.log("Log:", auth.userLoggedIn.isAuth);
-    if(!auth.userLoggedIn.isAuth) return navigate(`/login`);
+    if (!auth.userLoggedIn.isAuth) return navigate(`/login`);
+
     try {
       async function getCartData() {
+        // Get the cart details for the user
         let res = await fetch(`${cartUrl}/${userId}`);
 
+        // If no cart found for the user, create a brand new cart and add the product in it
         if (!res.ok) {
           await fetch(`${cartUrl}`, {
             method: "POST",
@@ -84,7 +89,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               id: userId,
               totalAmount: prod.price,
               user_id: userId,
-              product: [
+              products: [
                 {
                   id: prod.id,
                   title: prod.title,
@@ -98,13 +103,26 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               ],
             }),
           });
-          console.log("New cart created with add to cart product");
+
+          toast({
+            title: "Product is added to the cart",
+            description:
+              "The selected product has been successfully added to your cart.",
+            status: "success",
+            duration: 7000,
+            isClosable: true,
+            position: "top",
+          });
+          console.log(
+            "A brand new cart is created for the user and the selected product is added to the cart"
+          );
           return;
         }
 
         let data = await res.json();
 
-        const isProductAlreadyInCart = data.product.some(
+        // Check if the product is already present in the cart
+        const isProductAlreadyInCart = data.products.some(
           (item: Product) => item.id === prod.id
         );
 
@@ -126,8 +144,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             method: "PATCH",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({
-              product: [
-                ...data.product,
+              products: [
+                ...data.products,
                 {
                   id: prod.id,
                   title: prod.title,
@@ -169,8 +187,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       }
 
       await getCartData();
-    } catch (error) {
-      console.error(error);
+    } catch (err: any) {
+      toast({
+        title: "Unable to Add the Product",
+        description: err.message,
+        status: "error",
+        duration: 7000,
+        isClosable: true,
+        position: "top",
+      });
     }
   };
 
