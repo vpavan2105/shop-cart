@@ -10,10 +10,10 @@ import {
   Card,
 } from "@chakra-ui/react";
 
-import { url } from "../../redux/actions/actions";
 import { Product } from "../../redux/utils/Product_Utils";
 import { useParams } from "react-router";
 import axios from "axios";
+import {ProductUrl} from "../../ApiUrls.tsx";
 
 interface SingleProductPageProps {}
 
@@ -27,7 +27,7 @@ const SingleProductPage: React.FC<SingleProductPageProps> = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`${url}/${id}`);
+        const response = await axios.get(`${ProductUrl}/${id}`);
         const productData: Product = response.data;
         setProduct(productData);
       } catch (error) {
@@ -60,7 +60,7 @@ const SingleProductPage: React.FC<SingleProductPageProps> = () => {
             <Flex
                 direction={{ base: "column", md: "row" }}
                 alignItems="center"
-                justifyContent="space-between"
+                justifyContent="space-around"
             >
               <Image
                   src={product.image}
@@ -69,8 +69,8 @@ const SingleProductPage: React.FC<SingleProductPageProps> = () => {
                   width={{ base: "100%", md: "auto" }}
               />
               <Card width={{ base: "100%", md: "50%" }} p={4} mt={{ base: 4, md: 0 }}>
-                <Flex direction="column">
-                  <Heading mt={4}>{product.title}</Heading>
+                <Flex direction="column" alignItems="center" p={4}>
+                  <Heading fontSize="xx-large" mt={4}>{product.title}</Heading>
                   <Text fontSize="lg" mt={2}>
                     {product.description}
                   </Text>
