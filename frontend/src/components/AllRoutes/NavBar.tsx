@@ -9,6 +9,9 @@ const NavBar = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const { userLoggedIn } = useContext(AuthContext);
   // console.log(userLoggedIn);
+  const userType = localStorage.getItem("isLoginLocal")
+  const userObj = JSON.parse(userType) || {}
+  
 
   const listOfLinks: Links[] = [
     {
@@ -31,8 +34,8 @@ const NavBar = () => {
       to: "/contact",
       displayText: "Contact Us",
     },
-    userLoggedIn.isAuth
-      ? {
+    
+    userObj ? {
           to: "/logout",
           displayText: "Logout",
         }
