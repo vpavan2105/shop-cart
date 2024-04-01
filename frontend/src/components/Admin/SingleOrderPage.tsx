@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { OrderUrl } from "../../redux/actions/actionAdmin";
+
 import { Box, Flex, Image, Text, Spinner } from "@chakra-ui/react";
 import { ProdData } from "../../redux/utils/adminUtils";
+import { OrderUrl } from "../../ApiUrls";
 
 const SingleOrderPage = () => {
     const [singleOrder, setSingleOrder] = useState({});
