@@ -22,10 +22,14 @@ import { OrderList } from '../OrderList'
 
 
 const AllRoutes = () => {
-  const {isAdmin} = useContext(AuthContext)
+  // const {isLoginLocal} = useContext(AuthContext)
+  const isUserType = localStorage.getItem("isLoginLocal")
+  // console.log(isUserType);
+  const isUserobj = JSON.parse(isUserType)
+  
   return (
     <>
-    {isAdmin?
+    {isUserobj && isUserobj.isAdmin?
     (<Routes>
       <Route path='/' element={<DashBoard/>} />
         <Route path='/ordersadmin' element={<OrdersAdmin/>} />

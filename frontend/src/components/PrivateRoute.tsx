@@ -13,8 +13,11 @@ const PrivateRoute: React.FC<Props> = ({children}) => {
     console.log(userLoggedIn.isAuth);
 
     const isAuth = localStorage.getItem("isLoginLocal")
+    const authobj = JSON.parse(isAuth)
+    console.log(authobj);
     
-    if(!isAuth){
+    
+    if(!authobj || !authobj.isUser){
         return(<Navigate to="/login" />)
     }
 
