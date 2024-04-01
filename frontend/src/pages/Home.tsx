@@ -37,13 +37,23 @@ function Home() {
   }, []);
   return (
     <>
-      <div className="home">
+      {/* <div className="home">
         <img
           src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           className="img"
           alt=""
         />
-      </div>
+      </div> */}
+      <div className="sofa">
+        <img src="https://media.designcafe.com/wp-content/uploads/2021/04/15173304/trending-sofa-designs-for-your-home.jpg" alt="" />
+    </div>
+    <div className="discount-box">
+      <h2>Get 5% Cash Back On $200</h2>
+      <p>Shopping is a bit of a relaxing hobby for me,
+ which is sometimes troubling for the bank balance.</p>
+ <button className="lbtn">Learn more</button>
+    </div>
+    
       <div className="category">
         <h2>Shop Our Top Categories</h2>
 
