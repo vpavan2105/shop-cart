@@ -14,8 +14,8 @@ interface Props {
 
 export const Links = [
   "Fashion",
-  "electronics",
-  "Furniture",
+  "Electronics",
+  "furniture",
   "kitchen",
   "Luggage & Bags",
 ];
