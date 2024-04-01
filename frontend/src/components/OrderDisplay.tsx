@@ -47,8 +47,15 @@ interface OrderObject {
 }
 export function OrderDisplay(): ReactElement {
   const [orders, setOrders] = useState<null | OrderObject[]>(null);
-  const auth = useContext(AuthContext);
-  let userId = auth.userLoggedIn.id;
+ // get userid from local storage
+ let userId: string | undefined; //ip
+
+ const loginDetails = localStorage.getItem("isLoginLocal");
+ if (loginDetails !== null) {
+   const u_id = JSON.parse(loginDetails);
+   const id = u_id.id;
+   userId = id;
+ }
 
   const orderPageUrl = OrderUrl;
 
@@ -92,7 +99,7 @@ export function OrderDisplay(): ReactElement {
               >
                 <Card boxShadow="md" p="6" rounded="md" bg="white">
                   {order.allProducts.map((product) => (
-                    <CardBody  border="1px solid"
+                    <CardBody key={product.id} border="1px solid"
                     >
                       <Image
                         src={product.image}

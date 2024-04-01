@@ -1,9 +1,9 @@
-import { ReactElement, useContext, useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { FcEmptyTrash } from "react-icons/fc";
 import CartCard from "./CartCard";
 import { CartUrl } from "../ApiUrls";
-import { AuthContext } from "../contexts/AuthContextProvider";
-import {Box, Heading} from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
+
 export interface ProductDetails {
   id: number;
   title: string;
@@ -29,10 +29,16 @@ export enum IncDec {
 }
 function CartList(): ReactElement {
   const [cartProduct, setCartProduct] = useState<CartData | null>(null);
-  const auth = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [toggle, setToggle] = useState<boolean>(false);
 
-  const u_id = localStorage.getItem("isLoginLocal") as string;
+  let u_id: string | undefined; //ip
+  const loginDetails = localStorage.getItem("isLoginLocal");
+  if (loginDetails !== null) {
+    const user_id = JSON.parse(loginDetails);
+    const id = user_id.id;
+    u_id = id;
+  }
 
   const cartUrl = CartUrl;
 
@@ -41,15 +47,14 @@ function CartList(): ReactElement {
     fetch(`${cartUrl}/${u_id}`)
       .then((res) => res.json())
       .then((data: CartData) => {
-        console.log(`${cartUrl}/${u_id}`)
+        console.log(`${cartUrl}/${u_id}`);
         setCartProduct(data);
-        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
-        setIsLoading(false);
-      });
-  }, []);
+      })
+      .finally(() => setIsLoading(false));
+  }, [toggle]);
 
   //Handling each product increment and decrement
   const handleIncOrDec = (p_id: number, val: number) => {
@@ -61,7 +66,7 @@ function CartList(): ReactElement {
 
         let productsArray = data.products; //k
 
-        // Increasing product quantity for a partcular product in the cart
+        // Increasing product quantity for a particular product in the cart
         if (val === 1) {
           productsArray.forEach((product) => {
             if (product.id === p_id) {
@@ -90,7 +95,7 @@ function CartList(): ReactElement {
         );
         newTotalAmount = parseFloat(newTotalAmount.toFixed(2)); //rounding to 2 decimal places
         // Update cart details of the user using u_id
-        await fetch(`${cartUrl}/${u_id}`, {
+        let res2 = await fetch(`${cartUrl}/${u_id}`, {
           method: "PATCH",
           body: JSON.stringify({
             products: productsArray,
@@ -100,26 +105,31 @@ function CartList(): ReactElement {
             "Content-type": "application/json",
           },
         });
+
+        if (res2.ok) setToggle(!toggle);
       } catch (err) {
         console.error(err);
       }
     }
 
-    updateData(u_id); //invoking updateData
+    updateData(u_id as string); //invoking updateData
   };
 
   const handleEmpty = (u_id: number | string) => {
     async function emptyProductArray() {
       try {
-        await fetch(`${cartUrl}/${u_id}`, {
-          method: "PUT",
+        let res = await fetch(`${cartUrl}/${u_id}`, {
+          method: "PATCH",
           body: JSON.stringify({
             products: [],
+            totalAmount: 0
           }),
           headers: {
             "Content-type": "application/json",
           },
         });
+
+        if(res.ok) setToggle(!toggle);
       } catch (error) {
         console.error(error);
       }
@@ -127,10 +137,9 @@ function CartList(): ReactElement {
     emptyProductArray();
   };
 
-
   const handleCheckout = () => {
     // Redirect the user to the UserDetails page
-    window.location.href = '/order-list';
+    window.location.href = "/order-list";
   };
   return (
     <>
@@ -138,7 +147,9 @@ function CartList(): ReactElement {
         <div>Loading...</div> // Show loading message while fetching data
       ) : (
         <div>
-          {cartProduct && cartProduct.products.length > 0 ? (
+          {cartProduct &&
+          cartProduct.products &&
+          cartProduct.products.length > 0 ? (
             <div>
               <h2>Products in Cart:</h2>
               {cartProduct.products.map((product) => (
@@ -154,21 +165,34 @@ function CartList(): ReactElement {
                   handleEmpty(cartProduct.id);
                 }}
               />
-              <button onClick={handleCheckout}>
-                Proceed to Checkout
-              </button>
+              <button onClick={handleCheckout}>Proceed to Checkout</button>
             </div>
           ) : (
-            <Box border="1px solid red" justifyContent="center" width="100%" height="100vh" alignItems="center" display="flex">
-            <Box bg='hotpink' boxShadow="dark-lg"  alignItems="center"
-    justifyContent="center"
-            p="6"
-            rounded="md"
-            w='50%'  color='white' h='50vh' fontSize="50px">
-              <Heading marginTop="15%" textAlign="center">Cart is empty</Heading>
-           
-          </Box>
-          </Box>
+            <Box
+              border="1px solid red"
+              justifyContent="center"
+              width="100%"
+              height="100vh"
+              alignItems="center"
+              display="flex"
+            >
+              <Box
+                bg="hotpink"
+                boxShadow="dark-lg"
+                alignItems="center"
+                justifyContent="center"
+                p="6"
+                rounded="md"
+                w="50%"
+                color="white"
+                h="50vh"
+                fontSize="50px"
+              >
+                <Heading marginTop="15%" textAlign="center">
+                  Cart is empty
+                </Heading>
+              </Box>
+            </Box>
           )}
         </div>
       )}
@@ -177,4 +201,6 @@ function CartList(): ReactElement {
 }
 
 export default CartList;
-{/* <button onClick={() => console.log("Proceed to checkout")}> */}
+{
+  /* <button onClick={() => console.log("Proceed to checkout")}> */
+}

@@ -19,6 +19,7 @@ import { SingleOrderPage } from '../Admin/SingleOrderPage'
 import { SignleUserCard } from '../Admin/SignleUserCard'
 import CartList from '../CartList'
 import { OrderList } from '../OrderList'
+import { OrderDisplay } from '../OrderDisplay'
 
 
 const AllRoutes = () => {
@@ -51,7 +52,7 @@ const AllRoutes = () => {
       </PrivateRoute>} />
       <Route path='/orders' element={
       <PrivateRoute>
-          <Orders/>
+          <OrderDisplay/>
       </PrivateRoute>} />
       <Route path='/contact' element={<Contacts/>} />
       <Route path='/login' element={<Login/>} />

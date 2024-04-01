@@ -12,9 +12,9 @@ function App() {
   // localStorage.setItem('isLoginLocal', JSON.stringify({id: '', isAdmin: false, isUser: false}));
   const isUserType = localStorage.getItem("isLoginLocal")
   const isUserobj = JSON.parse(isUserType) || {}
-  console.log(isUserobj);
+  // console.log(isUserobj);
 const { isAdmin} = useContext(AuthContext)
- console.log(isAdmin);
+//  console.log(isAdmin);
  
   if(!isUserobj ) return(
     <>
