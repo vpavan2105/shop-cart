@@ -2,15 +2,16 @@ import axios from "axios";
 import {  AddProduct, DeleteProduct, DeleteUser, FetchCarts, FetchOrder, FetchProduct, FetchUsers, UpdateOrder, UpdateProduct } from "../actionTypes/actionTypes";
 import {  ProdData } from "../utils/adminUtils";
 import {  Dispatch } from "redux";
+import { BaseUrl, CartUrl, OrderUrl, ProductUrl, UserUrl } from "../../ApiUrls";
 
-export const BaseUrl:string = `http://localhost:3000/products`;
-export const UsersUrl:string = `http://localhost:3000/users`;
-export const CartUrl:string = `http://localhost:3000/carts`;
-export const OrderUrl:string = `http://localhost:3000/orders`;
-
+const url:string = BaseUrl;
+const prodcutUrl :string = ProductUrl;
+const cartUrl: string = CartUrl;
+const userUrl :string = UserUrl;
+const orderUrl : string = OrderUrl;
 export const fetchDataProduct = () =>  (dispatch:Dispatch)  => {
       dispatch({type:FetchProduct.FETCH_PRODUCT_LOADING})
-      axios.get(BaseUrl)
+      axios.get(prodcutUrl)
       .then((res)=>{
         // console.log(res.data);
         dispatch({type:FetchProduct.FETCH_PRODUCT_SUCCESS,payload:res.data})
@@ -24,7 +25,7 @@ export const fetchDataProduct = () =>  (dispatch:Dispatch)  => {
 
 export const addDataProduct = (newProduct:ProdData)=> (dispatch:Dispatch) => {
      dispatch({type:AddProduct.ADD_PRODUCT_LOADING})
-     axios.post(BaseUrl,newProduct)
+     axios.post(prodcutUrl,newProduct)
      .then((res)=>{
         console.log(res.data);
         dispatch({type:AddProduct.ADD_PRODUCT_SUCCESS,payload:res.data});
@@ -38,7 +39,7 @@ export const addDataProduct = (newProduct:ProdData)=> (dispatch:Dispatch) => {
 
 export const updateDataProduct = (product:ProdData,id:number|string) => (dispatch:Dispatch) => {
     dispatch({type:UpdateProduct.UPDATE_PRODUCT_LOADING})
-    axios.patch(`${BaseUrl}/${id}`, product)
+    axios.patch(`${prodcutUrl}/${id}`, product)
     .then((res)=>{
         console.log(res.data);
         dispatch({type:UpdateProduct.UPDATE_PRODUCT_SUCCESS,payload:res.data});
@@ -51,7 +52,7 @@ export const updateDataProduct = (product:ProdData,id:number|string) => (dispatc
 
 export const deleteDataProduct = (id:number|string) =>  (dispatch:Dispatch)  =>{
     dispatch({type:DeleteProduct.DELETE_PRODUCT_LOADING})
-    axios.delete(`${BaseUrl}/${id}`)
+    axios.delete(`${prodcutUrl}/${id}`)
     .then((res)=>{
         console.log(res.data);
         dispatch({type:DeleteProduct.DELETE_PRODUCT_SUCCESS,payload:id})
@@ -65,7 +66,7 @@ export const deleteDataProduct = (id:number|string) =>  (dispatch:Dispatch)  =>{
 
 export const fetchUsersData = () =>  (dispatch:Dispatch)  =>{
       dispatch({type:FetchUsers.FETCH_USERS_LOADING});
-      axios.get(UsersUrl)
+      axios.get(userUrl)
       .then(res=>{
         console.log(res.data);
         dispatch({type:FetchUsers.FETCH_USERS_SUCCESS,payload:res.data})
@@ -78,7 +79,7 @@ export const fetchUsersData = () =>  (dispatch:Dispatch)  =>{
 
 export const deleteUserData = (id:number|string) =>  (dispatch:Dispatch)  =>{
     dispatch({type:DeleteUser.DELETE_USER_LOADING});
-    axios.delete(`$UsersUrl/${id}`)
+    axios.delete(`${userUrl}/${id}`)
     .then(res=>{
         console.log(res.data);
         dispatch({type:DeleteUser.DELETE_USER_SUCCESS,payload:id})
@@ -92,7 +93,7 @@ export const deleteUserData = (id:number|string) =>  (dispatch:Dispatch)  =>{
 
 export const fetchCartsData = () => (dispatch:Dispatch) =>{
   dispatch({type:FetchCarts.FETCH_CARTS_LOADING});
-      axios.get(CartUrl)
+      axios.get(cartUrl)
       .then(res=>{
         console.log(res.data);
         dispatch({type:FetchCarts.FETCH_CARTS_SUCCESS,payload:res.data})
@@ -105,7 +106,7 @@ export const fetchCartsData = () => (dispatch:Dispatch) =>{
 
 export const fetchOrdersData = () =>  (dispatch:Dispatch) =>{
     dispatch({type:FetchOrder.FETCH_ORDER_LOADING});
-        axios.get(OrderUrl)
+        axios.get(orderUrl)
         .then(res=>{
           console.log(res.data);
          dispatch({type:FetchOrder.FETCH_ORDER_SUCCESS,payload:res.data})
@@ -118,7 +119,7 @@ export const fetchOrdersData = () =>  (dispatch:Dispatch) =>{
 
 export const updateOrderData = (payload:{status:boolean},id:string|number) =>  (dispatch:Dispatch)  =>{
     dispatch({type:UpdateOrder.UPDATE_ORDER_LOADING});
-    axios.patch(`${OrderUrl}/${id}`,payload)
+    axios.patch(`${orderUrl}/${id}`,payload)
     .then((res)=>{
         console.log(res.data);
         dispatch({type:UpdateOrder.UPDATE_ORDER_SUCCESS,payload:res.data});
