@@ -10,7 +10,9 @@ const NavBar = () => {
   const { userLoggedIn } = useContext(AuthContext);
   // console.log(userLoggedIn);
   const userType = localStorage.getItem("isLoginLocal")
-  const userObj = JSON.parse(userType) || {}
+  const userObj = JSON.parse(userType) 
+  console.log(userObj);
+  
   
 
   const listOfLinks: Links[] = [
