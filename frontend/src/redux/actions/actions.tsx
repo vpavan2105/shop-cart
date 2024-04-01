@@ -5,7 +5,7 @@ import { Dispatch } from 'redux';
 import { Product } from '../utils/Product_Utils';
 
 
-export const url:string = "http://localhost:3001/products"; //ip
+export const url:string = "https://shop-cart-x0xf.onrender.com/products"; //ip
 
 
 export const fetchProducts = () => async (dispatch: Dispatch) => {
