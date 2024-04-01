@@ -22,7 +22,7 @@ const DashBoardAdmin = () => {
       }, 0)
     );    console.log(revenue,orders)
     const cardWidth = useBreakpointValue({ base: "100%", sm: "30%", md: "30%", lg: "30%" });
-if(true) return <DashboardLoading/>
+if(isLoadingFetch) return <DashboardLoading/>
   return (
     <Box className="dashboard-container" p={4}>
       <Heading mb={3} mt={3} p={2} >
