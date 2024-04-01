@@ -18,11 +18,11 @@ const Logout = () => {
         })
         setIsAdmin(false)
         localStorage.removeItem("isLoginLocal")
+        // localStorage.setItem("isLoginLocal" , JSON.stringify({id:null, isAdmin: false, isUser: false}))
+        navigate("/")
     },[])
 
-    useEffect(()=>{
-      navigate("/")
-    },[userLoggedIn.isAuth, isAdmin])
+  
 
     
   return (

@@ -510,7 +510,7 @@
         }
       ],
       "totalAmount": 3649.92,
-      "status": true
+      "status": "success"
     },
     {
       "id": "2",
@@ -563,7 +563,7 @@
         }
       ],
       "totalAmount": 3649.92,
-      "status": true
+      "status": "in progress"
     }
   ],
   "carts": [
