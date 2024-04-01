@@ -1,7 +1,12 @@
+import { Footer } from "./Footer"
 
 const Cart = () => {
   return (
-    <div>Cart</div>
+<>
+<div>cart</div>
+<Footer/>
+</>
+ 
   )
 }
 

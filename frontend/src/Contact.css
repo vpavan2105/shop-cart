@@ -1,0 +1,180 @@
+/* General Styles */
+.contact-container {
+   
+    margin-top: 40px;
+    padding: 40px;
+   display: flex;
+   flex-wrap: wrap;
+  
+  }
+  
+
+
+  
+  .image img{
+    width: 600px;
+    height: 420px;
+
+  }
+  
+  .contact-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 580px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Styles */
+  .contact-form h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+  width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .contact-form textarea {
+    height: 150px;
+  }
+  
+  #submitbtn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: linear-gradient(
+      135deg,
+      hsl(346, 80%, 47%) 9%,
+      hsl(333, 100%, 60%) 82%
+    );
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #submitbtn:hover {
+    background: linear-gradient(
+      135deg,
+      hsl(346, 90%, 57%) 9%,
+      hsl(333, 100%, 70%) 82%
+    );
+  }
+  
+.Team h1{
+    font-weight: bold;
+     margin-top: 50px; 
+text-align: center;
+font-size: large;
+/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+margin-top: 40px;
+}
+.Team h3{
+    font-weight: bold;
+    margin-top: 10px; 
+text-align: center;
+font-size: medium;
+/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+/* margin-top: 40px; */
+}
+
+.members{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 5px;
+    margin: 10px;
+}
+
+.mem{
+    margin-top: 30px;
+    height: 420px;
+    width: 250px;
+    /* border: 1px solid; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+ 
+}
+.img img{
+    height: 250px;
+    width: 250px;
+   /* margin-left: 20px; */
+}
+.img p{
+    padding: 5px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.img h2{
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pimg{
+    display: flex;
+}
+.pimg img{
+    margin-left: 90px;
+    width: 40px;
+    height: 40px;
+}
+
+.span img{
+    height: 25px;
+    width: 25px;
+    margin-left: -3px;
+    margin-top: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Responsive Adjustments */
+  @media (max-width: 700px) {
+    .firstPart {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .members{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 5px;
+        margin-left: 30%;
+
+    }
+  }
+  
+
+  
