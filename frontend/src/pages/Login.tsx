@@ -68,10 +68,18 @@ function Login(){
           }
 
           if(email == "admin@gmail.com"){
-            setIsAdmin(true);
+            userData.map((user)=>{
+            setUserLoggedIn((prev)=>{
+              return {...prev, id:user.id, username: user.username, isAuth: true, email:email}
+                   })
+            localStorage.setItem('isLoginLocal', user.id);
+            
             navigate("/")
-            // return
-          }
+            setIsAdmin(true);
+          })
+       }
+      
+ // return
           else{
             let flag: boolean = false;
             userData.map((user)=>{

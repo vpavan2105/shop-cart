@@ -5,15 +5,24 @@ import AreaChartComponent from "./AreaChartCompoent";
 import { faBookmark, faHouseUser, faMoneyCheck, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import RevenueLineComponents from "./RevenueLineChart";
+import DashboardLoading from "../Loadings/DashboardLoading";
+import { OrderData } from "../../redux/utils/adminUtils";
 
 const DashBoardAdmin = () => {
     const users:number = useAppSelector(state=>state.users.usersData).length
     const {isLoadingFetch} = useAppSelector(state=>state.products)
     const orders:number = useAppSelector(state=>state.orders.ordersData).length
-    const revenue :number= useAppSelector(state=>state.orders.ordersData).reduce((acc, curr) => acc + curr.totalAmount, 0);
-    console.log(revenue,orders)
+    console.log(useAppSelector(state=>state.orders.ordersData));
+    
+    const revenue: number = useAppSelector(state =>
+      state.orders.ordersData.reduce((acc, curr) => {
+       
+        
+        return curr.status ?  acc + (curr.totalAmount || 0) : acc;
+      }, 0)
+    );    console.log(revenue,orders)
     const cardWidth = useBreakpointValue({ base: "100%", sm: "30%", md: "30%", lg: "30%" });
-if(isLoadingFetch) return <div>loading...</div>
+if(true) return <DashboardLoading/>
   return (
     <Box className="dashboard-container" p={4}>
       <Heading mb={3} mt={3} p={2} >
