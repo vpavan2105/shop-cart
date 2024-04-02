@@ -29,7 +29,7 @@ const AuthContextProvider: React.FC<Props>= ({children}) => {
       email: "",
   });
 
-  console.log(userLoggedIn);
+  // console.log(userLoggedIn);
   
 
     useEffect(() => {
