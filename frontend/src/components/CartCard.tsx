@@ -12,9 +12,11 @@ function CartCard({ product, handleIncOrDec }: CartCartProps): ReactElement {
   return (
     <Box
       maxW={{ base: "80%", md: "85%", lg: "100%" }}
+     
+      p="6"
+      boxShadow="Outline"
+      // border="1px solid gray"
       bg="white"
-      p="4"
-      boxShadow="lg"
       borderRadius="lg"
       display="flex"
       justifyContent={{
@@ -29,7 +31,7 @@ function CartCard({ product, handleIncOrDec }: CartCartProps): ReactElement {
       transition="all 0.3s"
       _hover={{ transform: "scale(1.02)", boxShadow: "xl" }}
     >
-      <Box width="200px" h="200px">
+      <Box width="150px" h="150px">
         <Image w="100%" h="100%" src={image} alt={title} />
       </Box>
       <Box
@@ -42,7 +44,7 @@ function CartCard({ product, handleIncOrDec }: CartCartProps): ReactElement {
         }}
       >
         <Heading fontSize="15px" as="h6">
-          {title}
+        {title.length > 20 ? `${title.slice(0, 20)}...` : title}
         </Heading>
         <Text>Price:{price}</Text>
       </Box>

@@ -1,8 +1,10 @@
 import { ReactElement, useEffect, useState } from "react";
-import { FcEmptyTrash } from "react-icons/fc";
 import CartCard from "./CartCard";
 import { CartUrl } from "../ApiUrls";
 import { Box, Button, Center, Heading, Spinner } from "@chakra-ui/react";
+import { BsFillBagDashFill } from "react-icons/bs";
+import { Text } from "recharts";
+import { BsFillBagHeartFill } from "react-icons/bs";
 
 export interface ProductDetails {
   id: number;
@@ -122,14 +124,14 @@ function CartList(): ReactElement {
           method: "PATCH",
           body: JSON.stringify({
             products: [],
-            totalAmount: 0
+            totalAmount: 0,
           }),
           headers: {
             "Content-type": "application/json",
           },
         });
 
-        if(res.ok) setToggle(!toggle);
+        if (res.ok) setToggle(!toggle);
       } catch (error) {
         console.error(error);
       }
@@ -145,71 +147,157 @@ function CartList(): ReactElement {
     <>
       {isLoading ? (
         <Center height="100vh">
-       <Spinner
-       thickness='4px'
-       speed='0.65s'
-       emptyColor='gray.200'
-       color='yellow.400'
-       size='xl'
-     />
-     </Center> // Show loading message while fetching data fontSize={{ base: "24px", md: "40px", lg: "56px" }}
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="yellow.400"
+            size="xl"
+          />
+        </Center> // Show loading message while fetching data fontSize={{ base: "24px", md: "40px", lg: "56px" }}
       ) : (
-        <Box >
-          {cartProduct &&
-          cartProduct.products &&
-          cartProduct.products.length > 0 ? (
-            <Box  w={{ base: "100%", md: "80%", lg: "70%" }} >
-              <Heading as='h2'>Cart Items</Heading>
-              <Box display={{lg:"flex"}}>
-              <Box w={{ base: "100%", md: "80%", lg: "70%" }} >
-              {cartProduct.products.map((product) => (
-                <CartCard
-                  key={product.id}
-                  product={product}
-                  handleIncOrDec={handleIncOrDec}
-                />
-              ))}
-              </Box>
-              <Box position="sticky">
-              <Button bg="orange">Total : {cartProduct.totalAmount}</Button>
-              <FcEmptyTrash
-                onClick={() => {
-                  handleEmpty(cartProduct.id);
-                }}
-              />
-              <Button onClick={handleCheckout}>Proceed to Checkout</Button>
-              </Box>
-              </Box>
-            </Box>
+        <Center>
+          <Box w={{ base: "90%", md: "80%", lg: "65%" }}>
+            {cartProduct &&
+            cartProduct.products &&
+            cartProduct.products.length > 0 ? (
+              <Box w="100%" p="8px">
+                <Box
+                  mb="20px"
+                  bg="rgb(250, 251, 250)"
+                  borderRadius="10px"
+                  p="18px"
+                  display="flex"
+                  justifyContent="space-between"
+                >
+                  <Heading as="h2" fontFamily="revert">
+                    Cart Items
+                  </Heading>
+                  <Button
+                    fontFamily="revert"
+                    colorScheme="red"
+                    onClick={() => {
+                      handleEmpty(cartProduct.id);
+                    }}
+                  >
+                    <span style={{ marginRight: "10px" }}>Empty Cart </span>
+                    <BsFillBagDashFill />
+                  </Button>
+                </Box>
 
-          ) : (
-            <Box
-              border="1px solid red"
-              justifyContent="center"
-              width="100%"
-              height="100vh"
-              alignItems="center"
-              display="flex"
-            >
-              <Box
-                bg="hotpink"
-                boxShadow="dark-lg"
-                alignItems="center"
-                justifyContent="center"
-                p="6"
-                rounded="md"
-                w="50%"
-                color="white"
-                h="50vh"
-                fontSize="50px"
-              >
-                <Heading marginTop="15%" textAlign="center">
-                  Cart is empty
-                </Heading>
+                <Box
+                  boxShadow="lg"
+                  p="20px"
+                  display={{ sm: "block", lg: "flex" }}
+                  bg="rgb(250, 251, 250)"
+                  borderRadius="10px"
+                >
+                  <Box
+                    overflowY="scroll" // Enable vertical scrollbar
+                    overflowX="hidden" // Disable horizontal scrollbar
+                    h="80vh"
+                    paddingRight="10px"
+                    padding="15px"
+                    css={{
+                      "&::-webkit-scrollbar": {
+                        width: "8px",
+                      },
+                      "&::-webkit-scrollbar-track": {
+                        background: "#f1f1f1",
+                      },
+                      "&::-webkit-scrollbar-thumb": {
+                        background: "#C0C0C0",
+                        borderRadius: "4px",
+                        height: "20px",
+                      },
+                      "&::-webkit-scrollbar-thumb:hover": {
+                        background: "#555",
+                      },
+                    }}
+                    w={{ base: "100%", md: "100%", lg: "100%" }}
+                  >
+                    {cartProduct.products.map((product) => (
+                      <CartCard
+                        key={product.id}
+                        product={product}
+                        handleIncOrDec={handleIncOrDec}
+                      />
+                    ))}
+                  </Box>
+                </Box>
+                <Center>
+                  <Box
+                    mt="40px"
+                    mb="40px"
+                    borderRadius="20px"
+                    boxShadow="2xl"
+                    display="flex"
+                    p="20px"
+                    flexDirection="column"
+                    h="200px"
+                    w="480px"
+                    alignItems="center"
+                    justifyContent="space-around"
+                  >
+                    <Box display="flex" justifyContent="space-between" w="100%">
+                      <Heading fontSize="12px" as="h6">
+                        Sub Total
+                      </Heading>
+                      <Heading fontSize="12px" as="h6">
+                        {" "}
+                        {cartProduct.totalAmount}
+                      </Heading>
+                    </Box>
+                    <Box display="flex" justifyContent="space-between" w="100%">
+                      <Text fontSize="15px">Discount</Text>
+                      <Text fontSize="15px">0%</Text>
+                    </Box>
+                    <Box display="flex" justifyContent="space-between" w="100%">
+                      <Text>Delivery Charge</Text>
+                      <Text>0</Text>
+                    </Box>
+                    <Box display="flex" justifyContent="space-between" w="100%">
+                      <Heading fontSize="15px" as="h5">
+                        Total
+                      </Heading>
+                      <Heading fontSize="15px" as="h6">
+                        {cartProduct.totalAmount}
+                      </Heading>
+                    </Box>
+                    <Box mt="20px">
+                      <Button bg="blue.200" onClick={handleCheckout}>
+                        Proceed to Checkout
+                      </Button>
+                    </Box>
+                  </Box>
+                </Center>
               </Box>
-            </Box>
-          )}
-        </Box>
+            ) : (
+              <Box
+                width="100%"
+                height="80vh"
+                alignItems="center"
+                display="flex"
+                flexDirection="column"
+                textAlign="center"
+                justifyContent="center"
+               
+              >
+                <Box>
+                <BsFillBagHeartFill style={{ fontSize: '8em', color: "rgb(126, 146, 255)" }} />
+                </Box>
+                <Box marginTop="20px">
+                <Heading  >
+                  Hey! Your Shopping Cart is Empty.
+                </Heading>
+                <Text>
+                  There is nothing in your cart. Please add some items.
+                </Text>
+                </Box>
+              </Box>
+            )}
+          </Box>
+        </Center>
       )}
     </>
   );

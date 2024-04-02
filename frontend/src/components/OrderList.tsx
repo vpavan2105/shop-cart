@@ -5,6 +5,8 @@ import {
   Input,
   Button,
   useToast,
+  Center,
+  Card,
 } from "@chakra-ui/react";
 import { CartUrl } from "../ApiUrls";
 import { OrderUrl } from "../ApiUrls";
@@ -94,9 +96,29 @@ export function OrderList(): ReactElement {
           date: formattedDate,
           allProducts: cartProduct,
           totalAmount: totalPrice,
-          status: "In Progress",
+          status: "Pending",
         }),
       });
+
+      //setting input filed empty after placing order
+      if (name.current !== null) {
+        name.current.value = "";
+      }
+      if (address.current !== null) {
+        address.current.value = "";
+      }
+      if (pincode.current !== null) {
+        pincode.current.value = "";
+      }
+      if (city.current !== null) {
+        city.current.value = "";
+      }
+      if (state.current !== null) {
+        state.current.value = "";
+      }
+      if (country.current !== null) {
+        country.current.value = "";
+      }
 
       if (res.ok) {
         toast({
@@ -108,41 +130,25 @@ export function OrderList(): ReactElement {
           isClosable: true,
           position: "top",
         });
+
         await handleEmpty(user_id as string);
       }
     } catch (error) {
       toast({
         title: "Order Failed",
-        description: "Failed to create your order request. Please try again later.",
+        description:
+          "Failed to create your order request. Please try again later.",
         status: "error",
         duration: 7000,
         isClosable: true,
         position: "top",
       });
-      
+
       console.error("Error creating order:", error);
     }
   }
 
-  //Send POST request to make empty product array
-  // const handleEmpty = (u_id: number | string) => {
-  //   async function emptyProductArray() {
-  //     try {
-  //       await fetch(`${cartUrl}/${u_id}`, {
-  //         method: "PUT",
-  //         body: JSON.stringify({
-  //           products: [],
-  //         }),
-  //         headers: {
-  //           "Content-type": "application/json",
-  //         },
-  //       });
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   }
-  //   emptyProductArray();
-  // };
+
 
   //Make a PATCH request to make the cart empty
   const handleEmpty = async (u_id: number | string) => {
@@ -163,8 +169,9 @@ export function OrderList(): ReactElement {
   };
 
   return (
-    <>
-      <FormControl>
+    <Center>
+    <Card w={{base:"90%", md:"80%", lg:"60%"}} p="20px" mt="50px" boxShadow="lg">
+      <FormControl >
         <FormLabel>Name</FormLabel>
         <Input placeholder="Name" ref={name} />
         <FormLabel>Address</FormLabel>
@@ -177,15 +184,19 @@ export function OrderList(): ReactElement {
         <Input placeholder="State" ref={state} />
         <FormLabel>Country</FormLabel>
         <Input placeholder="Country" ref={country} />
-        <Button
-          bg="yellow"
-          color="black"
+        <Center>
+        <Button 
+        mt="30px"
+        bg="rgb(34,195,94)"
+         color="white"
           variant="outline"
           onClick={handleOrder}
         >
           Place Order
         </Button>
+        </Center>
       </FormControl>
-    </>
+    </Card>
+    </Center>
   );
 }
