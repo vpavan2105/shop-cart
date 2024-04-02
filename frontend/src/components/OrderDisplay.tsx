@@ -11,10 +11,8 @@ import {
   Box,
   Center,
 } from "@chakra-ui/react";
-import { AuthContext } from "./../contexts/AuthContextProvider";
 
 import { OrderUrl } from "../ApiUrls";
-import { useContext } from "react";
 
 interface Location {
   address: string;
@@ -47,15 +45,15 @@ interface OrderObject {
 }
 export function OrderDisplay(): ReactElement {
   const [orders, setOrders] = useState<null | OrderObject[]>(null);
- // get userid from local storage
- let userId: string | undefined; //ip
+  // get userid from local storage
+  let userId: string | undefined; //ip
 
- const loginDetails = localStorage.getItem("isLoginLocal");
- if (loginDetails !== null) {
-   const u_id = JSON.parse(loginDetails);
-   const id = u_id.id;
-   userId = id;
- }
+  const loginDetails = localStorage.getItem("isLoginLocal");
+  if (loginDetails !== null) {
+    const u_id = JSON.parse(loginDetails);
+    const id = u_id.id;
+    userId = id;
+  }
 
   const orderPageUrl = OrderUrl;
 
@@ -79,9 +77,7 @@ export function OrderDisplay(): ReactElement {
   }
 
   return (
-   
     <Box w="100%" justifyContent="center">
- 
       <Heading as="h2" size="3xl">
         Your Orders
       </Heading>
@@ -90,34 +86,41 @@ export function OrderDisplay(): ReactElement {
           <div key={order.id}>
             {order.allProducts.length > 0 && (
               <Center>
-              <SimpleGrid 
-                boxShadow="dark-lg"
-                p="6"
-                rounded="md"
-                bg="white"
-                w="50%"
-              >
-                <Card boxShadow="md" p="6" rounded="md" bg="white">
-                  {order.allProducts.map((product) => (
-                    <CardBody key={product.id} border="1px solid"
-                    >
-                      <Image
-                        src={product.image}
-                        alt={product.title}
-                       border="1px solid"
-                        width={100}
-                      />
-                      <Text width="100%"  border="1px solid">{product.title}</Text>
-                      <Text width="100%" border="1px solid">₹ {product.price}</Text>
-                      <Divider />
-                    </CardBody>
-                   
-                  ))}
-                  <Button bg="orange" width="150px">
-                    Total - {order.totalAmount}
-                  </Button>
-                </Card>
-              </SimpleGrid>
+                <SimpleGrid
+                  boxShadow="dark-lg"
+                  p="6"
+                  rounded="md"
+                  bg="white"
+                  w="50%"
+                >
+                  <Card boxShadow="md" p="6" rounded="md" bg="white">
+                    {order.allProducts.map((product) => (
+                      <CardBody key={product.id} border="1px solid">
+                        <Image
+                          src={product.image}
+                          alt={product.title}
+                          border="1px solid"
+                          width={100}
+                        />
+                        <Text width="100%" border="1px solid">
+                          {product.title}
+                        </Text>
+                        <Text width="100%" border="1px solid">
+                          ₹ {product.price}
+                        </Text>
+                        <Divider />
+                      </CardBody>
+                    ))}
+                    <Box display="flex" justifyContent="space-around">
+                      <Button bg="orange" width="150px">
+                        Total - {order.totalAmount}
+                      </Button>
+                      <Button width="150px" bg="lightgreen">
+                        {order.status}
+                      </Button>
+                    </Box>
+                  </Card>
+                </SimpleGrid>
               </Center>
             )}
 
@@ -127,8 +130,6 @@ export function OrderDisplay(): ReactElement {
             <Divider my={8} color="red" />
           </div>
         ))}
-       
     </Box>
-    
   );
 }

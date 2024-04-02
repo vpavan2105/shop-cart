@@ -2,7 +2,7 @@ import { ReactElement, useEffect, useState } from "react";
 import { FcEmptyTrash } from "react-icons/fc";
 import CartCard from "./CartCard";
 import { CartUrl } from "../ApiUrls";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Button, Center, Heading, Spinner } from "@chakra-ui/react";
 
 export interface ProductDetails {
   id: number;
@@ -144,14 +144,24 @@ function CartList(): ReactElement {
   return (
     <>
       {isLoading ? (
-        <div>Loading...</div> // Show loading message while fetching data
+        <Center height="100vh">
+       <Spinner
+       thickness='4px'
+       speed='0.65s'
+       emptyColor='gray.200'
+       color='yellow.400'
+       size='xl'
+     />
+     </Center> // Show loading message while fetching data fontSize={{ base: "24px", md: "40px", lg: "56px" }}
       ) : (
-        <div>
+        <Box >
           {cartProduct &&
           cartProduct.products &&
           cartProduct.products.length > 0 ? (
-            <div>
-              <h2>Products in Cart:</h2>
+            <Box  w={{ base: "100%", md: "80%", lg: "70%" }} >
+              <Heading as='h2'>Cart Items</Heading>
+              <Box display={{lg:"flex"}}>
+              <Box w={{ base: "100%", md: "80%", lg: "70%" }} >
               {cartProduct.products.map((product) => (
                 <CartCard
                   key={product.id}
@@ -159,14 +169,19 @@ function CartList(): ReactElement {
                   handleIncOrDec={handleIncOrDec}
                 />
               ))}
-              <h2>Total : {cartProduct.totalAmount}</h2>
+              </Box>
+              <Box position="sticky">
+              <Button bg="orange">Total : {cartProduct.totalAmount}</Button>
               <FcEmptyTrash
                 onClick={() => {
                   handleEmpty(cartProduct.id);
                 }}
               />
-              <button onClick={handleCheckout}>Proceed to Checkout</button>
-            </div>
+              <Button onClick={handleCheckout}>Proceed to Checkout</Button>
+              </Box>
+              </Box>
+            </Box>
+
           ) : (
             <Box
               border="1px solid red"
@@ -194,13 +209,10 @@ function CartList(): ReactElement {
               </Box>
             </Box>
           )}
-        </div>
+        </Box>
       )}
     </>
   );
 }
 
 export default CartList;
-{
-  /* <button onClick={() => console.log("Proceed to checkout")}> */
-}
