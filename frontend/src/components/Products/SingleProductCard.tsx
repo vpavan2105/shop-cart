@@ -24,6 +24,10 @@ const SingleProductPage: React.FC<SingleProductPageProps> = () => {
   // const dispatch = useAppDispatch();
   const toast = useToast();
 
+
+
+
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -53,6 +57,9 @@ const SingleProductPage: React.FC<SingleProductPageProps> = () => {
       position: "top",
     });
   };
+
+
+
 
   return (
       <Box p={4}>

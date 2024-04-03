@@ -24,56 +24,13 @@ export interface ProductCardProps {
   truncateTitle: (title: string) => string;
 }
 
-// ip
-// interface Product {
-//   id: number;
-//   title: string;
-//   price: number;
-//   description: string;
-//   category: string;
-//   image: string;
-//   rating: {
-//     rate: number;
-//   };
-//   quantity: number;
-// }
-
-// interface CartData {
-//   id: string;
-//   user_id: string;
-//   products: Product[];
-//   totalAmount: number;
-// }
-
-// export const ProductCard: React.FC<ProductCardProps> = ({
-//   prod,
-//   truncateDescription,
-//   truncateTitle,
-// }: ProductCardProps) => {
-//   const [cartItems, setCartItems] = React.useState<ProductDetails[]>([]);
-//   const dispatch = useAppDispatch();
-//   const navigate = useNavigate();
-//   // const isAuth = useAppSelector((state:RootState) => state.auth);
-//   const auth = useContext(AuthContext);
-//   const toast = useToast();
-
-//   const userId = auth.userLoggedIn.id; //ip
-
-//   const cartUrl = CartUrl;
-//   const handleBuy = () => {
-//     setTimeout(() => {
-//       console.log("moved to payment page");
-//     }, 500);
-//   };
 export const ProductCard: React.FC<ProductCardProps> = ({
   prod,
   truncateDescription,
   truncateTitle,
 }: ProductCardProps) => {
-  // const [cartItems, setCartItems] = useState<Product[]>([]);
-  // const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  // const isAuth = useAppSelector((state:RootState) => state.auth);
+
   const toast = useToast();
 
   let userId: string | undefined; //ip
@@ -86,9 +43,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   }
 
   const handleBuy = () => {
-    setTimeout(() => {
-      console.log("moved to payment page");
-    }, 500);
+    
+    window.location.href = "/order-list";
   };
 
   //Add to cart button functionality

@@ -7,9 +7,12 @@ import {
   useToast,
   Center,
   Card,
+  Box,
+  Flex,
 } from "@chakra-ui/react";
 import { CartUrl } from "../ApiUrls";
 import { OrderUrl } from "../ApiUrls";
+import { FaGooglePay, FaPaypal, FaPhone } from "react-icons/fa";
 
 interface Product {
   id: number;
@@ -28,6 +31,8 @@ interface Product {
 export function OrderList(): ReactElement {
   const [cartProduct, setCartProduct] = useState<Product[] | null>(null);
   const [totalPrice, setTotalPrice] = useState<number>(0);
+  const [selectedButton, setSelectedButton] = useState<string | null>(null); // State to track the selected button
+
   const toast = useToast();
   // get userid from local storage
   let user_id: string | undefined; //ip
@@ -168,6 +173,12 @@ export function OrderList(): ReactElement {
     }
   };
 
+  // Function to set payment mode
+  const setPayment = (mode: string) => {
+   
+    setSelectedButton(mode); // Set the selected button
+  };
+
   return (
     <Center>
     <Card w={{base:"90%", md:"80%", lg:"60%"}} p="20px" mt="50px" boxShadow="lg">
@@ -185,18 +196,64 @@ export function OrderList(): ReactElement {
         <FormLabel>Country</FormLabel>
         <Input placeholder="Country" ref={country} />
         <Center>
+       
+        </Center>
+      </FormControl>
+      
+      <Box mt="30px">
+          <FormLabel>Payment Mode</FormLabel>
+          <Flex>
+            <Button
+              mr="10px"
+              bg={selectedButton === "cash" ? "orange" : "Brown"}
+              color="white"
+              variant="outline"
+              onClick={() => setPayment("cash")}
+            >
+              Cash on Delivery
+            </Button>
+            <Button
+              mr="10px"
+              bg={selectedButton === "phonepe" ? "orange" : "rgb(95,37,159)"}
+              color="white"
+              variant="outline"
+              onClick={() => setPayment("phonepe")}
+              leftIcon={<FaPhone />}
+            >
+              PhonePe
+            </Button>
+            <Button
+              mr="10px"
+              bg={selectedButton === "gpay" ? "orange" : "rgb(26,115,232)"}
+              color="white"
+              variant="outline"
+              onClick={() => setPayment("gpay")}
+              leftIcon={<FaGooglePay />}
+            >
+              GPay
+            </Button>
+            <Button
+              bg={selectedButton === "paytm" ? "orange" : "rgb(23,43,117)"}
+              color="white"
+              variant="outline"
+              onClick={() => setPayment("paytm")}
+              leftIcon={<FaPaypal />}
+            >
+              Paytm
+            </Button>
+          </Flex>
+        </Box>
+
         <Button 
-        mt="30px"
-        bg="rgb(34,195,94)"
-         color="white"
+          mt="30px"
+          bg="rgb(34,195,94)"
+          color="white"
           variant="outline"
           onClick={handleOrder}
         >
           Place Order
         </Button>
-        </Center>
-      </FormControl>
-    </Card>
+      </Card>
     </Center>
   );
 }

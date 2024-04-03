@@ -1,8 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { Home } from '../../pages/Home'
 import Products from '../../pages/Products'
-import Cart from '../../pages/Cart'
-import Orders from '../../pages/Orders'
 import Contacts from '../../pages/Contacts'
 import { Login } from '../../pages/Login'
 import PrivateRoute from '../PrivateRoute'
@@ -10,10 +8,10 @@ import DashBoard from '../../pages/Admin/DashBoard'
 import OrdersAdmin from '../../pages/Admin/OrdersAdmin'
 import ProductsAdmin from '../../pages/Admin/ProductsAdmin'
 import { UsersAdmin } from '../../pages/Admin/UsersAdmin'
-import { useContext, useState } from 'react'
+import EachOrderDisplay from '../EachOrderDisplay'
 import SingleProductPage from '../Products/SingleProductCard'
 import Logout from '../Logout'
-import { AuthContext } from '../../contexts/AuthContextProvider'
+
 import SignUp from '../../pages/SignUp'
 import { SingleOrderPage } from '../Admin/SingleOrderPage'
 import { SignleUserCard } from '../Admin/SignleUserCard'
@@ -46,6 +44,7 @@ const AllRoutes = () => {
       <Route path='/products' element={<Products/>} />
       <Route path='/products/:id' element={<SingleProductPage/>} />
       <Route path="/order-list" element={<OrderList/>} />
+      <Route path='/each-order/:id' element={<EachOrderDisplay/>}/>
       <Route path='/cart' element={
       <PrivateRoute>
           <CartList/>
