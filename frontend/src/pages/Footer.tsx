@@ -1,12 +1,21 @@
  import "../home.css";
+ import {useNavigate} from "react-router";
 
 
 function Footer(){
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate("/")
+    }
+
     return(
         <div style={{backgroundColor: "aliceblue"}}>
           <div className="footer">
     <div className="nav-1 nav">
-      <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e86ab4c21faa7bc0bd90dd_Logo.svg" alt="" />
+        <div className="navImg">
+            <img src="/ShopCart_Logo-2.png" height={"100px"} width={"80px"} alt="" onClick={handleClick}/>
+            <h1>ShopCart</h1>
+        </div>
       <h3>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</h3>
    
    <h2>Accepted Payments</h2>
