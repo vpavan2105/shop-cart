@@ -60,6 +60,11 @@ export interface ICartState{
 //   Country: string;
 // }
 
+export enum status{
+  Pending="Pending",
+  inprogress="inprogress",
+  completed="completed"
+}
 export interface OrderData{
 
   userid: string;
@@ -68,7 +73,7 @@ export interface OrderData{
   totalAmount: number;
   address: [];
   date: string; 
-  status: boolean;
+  status: status;
   id?: any;
 }
 
