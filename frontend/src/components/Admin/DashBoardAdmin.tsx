@@ -6,19 +6,18 @@ import { faBookmark, faHouseUser, faMoneyCheck, faUser } from "@fortawesome/free
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import RevenueLineComponents from "./RevenueLineChart";
 import DashboardLoading from "../Loadings/DashboardLoading";
-import { OrderData } from "../../redux/utils/adminUtils";
 
 const DashBoardAdmin = () => {
-    const users:number = useAppSelector(state=>state.users.usersData).length
-    const {isLoadingFetch} = useAppSelector(state=>state.products)
-    const orders:number = useAppSelector(state=>state.orders.ordersData).length
-    console.log(useAppSelector(state=>state.orders.ordersData));
+    const users:number = useAppSelector((state:any)=>state.users.usersData).length
+    const {isLoadingFetch} = useAppSelector((state:any)=>state.products)
+    const orders:number = useAppSelector((state:any)=>state.orders.ordersData).length
+    console.log(useAppSelector((state:any)=>state.orders.ordersData));
     
-    const revenue: number = useAppSelector(state =>
-      state.orders.ordersData.reduce((acc, curr) => {
+    const revenue: number = useAppSelector((state:any) =>
+      state.orders.ordersData.reduce((acc:number, curr:any) => {
        
         
-        return curr.status ?  acc + (curr.totalAmount || 0) : acc;
+        return curr.status == "Success" ?  acc + (curr.totalAmount || 0) : acc;
       }, 0)
     );    console.log(revenue,orders)
     const cardWidth = useBreakpointValue({ base: "100%", sm: "30%", md: "30%", lg: "30%" });

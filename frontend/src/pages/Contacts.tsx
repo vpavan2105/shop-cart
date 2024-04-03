@@ -5,7 +5,7 @@ import { Footer } from './Footer';
 
 const Contacts = () => {
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     // Add your form submission logic here
   };

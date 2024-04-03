@@ -1,12 +1,12 @@
-import { useConst } from '@chakra-ui/react'
-import React, { useContext, useEffect } from 'react'
+
+import  { useContext, useEffect } from 'react'
 import { AuthContext } from '../contexts/AuthContextProvider'
 import { useNavigate } from 'react-router';
 
 const Logout = () => {
-    const {userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin} = useContext(AuthContext);
+    const { setUserLoggedIn, isAdmin, setIsAdmin}:any = useContext(AuthContext);
     const navigate = useNavigate();
-    console.log("check logout");
+    console.log("check logout",isAdmin);
     
 
     useEffect(()=>{

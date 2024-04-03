@@ -22,7 +22,7 @@ import { OrderDisplay } from "../Orders/OrderDisplay";
 
 const AllRoutes = () => {
   // const {isLoginLocal} = useContext(AuthContext)
-  const isUserType = localStorage.getItem("isLoginLocal");
+  const isUserType:any = localStorage.getItem("isLoginLocal");
   // console.log(isUserType);
   const isUserobj = JSON.parse(isUserType);
 

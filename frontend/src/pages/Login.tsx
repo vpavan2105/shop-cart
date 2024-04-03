@@ -4,7 +4,7 @@ import axios from "axios";
 import { Box, Heading, useToast } from '@chakra-ui/react'
 import { useNavigate } from "react-router";
 import { Button, Input, Stack } from '@chakra-ui/react';
-import { FaUser, FaLock } from 'react-icons/fa';
+
 import { UserUrl } from "../ApiUrls";
 
 
@@ -16,7 +16,7 @@ function Login(){
     const toast = useToast()
     const navigate = useNavigate()
 
-    const {userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin, isLoginLocal, setIsLoginLocal} = useContext(AuthContext);
+    const {userLoggedIn, setUserLoggedIn, isAdmin, setIsAdmin}:any = useContext(AuthContext);
     // console.log(isAuth);
     
     useEffect(()=>{
@@ -30,16 +30,16 @@ function Login(){
 
     
 
-    const validateEmail = (email) => {
+    const validateEmail = (email:string) => {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
         return regex.test(email);
     };
 
-    const validatePassword = (password) => {
+    const validatePassword = (password:string) => {
         return password.length >= 8;
     };
 
-    const handleLogin=(e)=>{
+    const handleLogin=(e:any)=>{
         e.preventDefault();
         console.log(email, password);
         setEmail("");
@@ -68,12 +68,12 @@ function Login(){
           }
 
           if(email == "admin@gmail.com"){
-            userData.map((user)=>{
-            setUserLoggedIn((prev)=>{
+            userData.map((user:any)=>{
+            setUserLoggedIn((prev:any)=>{
               return {...prev, id:user.id, username: user.username, isAuth: true, email:email}
                    })
             localStorage.setItem('isLoginLocal', JSON.stringify({id: user.id, isAdmin: true, isUser: false}));
-            setIsAdmin(prev=>!prev);
+            setIsAdmin((prev:any)=>!prev);
             navigate("/")
            
           })
@@ -82,18 +82,18 @@ function Login(){
 
           else{
             let flag: boolean = false;
-            userData.map((user)=>{
+            userData.map((user:any)=>{
                 if(user.email == email){
-                    setUserLoggedIn((prev)=>{
+                    setUserLoggedIn((prev:any)=>{
                         return {...prev, id:user.id, username: user.username, isAuth: true, email:email}
                     })
                     localStorage.setItem('isLoginLocal', JSON.stringify({id: user.id, isAdmin: false, isUser: true}));
                     flag = true;
                     console.log(flag);
                     
-                    setIsAdmin(prev=>!prev);
+                    setIsAdmin((prev:any)=>!prev);
                     navigate('/')
-                    setIsLoginLocal(true);
+                   
                 }
             })
             if(!flag){
@@ -118,30 +118,7 @@ function Login(){
 
 
     return(
-        // <>
-        // <h2>Welcome to login page</h2>
-        // <form onSubmit={handleLogin}>
-        //     <label htmlFor="email">Email:</label>
-        //     <input
-        //      type="text" 
-        //      id="email"
-        //      value={email} 
-        //      onChange={(e)=>setEmail(e.target.value)}
-        //      />
-        //      <br />
-        //     <label htmlFor="password">Password:</label>
-        //     <input
-        //     type="password" 
-        //     id="password"
-        //     value={password}
-        //     onChange={(e)=> setPassword(e.target.value)}
-        //     />
-        //     <br />
-        //     <button type="submit">Login</button>
-        // </form>
-
-        // <button onClick={()=> navigate("/signup")}>Create new Account</button>
-        // </>
+   
         <Box maxW="md" mx="auto" mt={8} p={4} borderWidth="1px" borderRadius="md" boxShadow="md">
       <Heading mb={4} textAlign="center" fontSize="xl">
         Welcome to login page

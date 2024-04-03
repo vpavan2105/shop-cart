@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom"
-import { Links } from "./NavBar"
+
 import { useState } from "react";
 
 const AdminNavBar = () => {
   const [isActive,setIsActive] = useState<boolean>(false);
 
-  const listOfLinks:Links[]=[
+  const listOfLinks=[
     {
        to:"/",
        displayText:"Dashboard"

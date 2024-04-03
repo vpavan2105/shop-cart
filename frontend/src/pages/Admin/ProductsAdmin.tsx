@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { ProductInput } from "../../components/Admin/ProductInput";
 import { ProductList } from "../../components/Admin/ProductList";
-import { Box, Button, Divider, Input, Select } from "@chakra-ui/react";
+import { Box, Divider, Heading, Input, Select } from "@chakra-ui/react";
 import { useAppDispatch } from "../../redux/utils/Product_Utils";
 import { fetchDataProduct, filterProducts, filtercategoryProducts } from "../../redux/actions/actionAdmin";
 
@@ -40,12 +40,15 @@ const ProductsAdmin = ():ReactElement => {
   
   return (
     <Box p={4}>
+    <Heading textAlign={'center'} color={'teal.500'} m={5}>Products</Heading>
+    
     <ProductInput />
     <Divider my={4} />
-    <Box mb={4}>
-     <Input  type='text' placeholder="search for item.." value={title} onChange={handleSearch}/>
-    <Select onChange={handleCategoryChange}>
-      <option value="All">----filter by category----</option>
+
+    <Box mb={4} display={'flex'} gap={3} padding={3}>
+     <Input  type='search' height={'50px'} placeholder="Search for Item.." value={title} onChange={handleSearch}/>
+    <Select onChange={handleCategoryChange} height={'50px'}  >
+      <option value="All">----Filter By Category----</option>
       <option>men's clothing</option>
       <option>kitchen</option>
       <option>storage device</option>

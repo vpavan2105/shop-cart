@@ -3,6 +3,8 @@ import "../home.css";
 import {Footer} from './Footer';
 import { ProductUrl } from "../ApiUrls";
 import { SearchBarHome } from "../components/SearchBarHome";
+import { Link } from "react-router-dom";
+import { ProdData } from "../redux/utils/adminUtils";
 
 
 function Home() {
@@ -36,25 +38,14 @@ function Home() {
       .then((res) => setSell(res))
       .catch((err) => console.log(err));
   }, []);
+
   return (
     <>
     <SearchBarHome/>
-      {/* <div className="home">
-        <img
-          src="https://assets.ajio.com/cms/AJIO/WEB/D-1.0-UHP-010424-MainBanner-Z1-Payday.gif"
-          className="img"
-          alt=""
-        />
-      </div> */}
       <div className="sofa">
         <img src="https://media.designcafe.com/wp-content/uploads/2021/04/15173304/trending-sofa-designs-for-your-home.jpg" alt="" />
       </div>
-    {/* <div className="discount-box">
-      <h2>Get 5% Cash Back On $200</h2>
-      <p>Shopping is a bit of a relaxing hobby for me,
- which is sometimes troubling for the bank balance.</p>
- <button className="lbtn">Learn more</button>
-    </div> */}
+
     
       <div className="category">
         <h2>Shop Our Top Categories</h2>
@@ -84,13 +75,14 @@ function Home() {
         <h2>Todays Best Deals For You!</h2>
 
         <div className="main-box">
-          {data.map((product,index) => (
+          {data.map((product:ProdData,index) => (
             <div className="card" key={index}>
+              <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 
               <p>{product.category}</p> 
-             
+             </Link>
             </div>
           ))}
         </div>
@@ -227,40 +219,32 @@ function Home() {
       <div className="popular">
         <h2>Weekly Popular Products</h2>
         <div className="main-box">
-          {product.map((product,index) => (
+          {product.map((product:ProdData,index) => (
             <div className="card" key={index}>
+              <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 
               <p>{product.category}</p> 
-             
+              </Link>
             </div>
           ))}
         </div>
       </div>
-      {/* <div className="Sofa-img">
-    <div className="sofa">
-        <img src="https://media.designcafe.com/wp-content/uploads/2021/04/15173304/trending-sofa-designs-for-your-home.jpg" alt="" />
-    </div>
-    <div className="discount-box">
-      <h2>Get 5% Cash Back On $200</h2>
-      <p>Shopping is a bit of a relaxing hobby for me,
- which is sometimes troubling for the bank balance.</p>
- <button className="lbtn">Learn more</button>
-    </div>
-     </div> */}
+
   
       <div className="Best-deal">
         <h2>Todays Best Deals For You!</h2>
 
         <div className="main-box">
-          {best.map((product,index) => (
+          {best.map((product:ProdData,index) => (
             <div className="card" key={index}>
+              <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 
               <p>{product.category}</p> 
-             
+              </Link>
             </div>
           ))}
         </div>
@@ -273,19 +257,20 @@ function Home() {
      <button className="lbtn">learn more</button>
       </div>
       <div className="get-2">
-         <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e768e3260571e48a0c_visa%20card-min.png" alt="" />
+         <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e768e3260571e48a0c_visa%20card-min.png"  alt="" />
         </div>
      </div>
    <div className="most-sell">
     <h2>Most Selling Products</h2>
     <div className="main-box">
-          {sell.map((product,index) => (
+          {sell.map((product:ProdData,index) => (
             <div className="card" key={index}>
+              <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 
               <p>{product.category}</p> 
-              
+              </Link>
             </div>
           ))}
         </div>
@@ -309,7 +294,7 @@ function Home() {
     </div>
    </div>
   <div className="service">
-    <h2>Services To Help You Shop</h2>
+ 
 <div className="ser-box">
   <div className="sbox">
     <h2>Frequently Asked Questions</h2>

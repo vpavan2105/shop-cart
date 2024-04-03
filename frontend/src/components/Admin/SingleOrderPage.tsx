@@ -7,7 +7,7 @@ import { ProdData } from "../../redux/utils/adminUtils";
 import { OrderUrl } from "../../ApiUrls";
 
 const SingleOrderPage = () => {
-    const [singleOrder, setSingleOrder] = useState({});
+    const [singleOrder, setSingleOrder] = useState<any>({});
     const [isLoading, setIsLoading] = useState(true);
     const { id } = useParams();
 
@@ -27,12 +27,16 @@ const SingleOrderPage = () => {
             });
     };
 
-    if (isLoading) return <Spinner size="lg" />;
+    if (isLoading) return (
+        <Box height={'100vh'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+            <Spinner size="xl" />
+         </Box>
+    );
 
     return (
         <Box p={4} borderWidth="1px" borderRadius="md" boxShadow="md">
             <Text fontSize="xl" fontWeight="bold" mb={4}>Order</Text>
-            {singleOrder.allProducts && singleOrder.allProducts.map((product, index) => (
+            {singleOrder.allProducts && singleOrder.allProducts.map((product:any, index:number) => (
                 <CartItem key={index} product={product} />
             ))}
             <Box mt={4} textAlign="right">

@@ -1,7 +1,6 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import {Link, NavLink} from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthContextProvider";
-import { SearchBarHome } from "../SearchBarHome";
+
 import {Image} from "@chakra-ui/react";
 interface Links {
   to: string;
@@ -9,9 +8,9 @@ interface Links {
 }
 const NavBar = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
-  const { userLoggedIn } = useContext(AuthContext);
+
   // console.log(userLoggedIn);
-  const userType = localStorage.getItem("isLoginLocal")
+  const userType:any = localStorage.getItem("isLoginLocal")
   const userObj = JSON.parse(userType) 
   console.log(userObj);
   
@@ -49,8 +48,8 @@ const NavBar = () => {
         },
   ];
 
-  const defaultStyle: { color: string } = { color: 'black' ,fontWeight: "bold" };
-  const activeStyle: { color: string } = { color: "green",fontWeight: "bold" }; //
+  const defaultStyle: { color: string ,fontWeight:string} = { color: 'black' ,fontWeight: "bold" };
+  const activeStyle: { color: string,fontWeight:string } = { color: "green",fontWeight: "bold" }; //
 
   return (
     <div className="navbar">

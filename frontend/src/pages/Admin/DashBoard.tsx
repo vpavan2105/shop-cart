@@ -4,6 +4,7 @@ import { fetchDataProduct, fetchOrdersData, fetchUsersData } from "../../redux/a
 import DashBoardAdmin from "../../components/Admin/DashBoardAdmin";
 
 
+
 const DashBoard = () => {
     const dispatch = useAppDispatch();
 useEffect(()=>{
@@ -14,8 +15,9 @@ useEffect(()=>{
 },[])
   return (
     <div>
+        
     <DashBoardAdmin/>
-    {/* <h2>demo dashboard</h2> */}
+  
     </div>
   )
 }

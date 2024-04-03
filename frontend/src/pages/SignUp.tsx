@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { useNavigate } from 'react-router';
 import { Button, Input, Box, Heading } from '@chakra-ui/react';
 import { FaUser, FaEnvelope, FaPhone, FaLock } from 'react-icons/fa';
@@ -15,14 +15,14 @@ const SignUp = () => {
 
   const navigate = useNavigate();
 
-  function handleChange(e){
+  function handleChange(e:any){
     const {name, value} = e.target;
     console.log(name, value);
     
     setUserDetails({...userDetails, [name]:value})
   }
 
-  function handleSubmit(e){
+  function handleSubmit(e:any){
     e.preventDefault();
     console.log(userDetails);
     axios.post(UserUrl, userDetails) 
@@ -40,49 +40,7 @@ const SignUp = () => {
 
   }
   return (
-    // <>
-    // <div>SignUp</div>
-    // <form onSubmit={handleSubmit}>
-    //   <label htmlFor="name">Enter your Name:</label> <br />
-    //   <input
-    //   type="text" 
-    //   id='name' 
-    //   name='username'
-    //   value={userDetails.username}
-    //   onChange={handleChange}
-    //   /> <br />
-
-    //   <label htmlFor="email">Enter your Email:</label> <br />
-    //   <input 
-    //   type="email" 
-    //   id='email'
-    //   name='email'
-    //   value={userDetails.email}
-    //   onChange={handleChange}
-    //   /> <br />
-
-    //   <label htmlFor="phone">Enter your PhoneNumber:</label> <br />
-    //   <input 
-    //   type="text" 
-    //   id='phone'
-    //   name='phonenumber'
-    //   value={userDetails.phonenumber}
-    //   onChange={handleChange}
-    //   />  <br />  
-
-    //   <label htmlFor="passwrod">Enter your Password:</label> <br />
-    //   <input 
-    //   type="password" 
-    //   id='password'
-    //   name='password'
-    //   value={userDetails.password}
-    //   onChange={handleChange}
-    //   /> <br />
-
-    //   <button type='submit'>Create Account</button>
-
-    // </form>
-    // </>
+    
     <Box maxW="md" mx="auto" mt={8} p={4} borderWidth="1px" borderRadius="md" boxShadow="md">
       <Heading mb={4} textAlign="center" fontSize="xl">
         SignUp

@@ -2,9 +2,9 @@ import axios from "axios";
 import {  AddProduct, DeleteProduct, DeleteUser, FetchCarts, FetchOrder, FetchProduct, FetchUsers, UpdateOrder, UpdateProduct } from "../actionTypes/actionTypes";
 import {  ProdData, status } from "../utils/adminUtils";
 import {  Dispatch } from "redux";
-import { BaseUrl, CartUrl, OrderUrl, ProductUrl, UserUrl } from "../../ApiUrls";
+import {  CartUrl, OrderUrl, ProductUrl, UserUrl } from "../../ApiUrls";
 
-const url:string = BaseUrl;
+
 const prodcutUrl :string = ProductUrl;
 const cartUrl: string = CartUrl;
 const userUrl :string = UserUrl;
@@ -143,7 +143,7 @@ export const fetchOrdersData = () =>  (dispatch:Dispatch) =>{
         })
   }
 
-export const updateOrderData = (payload:{status},id:string|number) =>  (dispatch:Dispatch)  =>{
+export const updateOrderData = (payload:status,id:string|number) =>  (dispatch:Dispatch)  =>{
     dispatch({type:UpdateOrder.UPDATE_ORDER_LOADING});
     axios.patch(`${orderUrl}/${id}`,payload)
     .then((res)=>{

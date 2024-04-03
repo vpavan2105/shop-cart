@@ -13,6 +13,8 @@ import { OrderUrl } from "../../ApiUrls";
 import { CgBorderTop } from "react-icons/cg";
 import { useNavigate } from "react-router";
 import { Footer } from "../../pages/Footer";
+import axios from "axios";
+
 export interface Location {
   address: string;
   city: string;
@@ -44,7 +46,7 @@ export interface OrderObject {
 }
 export function OrderDisplay(): ReactElement {
   const [orders, setOrders] = useState<null | OrderObject[]>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const navigate = useNavigate();
   // get userid from local storage
@@ -60,10 +62,13 @@ export function OrderDisplay(): ReactElement {
   const orderPageUrl = OrderUrl;
 
   async function getAllOrders() {
+    setIsLoading(true);
     try {
       let res = await fetch(`${orderPageUrl}`);
       let data = await res.json();
+
       orderOfThatUser(data);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -84,6 +89,25 @@ export function OrderDisplay(): ReactElement {
     localStorage.setItem("orderid", orderid);
     navigate(`/each-order/${orderid}`);
   };
+  const handlePendingOrder = (id:string) => {
+     setIsLoading(true);
+    axios.patch(`${OrderUrl}/${id}`,{status:'Success'})
+    .then(res=>{
+      console.log(res.data);
+      const updatedOrders : any = orders?.map((order)=>{
+      return   order.id == res.data.id ? res.data : order
+      })
+
+      
+      setOrders(updatedOrders)
+      setIsLoading(false);
+      
+    })
+    .catch(error => {
+      console.log(error);
+      
+    })
+  }
 
   return (
     <>
@@ -131,7 +155,7 @@ export function OrderDisplay(): ReactElement {
                       justifyContent="space-between"
                       bg= {order.status === "Pending"
                       ? "yellow.200"
-                      : order.status === "In Progress"
+                      : order.status === "Inprogress"
                       ? "orange.200"  :"teal.200"  }
                     >
                       <Box
@@ -153,17 +177,19 @@ export function OrderDisplay(): ReactElement {
                       </Box>
                       <Box display="flex" justifyContent="space-between">
                         <Heading as="h5" fontSize="12px">
-                          Oreder Status :
+                          Order Status :
                         </Heading>
-                        <Text
-                          fontSize="12px"
-                          px="5px"
+                        <Button
+                          isDisabled={order.status === "Pending" || order.status === "Completed"}
                           borderRadius="5px"
                           color="black"
+                         fontWeight={'bold'}
+                          onClick={()=>handlePendingOrder(order.id)}
+                          size={'sm'}
                         >
-                          {" "}
+                        
                           {order.status}
-                        </Text>
+                        </Button>
                       </Box>
                       <Box display="flex" justifyContent="space-between">
                         <Heading as="h5" fontSize="12px">
