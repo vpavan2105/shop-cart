@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 // import { addToCart, url } from "../../redux/actions/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+import {faBagShopping, faCartShopping, faStar, faStarHalfAlt} from "@fortawesome/free-solid-svg-icons";
 import { Product } from "../../redux/utils/Product_Utils";
 import { useNavigate } from "react-router-dom";
 import { CartUrl } from "../../ApiUrls.tsx";
@@ -227,6 +227,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       width={{ base: "100%", sm: "43%", md: "47%", lg: "31%" }}
       padding="10px"
       marginBottom="10px"
+      fontFamily={"Playfair Display"}
     >
       <Card p={3} height="100%">
         <Flex direction={["column"]} height="40%">
@@ -294,22 +295,29 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             flexWrap="wrap"
           >
             <Button
-              colorScheme="orange"
+              colorScheme="aliceblue"
+              color = "black"
+              bgColor={"yellow.500"}
+              _hover={{bgColor : "yellow.600", color : "aliceblue"}}
+              border = {"1px solid yellowgreen"}
               flex={{ base: "100%", sm: "1" }}
               margin={{ base: "5px 0", sm: "5px" }}
               p={{ base: "none", sm: 3 }}
               onClick={handleCart}
             >
-              Add to Cart
+              <FontAwesomeIcon icon={faCartShopping} style={{color: "#FFD43B", marginRight : "5px"}} />  Add to Cart
             </Button>
             <Button
-              colorScheme="yellow"
+              colorScheme="aliceblue"
+              color = "teal"
+              _hover={{bgColor : "teal", color : "aliceblue"}}
+              border = {"1px solid teal"}
               flex={{ base: "100%", sm: "1" }}
               margin={{ base: "5px 0", sm: "5px" }}
               p={{ base: "none", sm: 3 }}
               onClick={handleBuy}
             >
-              Buy Now
+              <FontAwesomeIcon icon={faBagShopping} style={{color: "#63E6BE", marginRight : "5px"}} /> Buy Now
             </Button>
           </Flex>
         </Flex>
