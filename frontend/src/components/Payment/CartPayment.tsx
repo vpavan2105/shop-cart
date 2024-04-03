@@ -7,9 +7,15 @@ import {
   useToast,
   Center,
   Card,
+  Box,
+  Flex,
+  Heading,
 } from "@chakra-ui/react";
-import { CartUrl } from "../ApiUrls";
-import { OrderUrl } from "../ApiUrls";
+import { CartUrl } from "../../ApiUrls";
+import { OrderUrl } from "../../ApiUrls";
+import { FaGooglePay, FaPhone } from "react-icons/fa";
+import { SiPaytm } from "react-icons/si";
+import { CheckCircleIcon } from "@chakra-ui/icons";
 
 interface Product {
   id: number;
@@ -25,9 +31,11 @@ interface Product {
 }
 
 //component
-export function OrderList(): ReactElement {
+export function CartPayment(): ReactElement {
   const [cartProduct, setCartProduct] = useState<Product[] | null>(null);
   const [totalPrice, setTotalPrice] = useState<number>(0);
+  const [selectedButton, setSelectedButton] = useState<string | null>(null); // State to track the selected button
+
   const toast = useToast();
   // get userid from local storage
   let user_id: string | undefined; //ip
@@ -146,9 +154,9 @@ export function OrderList(): ReactElement {
 
       console.error("Error creating order:", error);
     }
+
+    setSelectedButton(null);
   }
-
-
 
   //Make a PATCH request to make the cart empty
   const handleEmpty = async (u_id: number | string) => {
@@ -168,35 +176,133 @@ export function OrderList(): ReactElement {
     }
   };
 
+  // Function to set payment mode
+  const setPayment = (mode: string) => {
+    setSelectedButton(mode); // Set the selected button
+  };
+
   return (
     <Center>
-    <Card w={{base:"90%", md:"80%", lg:"60%"}} p="20px" mt="50px" boxShadow="lg">
-      <FormControl >
-        <FormLabel>Name</FormLabel>
-        <Input placeholder="Name" ref={name} />
-        <FormLabel>Address</FormLabel>
-        <Input placeholder="Address" ref={address} />
-        <FormLabel>Pincode</FormLabel>
-        <Input placeholder="Pincode" ref={pincode} />
-        <FormLabel>City</FormLabel>
-        <Input placeholder="City" ref={city} />
-        <FormLabel>State</FormLabel>
-        <Input placeholder="State" ref={state} />
-        <FormLabel>Country</FormLabel>
-        <Input placeholder="Country" ref={country} />
-        <Center>
-        <Button 
-        mt="30px"
-        bg="rgb(34,195,94)"
-         color="white"
+    <Box display="flex"  width="700px" flexDirection="column">
+      
+      <Heading textAlign="center" mt="20px" >Payment Details</Heading>
+      <Card 
+        w={{ base: "90%", md: "80%", lg: "100%" }}
+        p="20px"
+        mt="20px"
+        boxShadow="lg"
+      >
+        <FormControl>
+          <FormLabel>Name</FormLabel>
+          <Input placeholder="Name" ref={name} />
+          <FormLabel>Address</FormLabel>
+          <Input placeholder="Address" ref={address} />
+          <FormLabel>Pincode</FormLabel>
+          <Input placeholder="Pincode" ref={pincode} />
+          <FormLabel>City</FormLabel>
+          <Input placeholder="City" ref={city} />
+          <FormLabel>State</FormLabel>
+          <Input placeholder="State" ref={state} />
+          <FormLabel>Country</FormLabel>
+          <Input placeholder="Country" ref={country} />
+          <Center></Center>
+        </FormControl>
+
+        <Box mt="30px">
+          <FormLabel>Payment Mode</FormLabel>
+          <Flex>
+            <Button
+              mr="10px"
+              bg="Brown"
+              color="white"
+              variant="outline"
+              onClick={() => setPayment("cash")}
+            >
+              Cash on Delivery
+              {selectedButton === "cash" && (
+                <CheckCircleIcon
+                  position="absolute"
+                  top="-1"
+                  right="-1"
+                  color="#0ff408"
+                  boxSize="15px"
+                />
+              )}
+            </Button>
+
+            <Button
+              mr="10px"
+              bg="rgb(95,37,159)"
+              color="white"
+              variant="outline"
+              onClick={() => setPayment("phonepe")}
+              leftIcon={<FaPhone />}
+            >
+              PhonePe
+              {selectedButton === "phonepe" && (
+                <CheckCircleIcon
+                  position="absolute"
+                  top="-1"
+                  right="-1"
+                  color="#0ff408"
+                  boxSize="15px"
+                />
+              )}
+            </Button>
+
+            <Button
+              mr="10px"
+              bg="rgb(26,115,232)"
+              color="white"
+              variant="outline"
+              onClick={() => setPayment("gpay")}
+              leftIcon={<FaGooglePay />}
+            >
+              GPay
+              {selectedButton === "gpay" && (
+                <CheckCircleIcon
+                  position="absolute"
+                  top="-1"
+                  right="-1"
+                  color="#0ff408"
+                  boxSize="15px"
+                />
+              )}
+            </Button>
+
+            <Button
+              mr="10px"
+              bg="rgb(23,43,117)"
+              color="white"
+              variant="outline"
+              onClick={() => setPayment("paytm")}
+              leftIcon={<SiPaytm />}
+            >
+              Paytm
+              {selectedButton === "paytm" && (
+                <CheckCircleIcon
+                  position="absolute"
+                  top="-1"
+                  right="-1"
+                  color="#0ff408"
+                  boxSize="15px"
+                />
+              )}
+            </Button>
+          </Flex>
+        </Box>
+
+        <Button
+          mt="30px"
+          bg="rgb(34,195,94)"
+          color="white"
           variant="outline"
           onClick={handleOrder}
         >
           Place Order
         </Button>
-        </Center>
-      </FormControl>
-    </Card>
+      </Card>
+    </Box>
     </Center>
   );
 }

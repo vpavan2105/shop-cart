@@ -11,9 +11,10 @@ import {
 } from "@chakra-ui/react";
 
 import { Product } from "../../redux/utils/Product_Utils";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 import {ProductUrl} from "../../ApiUrls.tsx";
+import { CartUrl } from "../../ApiUrls.tsx";
 
 interface SingleProductPageProps {}
 
@@ -23,6 +24,18 @@ const SingleProductPage: React.FC<SingleProductPageProps> = () => {
   const [product, setProduct] = useState<Product | null>(null);
   // const dispatch = useAppDispatch();
   const toast = useToast();
+  const navigate = useNavigate();
+
+
+  let userId: string | undefined; //ip
+
+  const loginDetails = localStorage.getItem("isLoginLocal");
+  if (loginDetails !== null) {
+    const u_id = JSON.parse(loginDetails);
+    const id = u_id.id;
+    userId = id;
+  }
+
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -38,21 +51,151 @@ const SingleProductPage: React.FC<SingleProductPageProps> = () => {
   }, [id]);
 
   const handleBuy = () => {
-    setTimeout(() => {
-      console.log("Moved to payment page");
-    }, 500);
+    navigate(`/buy-payment/${id}`)
   };
 
-  const handleCart = () => {
-    toast({
-      title: "Unable to Add",
-      description: "You are not logged in yet.",
-      status: "error",
-      duration: 900,
-      isClosable: true,
-      position: "top",
-    });
-  };
+    //Add to cart button functionality
+    const handleCart = async () => {
+      if (!userId) return navigate(`/login`);
+      try {
+        async function getCartData() {
+          if (!product) {
+            // Handle the case where product is null
+            console.error("Product is null");
+            toast({
+              title: "Unable to Add",
+              description: "Unexpected error: product not found ",
+              status: "error",
+              duration: 7000,
+              isClosable: true,
+              position: "top",
+            });
+            return;
+          }
+          // Get the cart details for the user
+          let res = await fetch(`${CartUrl}/${userId}`);
+  
+          // If no cart found for the user, create a brand new cart and add the product in it
+          if (!res.ok) {
+            await fetch(`${CartUrl}`, {
+              method: "POST",
+              headers: { "Content-type": "application/json" },
+              body: JSON.stringify({
+                id: userId,
+                totalAmount: product.price,
+                user_id: userId,
+                products: [
+                  {
+                    id: product.id,
+                    title: product.title,
+                    price: product.price,
+                    description: product.description,
+                    category: product.category,
+                    image: product.image,
+                    rating: product.rating,
+                    quantity: 1,
+                  },
+                ],
+              }),
+            });
+  
+            toast({
+              title: "Product is added to the cart",
+              description:
+                "The selected product has been successfully added to your cart.",
+              status: "success",
+              duration: 7000,
+              isClosable: true,
+              position: "top",
+            });
+            console.log(
+              "A brand new cart is created for the user and the selected product is added to the cart"
+            );
+            return;
+          }
+  
+          let data = await res.json();
+  
+          // Check if the product is already present in the cart
+          const isProductAlreadyInCart = data.products.some(
+            (item: Product) => item.id === product.id
+          );
+  
+          if (isProductAlreadyInCart) {
+            toast({
+              title: "Unable to the Add Product",
+              description:
+                "Product is already in the cart. Please navigate to cart and increase quantity.",
+              status: "warning",
+              duration: 7000,
+              isClosable: true,
+              position: "top",
+            });
+            return; // Exit function if product is already in cart
+          }
+  
+          try {
+            let res1 = await fetch(`${CartUrl}/${userId}`, {
+              method: "PATCH",
+              headers: { "Content-type": "application/json" },
+              body: JSON.stringify({
+                products: [
+                  ...data.products,
+                  {
+                    id: product.id,
+                    title: product.title,
+                    price: product.price,
+                    description: product.description,
+                    category: product.category,
+                    image: product.image,
+                    rating: product.rating,
+                    quantity: 1,
+                  },
+                ],
+                totalAmount: +parseFloat(data.totalAmount + product.price).toFixed(
+                  2
+                ),
+              }),
+            });
+  
+            if (res1.ok) {
+              toast({
+                title: "Product is added to the cart",
+                description:
+                  "The selected product has been successfully added to your cart.",
+                status: "success",
+                duration: 7000,
+                isClosable: true,
+                position: "top",
+              });
+            }
+          } catch (err: any) {
+            toast({
+              title: "Unable to Add the Product",
+              description: err.message,
+              status: "error",
+              duration: 7000,
+              isClosable: true,
+              position: "top",
+            });
+          }
+        }
+  
+        await getCartData();
+      } catch (err: any) {
+        toast({
+          title: "Unable to Add the Product",
+          description: err.message,
+          status: "error",
+          duration: 7000,
+          isClosable: true,
+          position: "top",
+        });
+      }
+    };
+
+
+
 
   return (
       <Box p={4}>
