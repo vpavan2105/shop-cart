@@ -524,7 +524,7 @@ padding: 10px;
 }
 
 .footer{
-background-color: #f0dba7;
+/* background-color: #f0dba7; */
 margin-top: 60px;
 display: grid;
 grid-template-columns: repeat(5,1fr);
@@ -595,7 +595,7 @@ width: 170px;
 
 .fo-logo{
 display: flex;
-background-color: #f6e3b2;
+/* background-color: #f6e3b2; */
 }
 .fo-logo span{
 margin-right: 10px;
