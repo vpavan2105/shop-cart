@@ -14,7 +14,7 @@ import { CgBorderTop } from "react-icons/cg";
 import { useNavigate } from "react-router";
 import { Footer } from "../../pages/Footer";
 import axios from "axios";
-import { OrderData } from "../../redux/utils/adminUtils";
+
 export interface Location {
   address: string;
   city: string;
@@ -94,7 +94,7 @@ export function OrderDisplay(): ReactElement {
     axios.patch(`${OrderUrl}/${id}`,{status:'Success'})
     .then(res=>{
       console.log(res.data);
-      const updatedOrders : OrderObject[] = orders?.map((order)=>{
+      const updatedOrders : any = orders?.map((order)=>{
       return   order.id == res.data.id ? res.data : order
       })
 

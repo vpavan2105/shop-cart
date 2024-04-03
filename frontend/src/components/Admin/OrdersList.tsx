@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, SimpleGrid } from '@chakra-ui/react'
+import { Box, Flex, Heading } from '@chakra-ui/react'
 
 import {  OrderCard } from './OrderCard'
 import { useAppSelector } from '../../redux/utils/Product_Utils';
@@ -7,7 +7,7 @@ import { OrderData } from '../../redux/utils/adminUtils'
 
 const OrdersList = () => {
 
- const {isLoadingFetch,isErrorFetch,ordersData} = useAppSelector(state=>state.orders)
+ const {isLoadingFetch,isErrorFetch,ordersData} = useAppSelector((state:any)=>state.orders)
    console.log(ordersData);
   
   

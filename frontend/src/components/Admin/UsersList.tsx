@@ -6,7 +6,7 @@ import { useAppSelector } from '../../redux/utils/Product_Utils';
 
 const UsersList = () => {
 
-  const {isLoading,isError,usersData} = useAppSelector(state=>state.users)
+  const {isLoading,isError,usersData} = useAppSelector((state:any)=>state.users)
   // useEffect(()=>{
    
   // },[])

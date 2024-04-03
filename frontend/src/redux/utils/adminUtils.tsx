@@ -52,13 +52,6 @@ export interface ICartState{
   isError: boolean
 }
 
-// export interface Address{
-//   street: string;
-//   City: string;
-//   State: string;
-//   ZipCode: number;
-//   Country: string;
-// }
 
 export enum status{
   Pending="Pending",

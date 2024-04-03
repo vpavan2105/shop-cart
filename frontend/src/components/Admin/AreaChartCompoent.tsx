@@ -2,14 +2,14 @@
 import { Pie, PieChart, Cell, Legend } from 'recharts';
 import { useAppSelector } from '../../redux/utils/Product_Utils';
 
-const AreaChartComponent = () => {
-    const products = useAppSelector(state => state.products.productsData);
+import { ProdData } from '../../redux/utils/adminUtils';
+const AreaChartComponent: React.FC = () => {
+    const products :ProdData[]= useAppSelector((state:any) => state.products.productsData) ;
 console.log(products);
-
-    const categoryCounts: Record<string, number> = products.reduce((acc, product) => {
-        acc[product.category] = (acc[product.category] || 0) + 1;
-        return acc;
-    }, {});
+const categoryCounts: Record<string, number> = (products as ProdData[]).reduce((acc: any, product: ProdData) => {
+    acc[product.category] = (acc[product.category] || 0) + 1;
+    return acc;
+}, {});
     
     const data: { name: string, value: number }[] = Object.keys(categoryCounts).map(category => ({
         name: category,
@@ -30,7 +30,7 @@ console.log(products);
                 fill="#63E6BE"
                 dataKey="value"
             >
-                {data.map((entry, index) => (
+                {data.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
             </Pie>

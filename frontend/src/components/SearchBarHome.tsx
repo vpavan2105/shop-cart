@@ -1,4 +1,4 @@
-import { Box, Button, Input, Modal,Text, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, useDisclosure, ModalOverlay } from '@chakra-ui/react'
+import { Box, Input, Modal, ModalBody, useDisclosure, ModalOverlay, ModalContent } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import { filterSearchProducts } from '../redux/actions/actions';
 import { useAppDispatch, useAppSelector } from '../redux/utils/Product_Utils';
@@ -7,6 +7,8 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { PRODUCTS_INITIALSTATE } from '../redux/actionTypes/actionTypes_Products';
+import { ProdData } from '../redux/utils/adminUtils';
+
 
 const SearchBarHome = () => {
   
@@ -38,7 +40,7 @@ interface SearchBarProductsProps{
 export const SearchBarProducts = ({onClose,isOpen}:SearchBarProductsProps) =>{
     const [value,setValue] = useState("");
     const inputRef = useRef<null|number>(null);
-    const {products} = useAppSelector(state=>state.product);
+    const {products} = useAppSelector((state:any)=>state.product);
     console.log(products);
 
     console.log(products);
@@ -70,7 +72,7 @@ export const SearchBarProducts = ({onClose,isOpen}:SearchBarProductsProps) =>{
         <Input type="search" h={'35px'} border={'none'} ml={2} variant={'unstyled'} bgColor={'aliceblue'} value={value} w={'90%'} placeholder='search products..' onChange={handleSearchInput} />
       </Box>
       <div className="modal-item-container" style={{ paddingTop: '4rem' }}>
-        {products.map(product => (
+        {products.map((product:ProdData) => (
           <Link to={`/products/${product.id}`} key={product.id}>
             <Box p={2} _hover={{cursor:"pointer"}} borderBottom="1px solid #ccc">
               <p>{product.title}</p>

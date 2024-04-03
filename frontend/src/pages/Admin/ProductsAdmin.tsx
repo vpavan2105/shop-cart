@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { ProductInput } from "../../components/Admin/ProductInput";
 import { ProductList } from "../../components/Admin/ProductList";
-import { Box, Button,Text, Divider, Heading, Input, Select } from "@chakra-ui/react";
+import { Box, Divider, Heading, Input, Select } from "@chakra-ui/react";
 import { useAppDispatch } from "../../redux/utils/Product_Utils";
 import { fetchDataProduct, filterProducts, filtercategoryProducts } from "../../redux/actions/actionAdmin";
 

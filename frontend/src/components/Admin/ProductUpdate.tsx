@@ -24,19 +24,19 @@ interface ProductUpdateProps{
 export function ProductUpdate({isOpen,onClose,productDetails}:ProductUpdateProps) {
 console.log(productDetails);
 
-    const [updateProduct,setUpdateProduct] = useState<ProdData>(productDetails);
+    const [updateProduct,setUpdateProduct] = useState<any>(productDetails);
     const dispatch = useAppDispatch();
     const handleInputChange = (e:React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) => {
      
        const {name,value} = e.target;
       if(name === "rate" ){
-        setUpdateProduct(prev=>({
+        setUpdateProduct((prev:any)=>({
           ...prev,rating:{
             ...prev.rating,[name]:value
           }
         }))
       }else{
-        setUpdateProduct(prev=>({
+        setUpdateProduct((prev:any)=>({
           ...prev,[name]:value
         }))
       }

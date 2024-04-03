@@ -5,7 +5,7 @@ import {useAppSelector} from '../../redux/utils/Product_Utils'
 
 
 const RevenueLineComponents: React.FC = () => {
-  const orders:OrderData[] = useAppSelector(state => state.orders.ordersData);
+  const orders:OrderData[] = useAppSelector((state:any) => state.orders.ordersData);
 
 
   const ordersByDate = orders.reduce((acc: any, order: any) => {

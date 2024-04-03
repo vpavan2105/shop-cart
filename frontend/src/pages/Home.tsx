@@ -4,6 +4,7 @@ import {Footer} from './Footer';
 import { ProductUrl } from "../ApiUrls";
 import { SearchBarHome } from "../components/SearchBarHome";
 import { Link } from "react-router-dom";
+import { ProdData } from "../redux/utils/adminUtils";
 
 
 function Home() {
@@ -37,10 +38,10 @@ function Home() {
       .then((res) => setSell(res))
       .catch((err) => console.log(err));
   }, []);
+
   return (
     <>
     <SearchBarHome/>
-
       <div className="sofa">
         <img src="https://media.designcafe.com/wp-content/uploads/2021/04/15173304/trending-sofa-designs-for-your-home.jpg" alt="" />
       </div>
@@ -74,7 +75,7 @@ function Home() {
         <h2>Todays Best Deals For You!</h2>
 
         <div className="main-box">
-          {data.map((product,index) => (
+          {data.map((product:ProdData,index) => (
             <div className="card" key={index}>
               <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 
@@ -218,7 +219,7 @@ function Home() {
       <div className="popular">
         <h2>Weekly Popular Products</h2>
         <div className="main-box">
-          {product.map((product,index) => (
+          {product.map((product:ProdData,index) => (
             <div className="card" key={index}>
               <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 
@@ -236,7 +237,7 @@ function Home() {
         <h2>Todays Best Deals For You!</h2>
 
         <div className="main-box">
-          {best.map((product,index) => (
+          {best.map((product:ProdData,index) => (
             <div className="card" key={index}>
               <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 
@@ -262,7 +263,7 @@ function Home() {
    <div className="most-sell">
     <h2>Most Selling Products</h2>
     <div className="main-box">
-          {sell.map((product,index) => (
+          {sell.map((product:ProdData,index) => (
             <div className="card" key={index}>
               <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 

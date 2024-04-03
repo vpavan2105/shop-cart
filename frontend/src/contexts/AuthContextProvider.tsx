@@ -1,6 +1,6 @@
 import { ReactElement, createContext, useEffect, useState } from "react"
 
-export const AuthContext = createContext();
+export const AuthContext = createContext({});
 
 interface Props {
   children: ReactElement; // Use ReactElement to specify a single React element as children

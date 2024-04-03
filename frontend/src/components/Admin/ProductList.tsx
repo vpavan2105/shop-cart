@@ -1,10 +1,10 @@
 
 import {ProductCard} from "./ProductCard";
-import { Box, Button, Input, SimpleGrid, useDisclosure } from "@chakra-ui/react";
+import { Box,  SimpleGrid, useDisclosure } from "@chakra-ui/react";
 
 import { ReactElement, useEffect, useState } from "react";
 import {  ProdData  } from "../../redux/utils/adminUtils";
-import { deleteDataProduct, filterProducts } from "../../redux/actions/actionAdmin";
+import { deleteDataProduct } from "../../redux/actions/actionAdmin";
 import { ProductUpdate } from "./ProductUpdate";
 import Pagination from "./Pagination";
 import { useAppSelector, useAppDispatch } from '../../redux/utils/Product_Utils';
@@ -16,12 +16,12 @@ const ProductList:React.FC = () :ReactElement=> {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const dispatch = useAppDispatch();
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [itemsPerPage, setItemsPerPage] = useState<number>(6); 
+  const [itemsPerPage] = useState<number>(6); 
   
   const [currentProducts,setCurrentProducts] = useState<ProdData[]>([])
 
   const { productsData, isLoadingFetch, isErrorFetch } = useAppSelector(
-    (state) => state.products
+    (state:any) => state.products
   );
   useEffect(()=>{
 

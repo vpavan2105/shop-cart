@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Card } from "@chakra-ui/react";
 import { NavLink } from "./ProductNav";
 
 import { addToFilteredProducts } from "../../redux/actions/actions";
 import {
   useAppDispatch,
-  useAppSelector,
+
 } from "../../redux/utils/Product_Utils";
-import { RootState } from "../../redux/store";
+
 
 export const Fashion = [
   "men's clothing",
@@ -32,7 +32,7 @@ interface SubCategoriesProps {
 const SubCategories: React.FC<SubCategoriesProps> = ({
   category,
 }: SubCategoriesProps) => {
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(
+  const [ _,setSelectedSubcategory] = useState<string | null>(
     null
   );
   const dispatch = useAppDispatch();

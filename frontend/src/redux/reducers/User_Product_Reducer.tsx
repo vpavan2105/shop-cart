@@ -26,20 +26,3 @@ export const productReducer = (state = initialProductState, action: any) => {
       return state;
   }
 };
-
-// export const initialAuthState: AuthState = {
-//   auth:false
-// };
-
-// export const authReducer = (state = initialAuthState, action: any) => {
-//   switch (action.type) {
-//     case LOGIN_SUCCESS:
-//       return true;
-//     case LOGOUT:
-//       return false;
-//     default:
-//       return state;
-//   }
-// };
-
-// export default rootReducer;

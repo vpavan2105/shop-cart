@@ -1,4 +1,4 @@
-import { Box, Grid, HStack, Skeleton, Stack } from '@chakra-ui/react'
+import { Box, Grid, HStack, Skeleton } from '@chakra-ui/react'
 
 
 const DashboardLoading = () => {

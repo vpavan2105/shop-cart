@@ -8,11 +8,11 @@ interface Props {
 
  
 const PrivateRoute: React.FC<Props> = ({children}) => {
-    const {userLoggedIn} = useContext(AuthContext)
+    const {userLoggedIn}:any = useContext(AuthContext)
 
-    console.log(userLoggedIn.isAuth);
+    console.log(userLoggedIn);
 
-    const isAuth = localStorage.getItem("isLoginLocal")
+    const isAuth:any = localStorage.getItem("isLoginLocal")
     const authobj = JSON.parse(isAuth)
     console.log(authobj);
     

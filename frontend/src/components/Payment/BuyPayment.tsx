@@ -1,5 +1,6 @@
 
 import { ReactElement, useEffect, useRef, useState } from "react";
+
 import {
   FormControl,
   FormLabel,
@@ -13,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { OrderUrl } from "../../ApiUrls";
 import { FaGooglePay, FaPhone } from "react-icons/fa";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { ProductUrl } from "../../ApiUrls";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import { SiPaytm } from "react-icons/si";
@@ -35,11 +36,12 @@ export function BuyPayment(): ReactElement | undefined {
   const { id } = useParams<{ id: string | undefined }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [selectedButton, setSelectedButton] = useState<string | null>(null); // State to track the selected button
-
+ const navigate = useNavigate();
   useEffect(() => {
     // Calling postData function after totalPrice calculation
     if (product !== null) {
       postData(product);
+      navigate('/orders');
     }
   }, [product]);
 

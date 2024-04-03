@@ -1,16 +1,16 @@
-import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthContextProvider";
-import { SearchBarHome } from "../SearchBarHome";
+import {  useState } from "react";
+import {Link, NavLink} from "react-router-dom";
+
+import {Image} from "@chakra-ui/react";
 interface Links {
   to: string;
   displayText: string;
 }
 const NavBar = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
-  const { userLoggedIn } = useContext(AuthContext);
+
   // console.log(userLoggedIn);
-  const userType = localStorage.getItem("isLoginLocal")
+  const userType:any = localStorage.getItem("isLoginLocal")
   const userObj = JSON.parse(userType) 
   console.log(userObj);
   
@@ -48,8 +48,8 @@ const NavBar = () => {
         },
   ];
 
-  const defaultStyle: { color: string } = { color: 'black' ,fontWeight: "bold" };
-  const activeStyle: { color: string } = { color: "green",fontWeight: "bold" }; //
+  const defaultStyle: { color: string ,fontWeight:string} = { color: 'black' ,fontWeight: "bold" };
+  const activeStyle: { color: string,fontWeight:string } = { color: "green",fontWeight: "bold" }; //
 
   return (
     <div className="navbar">
@@ -64,6 +64,9 @@ const NavBar = () => {
         <span className="bar"></span>
       </div>
       <div className={`navbar-inner ${isActive ? "active" : null}`}>
+        <Link to={"/"}>
+          <Image src="/ShopCart_Logo.png" alt="Logo" boxSize={"60px"} />
+        </Link>
         {listOfLinks.map((link) => {
           return (
             <NavLink

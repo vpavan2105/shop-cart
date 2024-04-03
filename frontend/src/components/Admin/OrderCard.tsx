@@ -1,7 +1,7 @@
 import {  Button, Flex, Heading,Text } from '@chakra-ui/react'
 import { OrderData } from '../../redux/utils/adminUtils';
 
-import { useAppDispatch, useAppSelector} from '../../redux/utils/Product_Utils'
+import { useAppDispatch} from '../../redux/utils/Product_Utils'
 
 import { Link } from 'react-router-dom';
 import { updateOrderData } from '../../redux/actions/actionAdmin';
@@ -11,7 +11,7 @@ const OrderCard = ({order}:{order:OrderData}) => {
 
     const dispatch = useAppDispatch();
     const toggleStatusOrder = (order:OrderData) => {
-        const payload = {
+        const payload:any = {
             status:"Inprogress"
         }
         dispatch(updateOrderData(payload,order.id))
