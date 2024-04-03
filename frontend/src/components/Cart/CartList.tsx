@@ -6,6 +6,8 @@ import { BsFillBagDashFill } from "react-icons/bs";
 import { Text } from "recharts";
 import { BsFillBagHeartFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
+import { Footer } from "../../pages/Footer";
+
 
 export interface ProductDetails {
   id: number;
@@ -300,6 +302,7 @@ function CartList(): ReactElement {
           </Box>
         </Center>
       )}
+      <Footer/>
     </>
   );
 }

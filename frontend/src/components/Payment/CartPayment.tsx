@@ -9,6 +9,7 @@ import {
   Card,
   Box,
   Flex,
+  Heading,
 } from "@chakra-ui/react";
 import { CartUrl } from "../../ApiUrls";
 import { OrderUrl } from "../../ApiUrls";
@@ -182,10 +183,13 @@ export function CartPayment(): ReactElement {
 
   return (
     <Center>
-      <Card
-        w={{ base: "90%", md: "80%", lg: "60%" }}
+    <Box display="flex"  width="700px" flexDirection="column">
+      
+      <Heading textAlign="center" mt="20px" >Payment Details</Heading>
+      <Card 
+        w={{ base: "90%", md: "80%", lg: "100%" }}
         p="20px"
-        mt="50px"
+        mt="20px"
         boxShadow="lg"
       >
         <FormControl>
@@ -298,6 +302,7 @@ export function CartPayment(): ReactElement {
           Place Order
         </Button>
       </Card>
+    </Box>
     </Center>
   );
 }

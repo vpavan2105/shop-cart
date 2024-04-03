@@ -12,7 +12,7 @@ import {
 import { OrderUrl } from "../../ApiUrls";
 import { CgBorderTop } from "react-icons/cg";
 import { useNavigate } from "react-router";
-
+import { Footer } from "../../pages/Footer";
 export interface Location {
   address: string;
   city: string;
@@ -86,6 +86,7 @@ export function OrderDisplay(): ReactElement {
   };
 
   return (
+    <>
     <Box w="100%" justifyContent="center">
       {isLoading ? (
         <Center height="100vh">
@@ -121,18 +122,23 @@ export function OrderDisplay(): ReactElement {
                       boxShadow="md"
                       p="6"
                       rounded="md"
-                      bg="white"
+                     
                       mt="10px"
                       mb="10px"
                       h="150px"
                       display="flex"
                       flexDirection="column"
                       justifyContent="space-between"
+                      bg= {order.status === "Pending"
+                      ? "yellow.200"
+                      : order.status === "In Progress"
+                      ? "orange.200"  :"teal.200"  }
                     >
                       <Box
                         display="flex"
                         justifyContent="space-between"
                         alignItems="center"
+                       
                       >
                         <Heading as="h6" fontSize="12px">
                           Order Id :{" "}
@@ -153,15 +159,7 @@ export function OrderDisplay(): ReactElement {
                           fontSize="12px"
                           px="5px"
                           borderRadius="5px"
-                          bgColor={
-                            order.status === "Pending"
-                              ? "yellow"
-                              : order.status === "In Progress"
-                              ? "lightblue"
-                              : order.status === "Success"
-                              ? "lightGreen"
-                              : "black"
-                          }
+                          color="black"
                         >
                           {" "}
                           {order.status}
@@ -205,6 +203,10 @@ export function OrderDisplay(): ReactElement {
           )}
         </Box>
       )}
+     
     </Box>
+     <Footer/>
+     </>
   );
+  
 }
