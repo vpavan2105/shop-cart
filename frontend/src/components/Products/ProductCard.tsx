@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
   Box,
   Button,
@@ -13,77 +13,46 @@ import {
 } from "@chakra-ui/react";
 // import { addToCart, url } from "../../redux/actions/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+import {faBagShopping, faCartShopping, faStar, faStarHalfAlt} from "@fortawesome/free-solid-svg-icons";
 import { Product } from "../../redux/utils/Product_Utils";
 import { useNavigate } from "react-router-dom";
-import { CartUrl } from "../../ApiUrls";
-import { CartData, ProductDetails } from "../CartList";
-import { useAppDispatch } from "../../redux/utils/Product_Utils";
-import {
-  AuthContext,
-  LogUserDetails,
-} from "../../contexts/AuthContextProvider";
-import { Footer } from "../../pages/Footer";
+import { CartUrl } from "../../ApiUrls.tsx";
+
 export interface ProductCardProps {
   prod: Product;
   truncateDescription: (description: string) => string;
   truncateTitle: (title: string) => string;
 }
 
-// //ip
-// interface Product {
-//   id: number;
-//   title: string;
-//   price: number;
-//   description: string;
-//   category: string;
-//   image: string;
-//   rating: {
-//     rate: number;
-//   };
-//   quantity: number;
-// }
-
-// interface CartData {
-//   id: string;
-//   user_id: string;
-//   products: Product[];
-//   totalAmount: number;
-// }
-
 export const ProductCard: React.FC<ProductCardProps> = ({
   prod,
   truncateDescription,
   truncateTitle,
 }: ProductCardProps) => {
-  const [cartItems, setCartItems] = React.useState<ProductDetails[]>([]);
-  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  // const isAuth = useAppSelector((state:RootState) => state.auth);
-  const auth = useContext(AuthContext);
+
   const toast = useToast();
 
-  const userId = auth.userLoggedIn.id; //ip
+  let userId: string | undefined; //ip
 
-  const cartUrl = CartUrl;
-  const handleBuy = () => {
-    setTimeout(() => {
-      console.log("moved to payment page");
-    }, 500);
-  };
+  const loginDetails = localStorage.getItem("isLoginLocal");
+  if (loginDetails !== null) {
+    const u_id = JSON.parse(loginDetails);
+    const id = u_id.id;
+    userId = id;
+  }
 
   //Add to cart button functionality
   const handleCart = async () => {
-    if (!auth.userLoggedIn.isAuth) return navigate(`/login`);
-
+    if (!userId) return navigate(`/login`);
     try {
       async function getCartData() {
         // Get the cart details for the user
-        let res = await fetch(`${cartUrl}/${userId}`);
+        let res = await fetch(`${CartUrl}/${userId}`);
 
         // If no cart found for the user, create a brand new cart and add the product in it
         if (!res.ok) {
-          await fetch(`${cartUrl}`, {
+          await fetch(`${CartUrl}`, {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({
@@ -141,7 +110,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         }
 
         try {
-          let res1 = await fetch(`${cartUrl}/${userId}`, {
+          let res1 = await fetch(`${CartUrl}/${userId}`, {
             method: "PATCH",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({
@@ -201,8 +170,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   const handleProductClick = () => {
-    console.log("clicked..");
     navigate(`/products/${prod.id}`);
+  };
+
+  const handleBuy = () => {
+    navigate(`/buy-payment/${prod.id}`);
   };
 
   return (
@@ -210,6 +182,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       width={{ base: "100%", sm: "43%", md: "47%", lg: "31%" }}
       padding="10px"
       marginBottom="10px"
+      fontFamily={"Playfair Display"}
     >
       <Card p={3} height="100%">
         <Flex direction={["column"]} height="40%">
@@ -249,7 +222,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               alignItems="center"
               justifyContent="space-between"
             >
-              <Text mt={2}>
+              <Text mt={2} color="blue.500">
                 {" "}
                 <span>&#36; </span>
                 {prod.price}
@@ -277,22 +250,29 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             flexWrap="wrap"
           >
             <Button
-              colorScheme="orange"
+              colorScheme="aliceblue"
+              color = "black"
+              bgColor={"yellow.500"}
+              _hover={{bgColor : "yellow.600", color : "aliceblue"}}
+              border = {"1px solid yellowgreen"}
               flex={{ base: "100%", sm: "1" }}
               margin={{ base: "5px 0", sm: "5px" }}
               p={{ base: "none", sm: 3 }}
               onClick={handleCart}
             >
-              Add to Cart
+              <FontAwesomeIcon icon={faCartShopping} style={{color: "#FFD43B", marginRight : "5px"}} />  Add to Cart
             </Button>
             <Button
-              colorScheme="yellow"
+              colorScheme="aliceblue"
+              color = "teal"
+              _hover={{bgColor : "teal", color : "aliceblue"}}
+              border = {"1px solid teal"}
               flex={{ base: "100%", sm: "1" }}
               margin={{ base: "5px 0", sm: "5px" }}
               p={{ base: "none", sm: 3 }}
               onClick={handleBuy}
             >
-              Buy Now
+              <FontAwesomeIcon icon={faBagShopping} style={{color: "#63E6BE", marginRight : "5px"}} /> Buy Now
             </Button>
           </Flex>
         </Flex>

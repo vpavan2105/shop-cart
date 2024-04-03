@@ -12,9 +12,17 @@ import { RootState } from "../../redux/store";
 export const Fashion = [
   "men's clothing",
   "women's clothing",
-  "jewelery",
+  "skincare",
   "fragrances",
-  "shoes",
+];
+
+export const Electronics = [
+    "laptops",
+    "smartphones",
+    "smart watch",
+    "Monitor",
+    "storage device",
+    "head phones"
 ];
 
 interface SubCategoriesProps {
@@ -48,6 +56,15 @@ const SubCategories: React.FC<SubCategoriesProps> = ({
       {category === "Fashion" && (
           <Card position="absolute" top="80px" zIndex="1" p={2}>
             {Fashion.map((link) => (
+                <NavLink key={link} onclick={() => handleSubcategoryClick(link)}>
+                  {link}
+                </NavLink>
+            ))}
+          </Card>
+      )}
+      {category === "Electronics" && (
+          <Card position="absolute" top="80px" zIndex="1" p={2}>
+            {Electronics.map((link) => (
                 <NavLink key={link} onclick={() => handleSubcategoryClick(link)}>
                   {link}
                 </NavLink>

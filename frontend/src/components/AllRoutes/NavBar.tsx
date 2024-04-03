@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContextProvider";
+import { SearchBarHome } from "../SearchBarHome";
 interface Links {
   to: string;
   displayText: string;
@@ -9,6 +10,11 @@ const NavBar = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const { userLoggedIn } = useContext(AuthContext);
   // console.log(userLoggedIn);
+  const userType = localStorage.getItem("isLoginLocal")
+  const userObj = JSON.parse(userType) 
+  console.log(userObj);
+  
+  
 
   const listOfLinks: Links[] = [
     {
@@ -31,8 +37,8 @@ const NavBar = () => {
       to: "/contact",
       displayText: "Contact Us",
     },
-    userLoggedIn.isAuth
-      ? {
+    
+    userObj ? {
           to: "/logout",
           displayText: "Logout",
         }
@@ -42,8 +48,8 @@ const NavBar = () => {
         },
   ];
 
-  const defaultStyle: { color: string } = { color: "black" };
-  const activeStyle: { color: string } = { color: "red" };
+  const defaultStyle: { color: string } = { color: 'black' ,fontWeight: "bold" };
+  const activeStyle: { color: string } = { color: "green",fontWeight: "bold" }; //
 
   return (
     <div className="navbar">
@@ -70,9 +76,11 @@ const NavBar = () => {
             >
               {link.displayText}
             </NavLink>
+
           );
         })}
       </div>
+        
     </div>
   );
 };

@@ -27,7 +27,7 @@
       "title": "Sony High Speed SSD",
       "price": 499.99,
       "description": "Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D audio, and an all-new generation of incredible PlayStation games.",
-      "category": "electronics",
+      "category": "storage device",
       "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
       "rating": {
         "rate": "2.9"
@@ -38,7 +38,7 @@
       "title": "Apple AirPods Pro",
       "price": 249.99,
       "description": "Enjoy superior sound quality and active noise cancellation with Apple AirPods Pro. Designed for a comfortable and customizable fit.",
-      "category": "electronics",
+      "category": "head phones",
       "image": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694672652/Croma%20Assets/Entertainment/Wireless%20Earbuds/Images/301165_xzuxl0.png",
       "rating": {
         "rate": "4.0"
@@ -49,7 +49,7 @@
       "title": "Samsung Galaxy S24 Ultra",
       "price": 1199.99,
       "description": "Experience the power of 5G connectivity and revolutionary camera features with the Samsung Galaxy S20 Ultra. Capture stunning photos and videos in high resolution.",
-      "category": "electronics",
+      "category": "smartphones",
       "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRCjyekLTGxFsl4qRLxSG1Z-mqNJWIzPgRkGKmbrbqdmOmpH6D2Rh8z-rRBfO2o1wfXa-uRmj_LDp0YsbFNCB6kCLfvZ3ts",
       "rating": {
         "rate": 4.8
@@ -60,7 +60,7 @@
       "title": "Dell XPS 13 Laptop",
       "price": 1299.99,
       "description": "Work and play with speed, performance, and a stunning display with the Dell XPS 13 Laptop. Perfect for professionals and enthusiasts alike.",
-      "category": "electronics",
+      "category": "laptops",
       "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9315/media-gallery/notebook-xps-9315-nt-blue-gallery-3.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=575&qlt=100,1&resMode=sharp2&size=575,402&chrss=full",
       "rating": {
         "rate": 4.6
@@ -71,7 +71,7 @@
       "title": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
       "price": 349.99,
       "description": "Escape into your music with Sony WH-1000XM4 Wireless Noise-Canceling Headphones. Enjoy industry-leading noise cancellation and premium sound quality.",
-      "category": "electronics",
+      "category": "head phones",
       "image": "https://m.media-amazon.com/images/I/61Jl6XHrIqL._SX679_.jpg",
       "rating": {
         "rate": 4.9
@@ -82,7 +82,7 @@
       "title": "Fitbit Charge 4 Fitness and Activity Tracker",
       "price": 149.95,
       "description": "Track workouts, heart rate, distance, calories burned, and more with Fitbit Charge 4 Fitness and Activity Tracker. Stay motivated and achieve your fitness goals.",
-      "category": "electronics",
+      "category": "smart watch",
       "image": "https://m.media-amazon.com/images/I/311ThQv0JoL._SX300_SY300_QL70_FMwebp_.jpg",
       "rating": {
         "rate": 4.5
@@ -105,7 +105,7 @@
       "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
       "price": 109,
       "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
-      "category": "electronics",
+      "category": "storage device",
       "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
       "rating": {
         "rate": 4.8,
@@ -117,7 +117,7 @@
       "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
       "price": 114,
       "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
-      "category": "electronics",
+      "category": "storage device",
       "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
       "rating": {
         "rate": 4.8,
@@ -129,7 +129,7 @@
       "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
       "price": 599,
       "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
-      "category": "electronics",
+      "category": "Monitor",
       "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
       "rating": {
         "rate": 2.9,
@@ -141,7 +141,7 @@
       "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
       "price": 999.99,
       "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
-      "category": "electronics",
+      "category": "Monitor",
       "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
       "rating": {
         "rate": 2.2,
@@ -412,6 +412,61 @@
       "category": "skincare",
       "image": "data:image/jpeg;base64,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C5A5nA54HqkX4FQ9j4RSx5k46AfrMTyUe0yXanhFhXaXrVsdCXz9i8/ozKZcTHHpavjw8susjt8qvJbh2nGg7nUJa12mqssLV6oFw4uPvoEsFRC1ars6jOcHpNKnBdIQx7ynIPIbLxvG3wzb5p3ebz5ciemM6Ximi1WmPnFlQtgMjkpnGccvROPA4MwPftv96/8Arb+stLLNxXLG43VSing+kIyz1BtpO3bdnIPobjbtPIrzzjO7riRritQSwhV2DZUdozgFq1J6knqT4mcPftv96/8Arb+s6XcscsSx8STk/XJQzuGnrOjWelO3QHrOnVHzoHoX3P3wbU/Kq+55a0qn3P3wbUfLq+5pa0BERAREQEREBERAREQEREBERAREQEREBKx7e0LaOgKMsdRgAeJKkAfXLOlddtDBadCTyA11RJPgAckyLdTaZN3Skr9T7126ak4IAa2xerMR1B9oOQfBSvTLZ3Wk8n0vr01psZdOw1PvxwoJ0/cKbHPt3VlCuf0mxInxNGTUuG5HCcj4DYvL6On0SQPqrtNorKyzDT6sVF0QsCwRiykOa9n6OGCsT0BA6Tz4Ukxl7vTi3ednZmcO4RpVGopu1OsAThtWsKV16d07myil2q8/9INc2PDzQes0PFvI7utCutRrDlldqrKwCmmud109pcHBYmvzgOne1+uZXD+IveNTcm4fmlOitLEt+R7vagC10sQdum5scfbOirys1mqtNItcpqVXTdw7/miK+1ECVBcJtwpBAyCMy8+Ct3763PFezFKG4g3voNp6NPe+mYY7262nItqZP0djKQx/xV49Llxu7NFJXur2cjiWo09tZUd6NPVqUpOpQDrt7xSw8NwPQGariXGLaL9RbduazWU3mzuztQpexWzbXZUCjE1eroB1GJnjyltZ6dUO9Syo6rXVsltSkG/UbLgR3XMFlI2/qk+uLlexMZ3avhfAKg/EHutdNLo7QjmqtX1FjPa1daorEKM7WJYnljoczQ8YWkWsNPY9tPIq11a12cwCVZVYjIORkHnjMkvk5xJ3v1T6ZGdrK7LNRTeabKb13htncmvDtvZdo656czz0/lel41OdQtaWNXU2yla1StSo217K1CqVACkY5Y8ZMu/crZr3ry9z8PzXUfLr+5v6y1ZVfuf/AIJqPnE/CZaklBERAREQEREBERAREQEREBERAREQ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",
       "rate": 4.8
+    },
+    {
+      "id": "c33f",
+      "title": "Apple Watch Series 9 [GPS 45mm] Smartwatch with Midnight Aluminum Case with Midnight Sport Band M/L. Fitness Tracker, Blood Oxygen & ECG Apps, Always-On Retina Display, Water Resistant",
+      "description": "WHY APPLE WATCH SERIES 9 — Your essential companion for a healthy life is now even more powerful. The S9 chip enables a super-bright display and a magical new way to quickly and easily interact with your Apple Watch without touching the screen. Advanced health, safety and activity features provide powerful insights and help when you need it. And redesigned apps in watchOS give you more information at a glance.",
+      "price": "1299",
+      "category": "smart watch",
+      "image": "https://m.media-amazon.com/images/I/7162zT9RKRL._SX679_.jpg",
+      "rating": {
+        "rate": "4.6"
+      }
+    },
+    {
+      "id": "c148",
+      "title": "Samsung Galaxy Watch4 Classic LTE (4.6cm, Black)",
+      "description": "Only compatible with Android Smartphones (Runs on Wear OS Powered by Samsung)\nBioelectrical Impedance Analysis Sensor for Body Composition Analysis, Optical Heart Rate Sensor.",
+      "price": "1099",
+      "category": "smart watch",
+      "image": "https://m.media-amazon.com/images/I/61mkpp+F95L._SX679_.jpg",
+      "rating": {
+        "rate": "3.5"
+      }
+    },
+    {
+      "id": "7f48",
+      "title": "Fossil Gen 6 Digital Black Dial Men's Watch-FTW4059",
+      "description": "Round stainless steel case, with a silver dial.\nWarranty type:Manufacturer; 1 Year International Warranty",
+      "price": "999",
+      "category": "smart watch",
+      "image": "https://m.media-amazon.com/images/I/41JWnSAZN4L._SX300_SY300_QL70_FMwebp_.jpg",
+      "rating": {
+        "rate": "4.0"
+      }
+    },
+    {
+      "id": "2618",
+      "title": "Fire-Boltt Phoenix Ultra Luxury Stainless Steel, Bluetooth Calling Smartwatch, AI Voice Assistant, Metal Body with 120+ Sports Modes, SpO2, Heart Rate Monitoring (Gold)",
+      "description": "【Bigger Round Display】- Comes with a TFT Color Full Touch Screen and a 240*240 Pixel High Resolution this watch is covered to flaunt the sleek and stylish look always. Enjoy a 320 NITS Peak Brightness",
+      "price": "1099",
+      "category": "smart watch",
+      "image": "https://m.media-amazon.com/images/I/51w6VCsZ6GL._SX300_SY300_QL70_FMwebp_.jpg",
+      "rating": {
+        "rate": "3.8"
+      }
+    },
+    {
+      "id": "fe44",
+      "title": "Noise Diva Smartwatch with Diamond Cut dial, Glossy Metallic Finish, AMOLED Display, Mesh Metal and Leather Strap Options, 100+ Watch Faces, Female Cycle Tracker Smart Watch for Women (Gold Link)",
+      "description": "Diamond-cut dial: Enhance your style with a diamond-cut dial that perfectly complements your glamorous lifestyle, adding a touch of sophistication to your everyday look.",
+      "price": "1299",
+      "category": "smart watch",
+      "image": "https://m.media-amazon.com/images/I/51rAZQpFcIL._SX300_SY300_QL70_FMwebp_.jpg",
+      "rating": {
+        "rate": "4.0"
+      }
     }
   ],
   "users": [
@@ -510,7 +565,7 @@
         }
       ],
       "totalAmount": 3649.92,
-      "status": true
+      "status": "success"
     },
     {
       "id": "2",
@@ -563,7 +618,7 @@
         }
       ],
       "totalAmount": 3649.92,
-      "status": true
+      "status": "in progress"
     }
   ],
   "carts": [

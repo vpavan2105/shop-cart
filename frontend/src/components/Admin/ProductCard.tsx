@@ -12,7 +12,7 @@ interface ProductCardProps{
 }
 const ProductCard:React.FC<ProductCardProps> = ({ product, editProduct, deleteProduct }):ReactElement => {
 
-console.log(product);
+// console.log(product);
 
   return (
     <Box className="product-card" p={4} borderWidth="1px" borderRadius="md" shadow="md">

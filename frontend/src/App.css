@@ -1,24 +1,35 @@
-
+*{
+  font-family: "Playfair Display", serif;
+}
 
 
 /* navbar css */
 
 .navbar{
   width: 100%;
-  height: fit-content;
-  height: 40px;
-  z-index:3;
+height:50px;
+  position: sticky;
+  backdrop-filter:10px;
+  background-color: aliceblue;
+ 
+  top:0px;
+  z-index:1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
 .navbar-inner{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position:fixed;
+ 
   height: 50px;
-  width:100%;
-  background-color: grey;
-  z-index:3;
+  width:90%;
+
+  /* z-index:3; */
+
 }
 
 
@@ -40,15 +51,22 @@
 .nav-link{
   text-decoration-line: none;
   font-family:  'Trebuchet MS', sans-serif;
-  font-weight: bold;
+  font-weight:bolder;
+
   padding-bottom: 3px;
   border-bottom: 1px solid ;
 }
 
 @media screen and (max-width:784px){
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
   .hamburger-menu{
-    position: fixed;
-    z-index: 1;
+    
+    z-index: 4;
      display:block;
      
   }
@@ -68,41 +86,14 @@
       top: -300px;
       height: 250px;
       width: 100vw;
-  
+      z-index:3;
+      background-color: aliceblue;
     }
     .navbar-inner.active {
       top:0px;
     }
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media screen and (max-width: 700px) {

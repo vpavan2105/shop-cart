@@ -1,17 +1,13 @@
 import axios from 'axios';
-
 import { ADD_TO_CART, FETCH_CATEGORIES, FETCH_PRODUCTS, PRODUCTS_LOADING } from '../actionTypes/actionTypes_Products.tsx';
 import { Dispatch } from 'redux';
 import { Product } from '../utils/Product_Utils';
-
-
-export const url:string = "https://shop-cart-x0xf.onrender.com/products"; //ip
-
+import {ProductUrl} from "../../ApiUrls.tsx";
 
 export const fetchProducts = () => async (dispatch: Dispatch) => {
   try {
     dispatch({ type: PRODUCTS_LOADING });
-    const res = await axios.get<Product[]>(url);
+    const res = await axios.get<Product[]>(ProductUrl);
     dispatch({
       type: FETCH_PRODUCTS,
       payload: res.data,
@@ -20,10 +16,25 @@ export const fetchProducts = () => async (dispatch: Dispatch) => {
     console.error('Error fetching products:', error);
   }
 };
+export const filterSearchProducts = (query:string) => async (dispatch:Dispatch) => {
+  try {
+    dispatch({ type: PRODUCTS_LOADING });
+    const res = await axios.get<Product[]>(`${ProductUrl}?q=${query}`);
+    console.log(res.data);
+    
+    dispatch({
+      type: FETCH_PRODUCTS,
+      payload: res.data,
+    });
+  } catch (error) {
+    console.error('Error fetching products:', error);
+  } 
+}
 
 export const fetchCategories = (category: string) => async (dispatch: Dispatch) => {
     try {
-      const res = await axios.get<string[]>(`${url}?category=${category}`);
+      const res = await axios.get<string[]>(`${ProductUrl}?category=${category}`);
+
       dispatch({
         type: FETCH_CATEGORIES,
         payload: res.data,
@@ -43,7 +54,7 @@ export const addToCart = (product: Product) => ({
 export const addToFilteredProducts = (category: string) => async(dispatch : Dispatch) => {
     try {
         dispatch({ type: PRODUCTS_LOADING });
-        const res = await axios.get<Product[]>(`${url}?category=${category}`);
+        const res = await axios.get<Product[]>(`${ProductUrl}?category=${category}`);
         dispatch({
           type: FETCH_PRODUCTS,
           payload: res.data,

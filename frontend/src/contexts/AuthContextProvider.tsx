@@ -16,7 +16,11 @@ export interface LogUserDetails {
 const AuthContextProvider: React.FC<Props>= ({children}) => {
     
     
-    const[isLoginLocal, setIsLoginLocal] = useState(false)
+    const[isLoginLocal, setIsLoginLocal] = useState({
+      id: "",
+      isUser: false,
+      isAdmin: false
+    })
     const[isAdmin, setIsAdmin] = useState(false)
     const [userLoggedIn, setUserLoggedIn] = useState<LogUserDetails>({
       id:  "",
@@ -25,7 +29,7 @@ const AuthContextProvider: React.FC<Props>= ({children}) => {
       email: "",
   });
 
-  console.log(userLoggedIn);
+  // console.log(userLoggedIn);
   
 
     useEffect(() => {
