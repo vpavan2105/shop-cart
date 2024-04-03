@@ -10,12 +10,14 @@ import {
   Box,
   Flex,
   Heading,
+
 } from "@chakra-ui/react";
 import { CartUrl } from "../../ApiUrls";
 import { OrderUrl } from "../../ApiUrls";
 import { FaGooglePay, FaPhone } from "react-icons/fa";
 import { SiPaytm } from "react-icons/si";
 import { CheckCircleIcon } from "@chakra-ui/icons";
+import { useNavigate } from "react-router";
 
 interface Product {
   id: number;
@@ -35,7 +37,7 @@ export function CartPayment(): ReactElement {
   const [cartProduct, setCartProduct] = useState<Product[] | null>(null);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [selectedButton, setSelectedButton] = useState<string | null>(null); // State to track the selected button
-
+  const navigate = useNavigate();
   const toast = useToast();
   // get userid from local storage
   let user_id: string | undefined; //ip
@@ -62,6 +64,7 @@ export function CartPayment(): ReactElement {
     if (cartProduct !== null) {
       console.log(cartProduct);
       postData(cartProduct);
+      navigate('/orders')
     }
   }, [totalPrice]);
 
@@ -79,10 +82,13 @@ export function CartPayment(): ReactElement {
       }
     }
     getCartProductData();
+   
   };
 
   //Send POST request to the server to create a new order
   async function postData(cartProduct: Product[]) {
+    console.log("rendering..");
+    
     try {
       const currentDate = new Date(); // get the current date and time
       const formattedDate = currentDate.toLocaleString(); // Convert the current date and time to a string representation
