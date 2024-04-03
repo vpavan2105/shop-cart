@@ -1,6 +1,6 @@
 import axios from "axios";
 import {  AddProduct, DeleteProduct, DeleteUser, FetchCarts, FetchOrder, FetchProduct, FetchUsers, UpdateOrder, UpdateProduct } from "../actionTypes/actionTypes";
-import {  ProdData } from "../utils/adminUtils";
+import {  ProdData, status } from "../utils/adminUtils";
 import {  Dispatch } from "redux";
 import { BaseUrl, CartUrl, OrderUrl, ProductUrl, UserUrl } from "../../ApiUrls";
 
@@ -21,7 +21,33 @@ export const fetchDataProduct = () =>  (dispatch:Dispatch)  => {
         dispatch({type:FetchProduct.FETCH_PRODUCT__ERROR})
       })
 }
-
+export const filterProducts = (query:string) => (dispatch:Dispatch) => {
+  console.log("loghgh........");
+  
+  dispatch({type:FetchProduct.FETCH_PRODUCT_LOADING})
+      axios.get(`${prodcutUrl}?q=${query}`)
+      .then((res)=>{
+        console.log(res);
+        dispatch({type:FetchProduct.FETCH_PRODUCT_SUCCESS,payload:res.data})
+      })
+      .catch((error)=>{
+        console.log(error);
+        dispatch({type:FetchProduct.FETCH_PRODUCT__ERROR})
+      })
+}
+export const filtercategoryProducts = (category:string) => (dispatch:Dispatch) => {
+    
+  dispatch({type:FetchProduct.FETCH_PRODUCT_LOADING})
+      axios.get(`${prodcutUrl}?category=${category}`)
+      .then((res)=>{
+        console.log(res);
+        dispatch({type:FetchProduct.FETCH_PRODUCT_SUCCESS,payload:res.data})
+      })
+      .catch((error)=>{
+        console.log(error);
+        dispatch({type:FetchProduct.FETCH_PRODUCT__ERROR})
+      })
+}
 
 export const addDataProduct = (newProduct:ProdData)=> (dispatch:Dispatch) => {
      dispatch({type:AddProduct.ADD_PRODUCT_LOADING})
@@ -117,7 +143,7 @@ export const fetchOrdersData = () =>  (dispatch:Dispatch) =>{
         })
   }
 
-export const updateOrderData = (payload:{status:boolean},id:string|number) =>  (dispatch:Dispatch)  =>{
+export const updateOrderData = (payload:{status},id:string|number) =>  (dispatch:Dispatch)  =>{
     dispatch({type:UpdateOrder.UPDATE_ORDER_LOADING});
     axios.patch(`${orderUrl}/${id}`,payload)
     .then((res)=>{

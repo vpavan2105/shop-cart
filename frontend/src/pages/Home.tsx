@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "../home.css";
 import {Footer} from './Footer';
+import { ProductUrl } from "../ApiUrls";
+import { SearchBarHome } from "../components/SearchBarHome";
 
 
 function Home() {
@@ -9,34 +11,34 @@ function Home() {
   const [best,setBest]=useState([])
   const [sell,setSell]=useState([])
 
-
   useEffect(() => {
-    fetch("http://localhost:8080/products?_limit=4")
+    fetch(`${ProductUrl}?_limit=4`)
       .then((res) => res.json())
       .then((res) => setData(res))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8080/products?_sort=price&_limit=4")
+    fetch(`${ProductUrl}?_sort=price&_limit=4`)
       .then((res) => res.json())
       .then((res) => setProduct(res))
       .catch((err) => console.log(err));
   }, []);
   useEffect(() => {
-    fetch("http://localhost:8080/products?_sort=title&_limit=8")
+    fetch(`${ProductUrl}?_sort=title&_limit=8`)
       .then((res) => res.json())
       .then((res) => setBest(res))
       .catch((err) => console.log(err));
   }, []);
   useEffect(() => {
-    fetch("http://localhost:8080/products?_sort=description&_limit=4")
+    fetch(`${ProductUrl}?_sort=description&_limit=4`)
       .then((res) => res.json())
       .then((res) => setSell(res))
       .catch((err) => console.log(err));
   }, []);
   return (
     <>
+    <SearchBarHome/>
       {/* <div className="home">
         <img
           src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -46,13 +48,13 @@ function Home() {
       </div> */}
       <div className="sofa">
         <img src="https://media.designcafe.com/wp-content/uploads/2021/04/15173304/trending-sofa-designs-for-your-home.jpg" alt="" />
-    </div>
-    <div className="discount-box">
+      </div>
+    {/* <div className="discount-box">
       <h2>Get 5% Cash Back On $200</h2>
       <p>Shopping is a bit of a relaxing hobby for me,
  which is sometimes troubling for the bank balance.</p>
  <button className="lbtn">Learn more</button>
-    </div>
+    </div> */}
     
       <div className="category">
         <h2>Shop Our Top Categories</h2>
@@ -82,8 +84,8 @@ function Home() {
         <h2>Todays Best Deals For You!</h2>
 
         <div className="main-box">
-          {data.map((product) => (
-            <div className="card">
+          {data.map((product,index) => (
+            <div className="card" key={index}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 
@@ -225,8 +227,8 @@ function Home() {
       <div className="popular">
         <h2>Weekly Popular Products</h2>
         <div className="main-box">
-          {product.map((product) => (
-            <div className="card">
+          {product.map((product,index) => (
+            <div className="card" key={index}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 
@@ -236,7 +238,7 @@ function Home() {
           ))}
         </div>
       </div>
-      <div className="Sofa-img">
+      {/* <div className="Sofa-img">
     <div className="sofa">
         <img src="https://media.designcafe.com/wp-content/uploads/2021/04/15173304/trending-sofa-designs-for-your-home.jpg" alt="" />
     </div>
@@ -246,14 +248,14 @@ function Home() {
  which is sometimes troubling for the bank balance.</p>
  <button className="lbtn">Learn more</button>
     </div>
-     </div>
+     </div> */}
   
       <div className="Best-deal">
         <h2>Todays Best Deals For You!</h2>
 
         <div className="main-box">
-          {best.map((product) => (
-            <div className="card">
+          {best.map((product,index) => (
+            <div className="card" key={index}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 
@@ -277,8 +279,8 @@ function Home() {
    <div className="most-sell">
     <h2>Most Selling Products</h2>
     <div className="main-box">
-          {sell.map((product) => (
-            <div className="card">
+          {sell.map((product,index) => (
+            <div className="card" key={index}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 

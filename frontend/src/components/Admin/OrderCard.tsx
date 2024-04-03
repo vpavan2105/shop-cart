@@ -12,7 +12,7 @@ const OrderCard = ({order}:{order:OrderData}) => {
     const dispatch = useAppDispatch();
     const toggleStatusOrder = (order:OrderData) => {
         const payload = {
-            status:!order.status
+            status:"inprogress"
         }
         dispatch(updateOrderData(payload,order.id))
     }
@@ -43,14 +43,13 @@ const OrderCard = ({order}:{order:OrderData}) => {
     <Text fontSize={['sm', 'md']} fontWeight={'bold'}>
         Total Price: {order.totalAmount}
     </Text>
-    <Text fontSize={['sm', 'md']}>Date : {order.date}</Text>
     <Button
         fontSize={['sm', 'md']}
         onClick={() => toggleStatusOrder(order)}
         bgColor={statusColor}
         color={'white'} // Button text color
     >
-        {order.status ? 'Successful' : 'On Progress'}
+        {order.status}
     </Button>
     <Link to={`/ordersadmin/${order.id}`}>
         <Button fontSize={['sm', 'md']} color={'blue'} border={'1px solid'}>Show More</Button>
