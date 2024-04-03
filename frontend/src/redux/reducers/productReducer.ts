@@ -21,9 +21,7 @@ export const productReducerAdmin = (state:IProductState = initialState, {type, p
     
     switch(type){
         case FetchProduct.FETCH_PRODUCT_LOADING : return {...state,isLoadingFetch:true}
-        case FetchProduct.FETCH_PRODUCT_SUCCESS : {console.log(payload);
-        
-            return {...state,isLoadingFetch:false,productsData:payload}}
+        case FetchProduct.FETCH_PRODUCT_SUCCESS :  return {...state,isLoadingFetch:false,productsData:payload}
         case FetchProduct.FETCH_PRODUCT__ERROR  : return {...state,isErrorFetch:false,isLoadingFetch:false}
 
         case AddProduct.ADD_PRODUCT_LOADING : return {...state,isLoadingAdd:true}

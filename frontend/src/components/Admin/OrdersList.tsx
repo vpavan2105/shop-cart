@@ -1,4 +1,4 @@
-import { Box, SimpleGrid } from '@chakra-ui/react'
+import { Box, Heading, SimpleGrid } from '@chakra-ui/react'
 
 import {  OrderCard } from './OrderCard'
 import { useAppSelector } from '../../redux/utils/Product_Utils';
@@ -17,10 +17,29 @@ const OrdersList = () => {
   return (
     <Box display={'flex'} justifyContent={'center'} >
     <SimpleGrid columns={[1, 2, 3]} gap={4}>
-      {ordersData.map((order:OrderData)=>{
+  <Box>
+    <Heading as="h2" size="md" mb={2}>Pending</Heading>
+    {ordersData.map((order: OrderData) => {
+      if (order.status === 'Pending') 
         return <OrderCard order={order} key={order.id} />
-      })}
-    </SimpleGrid>
+    })}
+  </Box>
+  <Box>
+    <Heading as="h2" size="md" mb={2}>In Progress</Heading>
+    {ordersData.map((order: OrderData) => {
+      if (order.status === 'inprogress') 
+        return <OrderCard order={order} key={order.id} />
+    })}
+  </Box>
+  <Box>
+    <Heading as="h2" size="md" mb={2}>Complete</Heading>
+    {ordersData.map((order: OrderData) => {
+      if (order.status === 'completed') 
+        return <OrderCard order={order} key={order.id} />
+    })}
+  </Box>
+</SimpleGrid>
+
     </Box>
   )
 }

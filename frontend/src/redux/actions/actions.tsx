@@ -16,10 +16,25 @@ export const fetchProducts = () => async (dispatch: Dispatch) => {
     console.error('Error fetching products:', error);
   }
 };
+export const filterSearchProducts = (query:string) => async (dispatch:Dispatch) => {
+  try {
+    dispatch({ type: PRODUCTS_LOADING });
+    const res = await axios.get<Product[]>(`${ProductUrl}?q=${query}`);
+    console.log(res.data);
+    
+    dispatch({
+      type: FETCH_PRODUCTS,
+      payload: res.data,
+    });
+  } catch (error) {
+    console.error('Error fetching products:', error);
+  } 
+}
 
 export const fetchCategories = (category: string) => async (dispatch: Dispatch) => {
     try {
       const res = await axios.get<string[]>(`${ProductUrl}?category=${category}`);
+
       dispatch({
         type: FETCH_CATEGORIES,
         payload: res.data,
