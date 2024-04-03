@@ -41,7 +41,7 @@ function Home() {
     <SearchBarHome/>
       {/* <div className="home">
         <img
-          src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://assets.ajio.com/cms/AJIO/WEB/D-1.0-UHP-010424-MainBanner-Z1-Payday.gif"
           className="img"
           alt=""
         />

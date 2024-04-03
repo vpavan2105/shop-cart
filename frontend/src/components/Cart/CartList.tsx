@@ -269,7 +269,7 @@ function CartList(): ReactElement {
                       </Heading>
                     </Box>
                     <Box mt="20px">
-                      <Button bg="blue.200" onClick={handleCheckout}>
+                      <Button border="1px solid teal" bgColor={'aliceblue'}  _hover={{bg:"teal.300",border:"none",transition:'all 1s ease-out'}} onClick={handleCheckout}>
                         Proceed to Checkout
                       </Button>
                     </Box>
