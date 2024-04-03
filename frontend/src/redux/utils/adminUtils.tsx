@@ -62,8 +62,8 @@ export interface ICartState{
 
 export enum status{
   Pending="Pending",
-  inprogress="inprogress",
-  completed="completed"
+  Inprogress="Inprogress",
+  Success="Success"
 }
 export interface OrderData{
 

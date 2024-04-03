@@ -3,23 +3,25 @@ import { Box, Grid, HStack, Skeleton, Stack } from '@chakra-ui/react'
 
 const DashboardLoading = () => {
   return (
-   <Box>
-       <Grid templateColumns={'repeat(1,1fr)' } alignItems={'center'} gap={3}>
+   <Box h={'80vh'} display={'flex'} justifyContent={'center'} >
+       <Grid templateColumns={'repeat(1,1fr)' }  gap={5}>
          <HStack spacing='24px'>
-            <Skeleton w='100px' h={'42px'}/>
-            <Skeleton w='100px'  h={'42px'}/>
-            <Skeleton w='100px'  h={'42px'}/>
+            <Skeleton w='300px' h={'80px'}/>
+            <Skeleton w='300px'  h={'80px'}/>
+            <Skeleton w='300px'  h={'80px'}/>
+
          </HStack>
           <HStack spacing='24px'>
-          <Skeleton w='100px' h={'42px'}/>
-          <Skeleton w='100px'  h={'42px'}/>
-          <Skeleton w='100px'  h={'42px'}/>
+          <Skeleton w='200px' h={'50px'}/>
+          <Skeleton w='200px'  h={'50px'}/>
+          <Skeleton w='50px'  h={'50px'}/>
+          <Skeleton w='200px'  h={'50px'}/>
+          <Skeleton w='200px'  h={'50px'}/>
          </HStack>
          <HStack spacing='24px'>
-          <Skeleton w='100px' h={'42px'}/>
-          <Skeleton w='100px'  h={'42px'}/>
-          <Skeleton w='100px'  h={'42px'}/>
+          <Skeleton w='950px' h={'50px'}/>
          </HStack>
+       
        </Grid>
    </Box>
   )

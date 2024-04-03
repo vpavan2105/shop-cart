@@ -27,7 +27,11 @@ const SingleOrderPage = () => {
             });
     };
 
-    if (isLoading) return <Spinner size="lg" />;
+    if (isLoading) return (
+        <Box height={'100vh'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+            <Spinner size="xl" />
+         </Box>
+    );
 
     return (
         <Box p={4} borderWidth="1px" borderRadius="md" boxShadow="md">

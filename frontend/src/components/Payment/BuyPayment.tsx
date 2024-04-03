@@ -66,7 +66,7 @@ export function BuyPayment(): ReactElement | undefined {
         description:
           "Product is not found with the given product id. Unable to process the order.",
         status: "error",
-        duration: 7000,
+        duration: 3000,
         isClosable: true,
         position: "top",
       });
@@ -134,7 +134,7 @@ export function BuyPayment(): ReactElement | undefined {
           description:
             "Your order request has been created successfully. Please navigate to the order page to check the order status.",
           status: "success",
-          duration: 7000,
+          duration: 3000,
           isClosable: true,
           position: "top",
         });
@@ -145,7 +145,7 @@ export function BuyPayment(): ReactElement | undefined {
         description:
           "Failed to create your order request. Please try again later.",
         status: "error",
-        duration: 7000,
+        duration: 3000,
         isClosable: true,
         position: "top",
       });

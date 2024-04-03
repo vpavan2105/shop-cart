@@ -6,7 +6,6 @@ import { faBookmark, faHouseUser, faMoneyCheck, faUser } from "@fortawesome/free
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import RevenueLineComponents from "./RevenueLineChart";
 import DashboardLoading from "../Loadings/DashboardLoading";
-import { OrderData } from "../../redux/utils/adminUtils";
 
 const DashBoardAdmin = () => {
     const users:number = useAppSelector(state=>state.users.usersData).length
@@ -18,7 +17,7 @@ const DashBoardAdmin = () => {
       state.orders.ordersData.reduce((acc, curr) => {
        
         
-        return curr.status ?  acc + (curr.totalAmount || 0) : acc;
+        return curr.status == "Success" ?  acc + (curr.totalAmount || 0) : acc;
       }, 0)
     );    console.log(revenue,orders)
     const cardWidth = useBreakpointValue({ base: "100%", sm: "30%", md: "30%", lg: "30%" });

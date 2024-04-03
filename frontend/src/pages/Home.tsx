@@ -3,6 +3,7 @@ import "../home.css";
 import {Footer} from './Footer';
 import { ProductUrl } from "../ApiUrls";
 import { SearchBarHome } from "../components/SearchBarHome";
+import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -39,22 +40,11 @@ function Home() {
   return (
     <>
     <SearchBarHome/>
-      {/* <div className="home">
-        <img
-          src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          className="img"
-          alt=""
-        />
-      </div> */}
+
       <div className="sofa">
         <img src="https://media.designcafe.com/wp-content/uploads/2021/04/15173304/trending-sofa-designs-for-your-home.jpg" alt="" />
       </div>
-    {/* <div className="discount-box">
-      <h2>Get 5% Cash Back On $200</h2>
-      <p>Shopping is a bit of a relaxing hobby for me,
- which is sometimes troubling for the bank balance.</p>
- <button className="lbtn">Learn more</button>
-    </div> */}
+
     
       <div className="category">
         <h2>Shop Our Top Categories</h2>
@@ -86,11 +76,12 @@ function Home() {
         <div className="main-box">
           {data.map((product,index) => (
             <div className="card" key={index}>
+              <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 
               <p>{product.category}</p> 
-             
+             </Link>
             </div>
           ))}
         </div>
@@ -229,26 +220,17 @@ function Home() {
         <div className="main-box">
           {product.map((product,index) => (
             <div className="card" key={index}>
+              <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 
               <p>{product.category}</p> 
-             
+              </Link>
             </div>
           ))}
         </div>
       </div>
-      {/* <div className="Sofa-img">
-    <div className="sofa">
-        <img src="https://media.designcafe.com/wp-content/uploads/2021/04/15173304/trending-sofa-designs-for-your-home.jpg" alt="" />
-    </div>
-    <div className="discount-box">
-      <h2>Get 5% Cash Back On $200</h2>
-      <p>Shopping is a bit of a relaxing hobby for me,
- which is sometimes troubling for the bank balance.</p>
- <button className="lbtn">Learn more</button>
-    </div>
-     </div> */}
+
   
       <div className="Best-deal">
         <h2>Todays Best Deals For You!</h2>
@@ -256,11 +238,12 @@ function Home() {
         <div className="main-box">
           {best.map((product,index) => (
             <div className="card" key={index}>
+              <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 
               <p>{product.category}</p> 
-             
+              </Link>
             </div>
           ))}
         </div>
@@ -273,7 +256,7 @@ function Home() {
      <button className="lbtn">learn more</button>
       </div>
       <div className="get-2">
-         <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e768e3260571e48a0c_visa%20card-min.png" alt="" />
+         <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e768e3260571e48a0c_visa%20card-min.png"  alt="" />
         </div>
      </div>
    <div className="most-sell">
@@ -281,11 +264,12 @@ function Home() {
     <div className="main-box">
           {sell.map((product,index) => (
             <div className="card" key={index}>
+              <Link to={`/products/${product.id}`}>
               <img src={product.image} /> 
               <h4>{product.title}</h4>
               <h3>$ {product.price}</h3> 
               <p>{product.category}</p> 
-              
+              </Link>
             </div>
           ))}
         </div>
@@ -309,7 +293,7 @@ function Home() {
     </div>
    </div>
   <div className="service">
-    <h2>Services To Help You Shop</h2>
+ 
 <div className="ser-box">
   <div className="sbox">
     <h2>Frequently Asked Questions</h2>

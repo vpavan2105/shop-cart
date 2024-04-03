@@ -349,6 +349,9 @@ background-color: #ffe6cc;
 font-size: 50px;
 /* color: white; */
 }
+.cash-back > img{
+  width:70vw;
+}
 .cash-back p{
 margin-top: 30px;
 /* color:white; */
@@ -426,16 +429,13 @@ margin-left: 10px;
 .style button:hover {
 background-color: #45a049; /* Darker green on hover */
 }
-
-
-.service>h2{
-font-weight: bold;
-/* margin-left: 30px; */
-text-align: center;
-font-size: large;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-margin-top: 40px;
+.service{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
+
 
 
 .ser-box{
