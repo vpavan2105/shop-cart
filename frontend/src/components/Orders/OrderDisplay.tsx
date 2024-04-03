@@ -122,7 +122,7 @@ export function OrderDisplay(): ReactElement {
                       boxShadow="md"
                       p="6"
                       rounded="md"
-                     
+                     key={order.id}
                       mt="10px"
                       mb="10px"
                       h="150px"
