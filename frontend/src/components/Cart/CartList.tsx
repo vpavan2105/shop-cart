@@ -1,10 +1,13 @@
 import { ReactElement, useEffect, useState } from "react";
 import CartCard from "./CartCard";
-import { CartUrl } from "../ApiUrls";
+import { CartUrl } from "../../ApiUrls";
 import { Box, Button, Center, Heading, Spinner } from "@chakra-ui/react";
 import { BsFillBagDashFill } from "react-icons/bs";
 import { Text } from "recharts";
 import { BsFillBagHeartFill } from "react-icons/bs";
+import { useNavigate } from "react-router";
+import { Footer } from "../../pages/Footer";
+
 
 export interface ProductDetails {
   id: number;
@@ -33,6 +36,7 @@ function CartList(): ReactElement {
   const [cartProduct, setCartProduct] = useState<CartData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [toggle, setToggle] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   let u_id: string | undefined; //ip
   const loginDetails = localStorage.getItem("isLoginLocal");
@@ -141,7 +145,7 @@ function CartList(): ReactElement {
 
   const handleCheckout = () => {
     // Redirect the user to the UserDetails page
-    window.location.href = "/order-list";
+    navigate("/cart-payment");
   };
   return (
     <>
@@ -281,24 +285,24 @@ function CartList(): ReactElement {
                 flexDirection="column"
                 textAlign="center"
                 justifyContent="center"
-               
               >
                 <Box>
-                <BsFillBagHeartFill style={{ fontSize: '8em', color: "rgb(126, 146, 255)" }} />
+                  <BsFillBagHeartFill
+                    style={{ fontSize: "8em", color: "rgb(126, 146, 255)" }}
+                  />
                 </Box>
                 <Box marginTop="20px">
-                <Heading  >
-                  Hey! Your Shopping Cart is Empty.
-                </Heading>
-                <Text>
-                  There is nothing in your cart. Please add some items.
-                </Text>
+                  <Heading>Hey! Your Shopping Cart is Empty.</Heading>
+                  <Text>
+                    There is nothing in your cart. Please add some items.
+                  </Text>
                 </Box>
               </Box>
             )}
           </Box>
         </Center>
       )}
+      <Footer/>
     </>
   );
 }

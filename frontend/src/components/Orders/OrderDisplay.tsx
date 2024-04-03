@@ -1,22 +1,19 @@
 import { ReactElement, useState, useEffect } from "react";
 import {
   Heading,
- 
   Card,
-  
- 
   Text,
   Button,
- 
   Box,
   Center,
   Spinner,
 } from "@chakra-ui/react";
 
-import { OrderUrl } from "../ApiUrls";
+import { OrderUrl } from "../../ApiUrls";
 import { CgBorderTop } from "react-icons/cg";
-
-interface Location {
+import { useNavigate } from "react-router";
+import { Footer } from "../../pages/Footer";
+export interface Location {
   address: string;
   city: string;
   state: string;
@@ -24,7 +21,7 @@ interface Location {
   pincode: number;
 }
 
-interface Product {
+export interface Product {
   id: number;
   title: string;
   price: number;
@@ -36,7 +33,7 @@ interface Product {
   };
   quantity: number;
 }
-interface OrderObject {
+export interface OrderObject {
   id: string;
   userid: string;
   address: Location[];
@@ -46,9 +43,10 @@ interface OrderObject {
   status: string;
 }
 export function OrderDisplay(): ReactElement {
-  const [orderid, setOrderid] = useState<string | null>(null);
   const [orders, setOrders] = useState<null | OrderObject[]>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const navigate = useNavigate();
   // get userid from local storage
   let userId: string | undefined; //ip
 
@@ -83,11 +81,12 @@ export function OrderDisplay(): ReactElement {
   }
 
   const displayEach = (orderid: string) => {
-    console.log(orderid);
-    setOrderid(orderid);
+    localStorage.setItem("orderid", orderid);
+    navigate(`/each-order/${orderid}`);
   };
 
   return (
+    <>
     <Box w="100%" justifyContent="center">
       {isLoading ? (
         <Center height="100vh">
@@ -123,18 +122,23 @@ export function OrderDisplay(): ReactElement {
                       boxShadow="md"
                       p="6"
                       rounded="md"
-                      bg="white"
+                     
                       mt="10px"
                       mb="10px"
                       h="150px"
                       display="flex"
                       flexDirection="column"
                       justifyContent="space-between"
+                      bg= {order.status === "Pending"
+                      ? "yellow.200"
+                      : order.status === "In Progress"
+                      ? "orange.200"  :"teal.200"  }
                     >
                       <Box
                         display="flex"
                         justifyContent="space-between"
                         alignItems="center"
+                       
                       >
                         <Heading as="h6" fontSize="12px">
                           Order Id :{" "}
@@ -155,15 +159,7 @@ export function OrderDisplay(): ReactElement {
                           fontSize="12px"
                           px="5px"
                           borderRadius="5px"
-                          bgColor={
-                            order.status === "Pending"
-                              ? "yellow"
-                              : order.status === "In Progress"
-                              ? "lightblue"
-                              : order.status === "Success"
-                              ? "lightGreen"
-                              : "black"
-                          }
+                          color="black"
                         >
                           {" "}
                           {order.status}
@@ -207,6 +203,10 @@ export function OrderDisplay(): ReactElement {
           )}
         </Box>
       )}
+     
     </Box>
+     <Footer/>
+     </>
   );
+  
 }

@@ -1,4 +1,4 @@
-import { OrderDisplay } from "../components/OrderDisplay"
+import { OrderDisplay } from "../components/Orders/OrderDisplay"
 const Orders = () => {
   return (
    <OrderDisplay/>
