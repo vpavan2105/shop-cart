@@ -23,6 +23,7 @@ import {
   AuthContext,
   LogUserDetails,
 } from "../../contexts/AuthContextProvider";
+import { Footer } from "../../pages/Footer";
 export interface ProductCardProps {
   prod: Product;
   truncateDescription: (description: string) => string;
