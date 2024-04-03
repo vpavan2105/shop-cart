@@ -19,6 +19,7 @@ import CartList from "../Cart/CartList";
 import { CartPayment } from "../Payment/CartPayment";
 import { BuyPayment } from "../Payment/BuyPayment";
 import { OrderDisplay } from "../Orders/OrderDisplay";
+import WildCard from "../WildCard";
 
 const AllRoutes = () => {
   // const {isLoginLocal} = useContext(AuthContext)
@@ -35,7 +36,8 @@ const AllRoutes = () => {
           <Route path="/productsadmin" element={<ProductsAdmin />} />
           <Route path="/usersadmin" element={<UsersAdmin />} />
           <Route path="/ordersadmin/:id" element={<SingleOrderPage />} />
-          <Route path="usersadmin/:id" element={<SignleUserCard />} />
+          <Route path='/*' element={<WildCard/>}/>
+          <Route path="/usersadmin/:id" element={<SignleUserCard />} />
           <Route path="/logout" element={<Logout />} />
         </Routes>
       ) : (
@@ -43,6 +45,7 @@ const AllRoutes = () => {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<SingleProductPage />} />
+          <Route path='/*' element={<WildCard/>}/>
           <Route
             path="/cart-payment"
             element={
