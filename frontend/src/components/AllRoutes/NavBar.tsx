@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContextProvider";
 import { SearchBarHome } from "../SearchBarHome";
+import {Image} from "@chakra-ui/react";
 interface Links {
   to: string;
   displayText: string;
@@ -64,6 +65,9 @@ const NavBar = () => {
         <span className="bar"></span>
       </div>
       <div className={`navbar-inner ${isActive ? "active" : null}`}>
+        <Link to={"/"}>
+          <Image src="/ShopCart_Logo.png" alt="Logo" boxSize={"60px"} />
+        </Link>
         {listOfLinks.map((link) => {
           return (
             <NavLink
