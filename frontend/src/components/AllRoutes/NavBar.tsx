@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContextProvider";
+import { SearchBarHome } from "../SearchBarHome";
 interface Links {
   to: string;
   displayText: string;
@@ -47,8 +48,8 @@ const NavBar = () => {
         },
   ];
 
-  const defaultStyle: { color: string } = { color: "black" };
-  const activeStyle: { color: string } = { color: "red" };
+  const defaultStyle: { color: string } = { color: 'black' ,fontWeight: "bold" };
+  const activeStyle: { color: string } = { color: "green",fontWeight: "bold" }; //
 
   return (
     <div className="navbar">
@@ -75,9 +76,11 @@ const NavBar = () => {
             >
               {link.displayText}
             </NavLink>
+
           );
         })}
       </div>
+        
     </div>
   );
 };

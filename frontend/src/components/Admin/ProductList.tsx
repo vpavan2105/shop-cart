@@ -1,10 +1,10 @@
 
 import {ProductCard} from "./ProductCard";
-import { Box, Button, SimpleGrid, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, Input, SimpleGrid, useDisclosure } from "@chakra-ui/react";
 
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import {  ProdData  } from "../../redux/utils/adminUtils";
-import { deleteDataProduct } from "../../redux/actions/actionAdmin";
+import { deleteDataProduct, filterProducts } from "../../redux/actions/actionAdmin";
 import { ProductUpdate } from "./ProductUpdate";
 import Pagination from "./Pagination";
 import { useAppSelector, useAppDispatch } from '../../redux/utils/Product_Utils';
@@ -16,14 +16,20 @@ const ProductList:React.FC = () :ReactElement=> {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const dispatch = useAppDispatch();
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [itemsPerPage, setItemsPerPage] = useState<number>(6); // Change as per your requirement
+  const [itemsPerPage, setItemsPerPage] = useState<number>(6); 
+  
+  const [currentProducts,setCurrentProducts] = useState<ProdData[]>([])
 
   const { productsData, isLoadingFetch, isErrorFetch } = useAppSelector(
     (state) => state.products
   );
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = productsData.slice(indexOfFirstItem, indexOfLastItem);
+  useEffect(()=>{
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = productsData.slice(indexOfFirstItem, indexOfLastItem);
+    setCurrentProducts(currentItems)
+  },[productsData,currentPage])
   const editProduct = (product:ProdData) => {
     console.log(product);
     setProductDetails(product);
@@ -39,7 +45,7 @@ const ProductList:React.FC = () :ReactElement=> {
 
 
 
-console.log(isLoadingFetch);
+// console.log(isLoadingFetch);
 
 
   if (isLoadingFetch) return <div>loading</div>;
@@ -47,11 +53,9 @@ console.log(isLoadingFetch);
 
   return (
     <>
-      <Box mb={4}>
-     
-      </Box>
+   
       <SimpleGrid columns={[1, 2, 3]} gap={4}>
-        {currentItems.map((product:ProdData) => {
+        {currentProducts?.map((product:ProdData) => {
           return (
             <ProductCard
               key={product.id}
