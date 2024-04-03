@@ -3,7 +3,7 @@
 
 function Footer(){
     return(
-        <>
+        <div style={{backgroundColor: "aliceblue"}}>
           <div className="footer">
     <div className="nav-1 nav">
       <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e86ab4c21faa7bc0bd90dd_Logo.svg" alt="" />
@@ -107,7 +107,7 @@ function Footer(){
 <h2><a href="#">All Right reserved by Musemind ui/ux design agency | 2024</a></h2>
 </div>
         
-        </>
+        </div>
     )
 }
 

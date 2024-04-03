@@ -66,7 +66,7 @@ const ProductNav: React.FC<ProductNavProps> = () => {
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={2}>
+      <Box bgColor={"#63E6BE"} px={2}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <HStack spacing={8} alignItems={"center"}>
             <HStack as={"nav"} spacing={4} display={{ base: "flex" }}>
