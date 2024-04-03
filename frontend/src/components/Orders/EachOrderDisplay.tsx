@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { OrderUrl } from "../ApiUrls";
+import { OrderUrl } from "../../ApiUrls";
 import { Product } from "./OrderDisplay";
 import { Card, Image, Text, Box, Heading, Center } from "@chakra-ui/react";
 function EachOrderDisplay() {
@@ -28,7 +28,9 @@ function EachOrderDisplay() {
     <>
       <Center>
         <Box w={{ base: "100%", md: "80%", lg: "60%" }}>
-          <Heading my="15px">Order Details</Heading>
+          <Center>
+            <Heading my="15px">Order Details</Heading>
+          </Center>
           <Card boxShadow="md" p="6" rounded="md" bg="white">
             {orderData &&
               orderData.map((element) => (
@@ -76,7 +78,7 @@ function EachOrderDisplay() {
                         ? `${element.title.slice(0, 20)}...`
                         : element.title}
                     </Heading>
-                    <Text>Price:{element.price}</Text>
+                    <Text>Price: ${element.price}</Text>
                   </Box>
                 </Box>
               ))}

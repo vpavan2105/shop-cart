@@ -42,11 +42,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     userId = id;
   }
 
-  const handleBuy = () => {
-    
-    window.location.href = "/order-list";
-  };
-
   //Add to cart button functionality
   const handleCart = async () => {
     if (!userId) return navigate(`/login`);
@@ -176,6 +171,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   const handleProductClick = () => {
     navigate(`/products/${prod.id}`);
+  };
+
+  const handleBuy = () => {
+    navigate(`/buy-payment/${prod.id}`);
   };
 
   return (

@@ -12,7 +12,6 @@ function CartCard({ product, handleIncOrDec }: CartCartProps): ReactElement {
   return (
     <Box
       maxW={{ base: "80%", md: "85%", lg: "100%" }}
-     
       p="6"
       boxShadow="Outline"
       // border="1px solid gray"
@@ -44,9 +43,9 @@ function CartCard({ product, handleIncOrDec }: CartCartProps): ReactElement {
         }}
       >
         <Heading fontSize="15px" as="h6">
-        {title.length > 20 ? `${title.slice(0, 20)}...` : title}
+          {title.length > 20 ? `${title.slice(0, 20)}...` : title}
         </Heading>
-        <Text>Price:{price}</Text>
+        <Text>Price: ${price}</Text>
       </Box>
       <Box
         display="flex"
