@@ -13,7 +13,7 @@ import { OrderUrl } from "../../ApiUrls";
 import { CgBorderTop } from "react-icons/cg";
 import { useNavigate } from "react-router";
 import { Footer } from "../../pages/Footer";
-import axios from "axios";
+
 
 export interface Location {
   address: string;
@@ -89,26 +89,7 @@ export function OrderDisplay(): ReactElement {
     localStorage.setItem("orderid", orderid);
     navigate(`/each-order/${orderid}`);
   };
-  const handlePendingOrder = (id:string) => {
-     setIsLoading(true);
-    axios.patch(`${OrderUrl}/${id}`,{status:'Success'})
-    .then(res=>{
-      console.log(res.data);
-      const updatedOrders : any = orders?.map((order)=>{
-      return   order.id == res.data.id ? res.data : order
-      })
-
-      
-      setOrders(updatedOrders)
-      setIsLoading(false);
-      
-    })
-    .catch(error => {
-      console.log(error);
-      
-    })
-  }
-
+ 
   return (
     <>
     <Box w="100%" justifyContent="center">
@@ -179,17 +160,17 @@ export function OrderDisplay(): ReactElement {
                         <Heading as="h5" fontSize="12px">
                           Order Status :
                         </Heading>
-                        <Button
-                          isDisabled={order.status === "Pending" || order.status === "Completed"}
+                        <Text
+          
                           borderRadius="5px"
                           color="black"
                          fontWeight={'bold'}
-                          onClick={()=>handlePendingOrder(order.id)}
+                          
                           size={'sm'}
                         >
                         
                           {order.status}
-                        </Button>
+                        </Text>
                       </Box>
                       <Box display="flex" justifyContent="space-between">
                         <Heading as="h5" fontSize="12px">
