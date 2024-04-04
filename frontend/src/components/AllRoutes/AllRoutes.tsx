@@ -14,7 +14,7 @@ import Logout from "../Logout";
 
 import SignUp from "../../pages/SignUp";
 import { SingleOrderPage } from "../Admin/SingleOrderPage";
-import { SignleUserCard } from "../Admin/SignleUserCard";
+
 import CartList from "../Cart/CartList";
 import { CartPayment } from "../Payment/CartPayment";
 import { BuyPayment } from "../Payment/BuyPayment";
