@@ -41,7 +41,7 @@ export function BuyPayment(): ReactElement | undefined {
     // Calling postData function after totalPrice calculation
     if (product !== null) {
       postData(product);
-      navigate('/');
+      navigate('/orders');
     }
   }, [product]);
 

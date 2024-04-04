@@ -14,10 +14,11 @@ const DashBoardAdmin = () => {
     console.log(useAppSelector((state:any)=>state.orders.ordersData));
     
     const revenue: number = useAppSelector((state:any) =>
-      Math.floor(state.orders.ordersData.reduce((acc:number, curr:any) => {
+      state.orders.ordersData.reduce((acc:number, curr:any) => {
        
+        
         return curr.status == "Success" ?  acc + (curr.totalAmount || 0) : acc;
-      }, 0))
+      }, 0)
     );    console.log(revenue,orders)
     const cardWidth = useBreakpointValue({ base: "100%", sm: "30%", md: "30%", lg: "30%" });
 if(isLoadingFetch) return <DashboardLoading/>
