@@ -12,7 +12,7 @@ const OrderCard = ({order}:{order:OrderData}) => {
     const dispatch = useAppDispatch();
     const toggleStatusOrder = (order:OrderData) => {
         const payload:any = {
-            status:"Inprogress"
+            status: order.status === "Pending" ? "Inprogress" :"Success"
         }
         dispatch(updateOrderData(payload,order.id))
     }
@@ -47,7 +47,7 @@ const OrderCard = ({order}:{order:OrderData}) => {
         bgColor={statusColor}
         size={'sm'}
         color={'white'} 
-        isDisabled={order.status == "Inprogress" || order.status == "Success"} 
+        isDisabled={ order.status == "Success"} 
     >
         {order.status}
     </Button>

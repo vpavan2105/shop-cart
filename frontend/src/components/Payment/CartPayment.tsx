@@ -64,7 +64,7 @@ export function CartPayment(): ReactElement {
     if (cartProduct !== null) {
       console.log(cartProduct);
       postData(cartProduct);
-      navigate('/orders')
+      navigate('/')
     }
   }, [totalPrice]);
 
