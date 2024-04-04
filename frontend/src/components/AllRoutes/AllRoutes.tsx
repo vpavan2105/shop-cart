@@ -37,7 +37,7 @@ const AllRoutes = () => {
           <Route path="/usersadmin" element={<UsersAdmin />} />
           <Route path="/ordersadmin/:id" element={<SingleOrderPage />} />
           <Route path='/*' element={<WildCard/>}/>
-          <Route path="/usersadmin/:id" element={<SignleUserCard />} />
+          {/* <Route path="/usersadmin/:id" element={<SignleUserCard />} /> */}
           <Route path="/logout" element={<Logout />} />
         </Routes>
       ) : (
