@@ -89,7 +89,25 @@ export function OrderDisplay(): ReactElement {
     localStorage.setItem("orderid", orderid);
     navigate(`/each-order/${orderid}`);
   };
+  const handlePendingOrder = (id:string) => {
+     setIsLoading(true);
+    axios.patch(`${OrderUrl}/${id}`,{status:'Success'})
+    .then(res=>{
+      console.log(res.data);
+      const updatedOrders : any = orders?.map((order)=>{
+      return   order.id == res.data.id ? res.data : order
+      })
 
+      
+      setOrders(updatedOrders)
+      setIsLoading(false);
+      
+    })
+    .catch(error => {
+      console.log(error);
+      
+    })
+  }
 
   return (
     <>
@@ -161,16 +179,17 @@ export function OrderDisplay(): ReactElement {
                         <Heading as="h5" fontSize="12px">
                           Order Status :
                         </Heading>
-                        <Text
-                         
+                        <Button
+                          isDisabled={order.status === "Pending" || order.status === "Completed"}
                           borderRadius="5px"
                           color="black"
                          fontWeight={'bold'}
-                          
+                          onClick={()=>handlePendingOrder(order.id)}
                           size={'sm'}
                         >
+                        
                           {order.status}
-                        </Text>
+                        </Button>
                       </Box>
                       <Box display="flex" justifyContent="space-between">
                         <Heading as="h5" fontSize="12px">
