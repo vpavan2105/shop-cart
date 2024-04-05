@@ -10,6 +10,7 @@ import {
     Button,
     Input,
     Textarea,
+    useToast,
   } from '@chakra-ui/react'
 
 import { ProdData } from '../../redux/utils/adminUtils';
@@ -26,6 +27,7 @@ console.log(productDetails);
 
     const [updateProduct,setUpdateProduct] = useState<any>(productDetails);
     const dispatch = useAppDispatch();
+    const toast = useToast();
     const handleInputChange = (e:React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) => {
      
        const {name,value} = e.target;
@@ -44,6 +46,13 @@ console.log(productDetails);
     const handleUpdateData = () => {
 
       dispatch(updateDataProduct(updateProduct,updateProduct.id));
+      toast({
+        title: 'Update Product.',
+        description: `Successfully updated product : ${updateProduct.title}`,
+        status: 'info',
+        duration: 2000,
+        isClosable: true,
+      })
       onClose();
       
     }

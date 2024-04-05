@@ -7,12 +7,13 @@ import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 interface ProductCardProps{
    product:ProdData;
    editProduct:(a:ProdData) => void;
-   deleteProduct: (a:any) => void;
+   deleteProduct: (a:number|string,b:string) => void;
 
 }
 const ProductCard:React.FC<ProductCardProps> = ({ product, editProduct, deleteProduct }):ReactElement => {
 
 // console.log(product);
+
 
   return (
     <Box className="product-card" p={4} borderWidth="1px" borderRadius="md" shadow="md">
@@ -28,7 +29,7 @@ const ProductCard:React.FC<ProductCardProps> = ({ product, editProduct, deletePr
       <Button onClick={() => editProduct(product)} leftIcon={<FontAwesomeIcon icon={faEdit} />}>
         Edit
       </Button>
-      <Button onClick={() => deleteProduct(product.id)} ml={2} leftIcon={<FontAwesomeIcon icon={faTrash} />}>
+      <Button onClick={() => deleteProduct(product.id,product.title)} ml={2} leftIcon={<FontAwesomeIcon icon={faTrash} />}>
         Delete
       </Button>
     </Box>
