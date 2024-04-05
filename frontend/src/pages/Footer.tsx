@@ -50,7 +50,7 @@ function Footer(){
     </div>
 
      <div className="nav-2 nav footer1">
-     <ul >
+   <ul >
      <li><a href="#department"><h2>Department</h2></a></li>
     <li><a href="#fashion">Fashion</a></li>
     <li><a href="#education">Education Product</a></li>
@@ -60,12 +60,7 @@ function Footer(){
     <li><a href="#office-supplies">Office Supplies</a></li>
     <li><a href="#beauty-products">Beauty Products</a></li>
     <li><a href="#books">Books</a></li>
-    <li><a href="#electronics">Electronics & Gadget</a></li>
-    <li><a href="#travel-accessories">Travel Accessories</a></li>
-    <li><a href="#fitness">Fitness</a></li>
-    <li><a href="#sneakers">Sneakers</a></li>
-    <li><a href="#toys">Toys</a></li>
-    <li><a href="#furniture">Furniture</a></li>
+
   </ul>
   
 

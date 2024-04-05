@@ -76,7 +76,7 @@ const ProductList: React.FC = () => {
           ))}
         </Stack>
       ) : (
-        <Stack direction={["row"]} flexWrap="wrap" spacing="24px">
+        <Stack direction={["row"]} flexWrap="wrap" justifyContent={'center'} spacing="24px">
           {currentProducts.map((prod: Product) => (
             <ProductCard
               key={prod.id}

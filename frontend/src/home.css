@@ -27,6 +27,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* font-weight: bold; */
 }
 
 .box{
@@ -67,7 +68,7 @@
 .boxes{
   margin-top: 40px;
   display: flex;
-  gap: 10px;
+
   flex-wrap: wrap;
 
 }
@@ -108,12 +109,10 @@ justify-content: space-around; /* Adjust as needed */
 }
 
 .card {
-width: 250px; /* Adjust width as needed */
+width: 350px; /* Adjust width as needed */
 margin: 20px;
 padding: 20px;
-/* border: 1px solid #ccc; */
 
-padding: 10px;
 border: 1px solid #ccc;
 border-radius: 5px;
 /* border-radius: 8px; */
@@ -128,7 +127,7 @@ transition: transform 0.3s ease;
 }
 
 .card img {
-width: 200px;
+width: 250px;
 height: 200px;
 margin: auto;
 }
@@ -169,7 +168,7 @@ background-color: #0056b3; /* Adjust color as needed */
 }
 
 .card {
-  width: 45%; /* Adjust width as needed */
+  width: 65%; /* Adjust width as needed */
 }
 }
 
@@ -227,6 +226,10 @@ background-color: #0056b3; /* Adjust color as needed */
 }
 
 @media screen  and (max-width:700px){
+  *{
+    font-size:large;
+   
+  }
   .m-Box{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -486,14 +489,18 @@ background-color: #45a049; /* Darker green on hover */
 .ser-box{
 display: grid;
 margin-top: 20px;
-grid-template-columns: repeat(3,1fr);
+/* grid-template-columns: repeat(3,1fr); */
+display: flex;
 
+flex-wrap: wrap;
+justify-content: center;
 }
 .sbox{
 background-color: 
 #f5f6f6;
-height: auto;
-width: 400px;
+
+
+width: 300px;
 /* border: 1px solid; */
 box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 margin: 10px;
@@ -508,11 +515,11 @@ transition: transform 0.3s ease;
 
 
 .sbox h2{
-font-size: 30px;
+font-size: 20px;
 padding: 10px;
 }
 .sbox h3{
-font-size: 20px;
+font-size: 15px;
 padding: 10px;
 }
 
@@ -625,6 +632,11 @@ color: #2270f6;
 
 
 @media screen  and (max-width:700px){
+  .box{
+
+    width: 150px; /* Set width of container */
+    height: 200px; 
+  }
 
  .tproduct{
 
