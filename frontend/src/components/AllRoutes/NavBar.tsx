@@ -49,7 +49,7 @@ const NavBar = () => {
   ];
 
   const defaultStyle: { color: string ,fontWeight:string} = { color: 'black' ,fontWeight: "bold" };
-  const activeStyle: { color: string,fontWeight:string } = { color: "green",fontWeight: "bold" }; //
+  const activeStyle: { color: string,fontWeight:string } = { color: "teal",fontWeight: "bold" }; //
 
   return (
     <div className="navbar">

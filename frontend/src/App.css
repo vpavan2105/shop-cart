@@ -56,7 +56,10 @@ height:50px;
   padding-bottom: 3px;
   border-bottom: 1px solid ;
 }
-
+.navbar-inner :hover{
+  border-bottom: 2px solid #63E6BE;
+ 
+}
 @media screen and (max-width:784px){
   .navbar{
     display: flex;
@@ -83,8 +86,8 @@ height:50px;
     .navbar-inner {
      position:fixed;
      flex-direction: column;
-      top: -300px;
-      height: 250px;
+      top: -400px;
+      height: 350px;
       width: 100vw;
       z-index:3;
       background-color: aliceblue;
@@ -92,7 +95,7 @@ height:50px;
     .navbar-inner.active {
       top:0px;
     }
-
+  
   }
 
 

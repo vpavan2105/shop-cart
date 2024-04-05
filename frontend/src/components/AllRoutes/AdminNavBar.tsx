@@ -27,8 +27,8 @@ const AdminNavBar = () => {
       displayText:"Logout"
     }
   ]
-  const defaultStyle : {color: string} = {color:"black"}
-    const activeStyle : {color: string} = {color:"red"}
+  const defaultStyle: { color: string ,fontWeight:string} = { color: 'black' ,fontWeight: "bold" };
+  const activeStyle: { color: string,fontWeight:string } = { color: "teal",fontWeight: "bold" }; 
 
   return (
     <div className='navbar'>
