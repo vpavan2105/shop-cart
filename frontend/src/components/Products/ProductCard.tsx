@@ -79,7 +79,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             description:
               "The selected product has been successfully added to your cart.",
             status: "success",
-            duration: 7000,
+            duration: 2000,
             isClosable: true,
             position: "top",
           });

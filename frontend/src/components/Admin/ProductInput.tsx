@@ -1,4 +1,4 @@
-import { Box, Button, Input, Textarea } from "@chakra-ui/react";
+import { Box, Button, Input, Textarea, useToast } from "@chakra-ui/react";
 import  { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -22,10 +22,17 @@ const initialState:ProdData = {
 
 const ProductInput = () => {
   const [updateProduct, setUpdateProduct] = useState<ProdData>(initialState);
+  const toast = useToast();
   const dispatch = useAppDispatch()
   const addProduct = () => {
     dispatch(addDataProduct(updateProduct));
-
+    toast({
+      title: 'New Product.',
+      description: `Successfully added ${updateProduct.title}`,
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+    })
     setUpdateProduct(initialState);
   };
   const handleInputChange = (e:React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) => {
