@@ -1,6 +1,6 @@
 
 import {ProductCard} from "./ProductCard";
-import { Box,  SimpleGrid, useDisclosure } from "@chakra-ui/react";
+import { Box,  SimpleGrid, useDisclosure, useToast } from "@chakra-ui/react";
 
 import { ReactElement, useEffect, useState } from "react";
 import {  ProdData  } from "../../redux/utils/adminUtils";
@@ -17,7 +17,7 @@ const ProductList:React.FC = () :ReactElement=> {
   const dispatch = useAppDispatch();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [itemsPerPage] = useState<number>(6); 
-  
+  const toast = useToast();
   const [currentProducts,setCurrentProducts] = useState<ProdData[]>([])
 
   const { productsData, isLoadingFetch, isErrorFetch } = useAppSelector(
@@ -36,8 +36,15 @@ const ProductList:React.FC = () :ReactElement=> {
     onOpen();
   };
 
-  const deleteProduct = (id:number|string) => {
+  const deleteProduct = (id:number|string,title:string) => {
     dispatch(deleteDataProduct(id));
+    toast({
+      title: 'Delete Product.',
+      description: `Successfully deleted product : ${title}`,
+      status: 'error',
+      duration: 2000,
+      isClosable: true,
+    })
   };
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
