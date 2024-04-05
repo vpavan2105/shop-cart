@@ -104,12 +104,6 @@ function Footer(){
    </div>
   <hr /> <hr />
 
-<div className="fo-logo">
-  <h2><span><img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63eb0ed6e927bdf5bc4309e0_briefcase.svg" alt="" /></span>   Become Seller</h2>
- <h2><span><img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63eb0ed6c4510c256356f4cd_gift.svg" alt="" /></span>Gift Cards</h2>
-<h2><span><img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63eb0ed6ae57fd74e0402aa4_help-circle.svg" alt="" /></span>help Center</h2>
-<h2><a href="#">All Right reserved by Musemind ui/ux design agency | 2024</a></h2>
-</div>
         
         </div>
     )
