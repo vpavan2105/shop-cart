@@ -3,6 +3,7 @@ import { Table, TableCaption, TableContainer, Tbody, Th, Thead, Tr } from '@chak
 import { UserData } from '../../redux/utils/adminUtils';
 import { UsersCard } from './UsersCard';
 import { useAppSelector } from '../../redux/utils/Product_Utils';
+import { OrderListLoading } from '../Loadings/OrderListLoading';
 
 const UsersList = () => {
 
@@ -10,7 +11,7 @@ const UsersList = () => {
   // useEffect(()=>{
    
   // },[])
-  if(isLoading) return <div>loading</div>
+  if(isLoading) return <OrderListLoading/>
   if(isError) return <div>error</div>
 
   return (

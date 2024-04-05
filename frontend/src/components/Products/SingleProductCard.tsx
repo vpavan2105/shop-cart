@@ -211,10 +211,10 @@ const SingleProductPage: React.FC<SingleProductPageProps> = () => {
                   src={product.image}
                   alt={product.title}
                   height={{ base: "300px", md: "400px" }}
-                  width={{ base: "70%", md: "auto" }}
+                  width={{ base: "60%", md: "auto" }}
               />
               <Card width={{ base: "100%", md: "50%" }} p={4} mt={{ base: 4, md: 0 }}>
-                <Flex direction="column" alignItems="center" p={4}>
+                <Flex direction="column"  p={4}>
                   <Heading fontSize="xx-large" mt={4}>{product.title}</Heading>
                   <Text fontSize="lg" mt={2}>
                     {product.description}

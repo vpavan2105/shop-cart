@@ -8,6 +8,7 @@ import { Button, Input, Stack } from '@chakra-ui/react';
 import { UserUrl } from "../ApiUrls";
 
 
+
 function Login(){
 
     const[email, setEmail] = useState("");
@@ -119,19 +120,25 @@ function Login(){
 
     return(
    
-        <Box maxW="md" mx="auto" mt={8} p={4} borderWidth="1px" borderRadius="md" boxShadow="md">
+        <Box maxW="md" mx="auto" mt={8} p={4} borderWidth="1px" borderRadius="md" boxShadow="md" bgColor={'aliceblue'}>
       <Heading mb={4} textAlign="center" fontSize="xl">
         Welcome to login page
       </Heading>
       <form onSubmit={handleLogin}>
         <Stack spacing={4}>
           <Box>
+
             <Input
               type="text"
+              mt={3}
               id="email"
-              placeholder="Email"
+              placeholder="Enter Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              borderColor="white"
+            _hover={{ borderColor: "teal.400" }}
+          
+            borderRadius="md"
              
             />
           </Box>
@@ -139,13 +146,19 @@ function Login(){
             <Input
               type="password"
               id="password"
-              placeholder="Password"
+              placeholder="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              borderColor="white"
+            _hover={{ borderColor: "teal.400" }}
+          
+            borderRadius="md"
               
             />
           </Box>
-          <Button type="submit" colorScheme="blue" size="md" w="100%">
+          <Button type="submit" colorScheme="blue" size="md" w="100%"   transition="all 0.2s"
+          _hover={{ bg: "white", color: "#ff7e5f" }}
+          _focus={{ bg: "white", color: "#ff7e5f" }}>
             Login
           </Button>
         </Stack>

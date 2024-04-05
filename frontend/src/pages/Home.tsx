@@ -175,46 +175,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="Discount">
-      <h2>Get Up To 70% Off</h2>
-      <div className="Main-DBox">
-      <div className="D-box">
-          <div className="c-box-1">
-          <h1>Save</h1><h1>  <sup>$</sup>100</h1>
-          <p>Explore Our Furniture & Home Furnishing Range</p>
-          </div>
-          <div className="c-box-2">
-              <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e6cd367817e964f756_sofa-min.png" alt="" />
-          </div>
-        </div>
-        <div className="D-box">
-          <div className="c-box-1">
-           <h1>Save</h1> <h1><sup>$</sup>29</h1>
-           <p>Explore Our Furniture & Home Furnishing Range</p>
-          </div>
-          <div className="c-box-2">
-            <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e4e006822af104db61_book-min.png" alt="" />
-          </div>
-        </div>
-        <div className="D-box">
-          <div className="c-box-1">
-             <h1>Save</h1> <h1><sup>$</sup>67</h1>
-             <p>Explore Our Furniture & Home Furnishing Range</p>
-          </div>
-          <div className="c-box-2">
-            <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e61a7c20076aec5fe7_shirt-min.png" alt="" />
-          </div>
-        </div>
-        <div className="D-box">
-          <div className="c-box-1"> <h1>Save</h1> <h1> <sup>$</sup>56</h1>
-          <p>Explore Our Furniture & Home Furnishing Range</p>
-          </div>
-          <div className="c-box-2">
-            <img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e53f7127592743f6be_bug%20%26%20book-min.png" alt="" />
-          </div>
-        </div>
-      </div>
-      </div>
+     
 
       <div className="popular">
         <h2>Weekly Popular Products</h2>

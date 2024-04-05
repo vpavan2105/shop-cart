@@ -50,7 +50,7 @@ function Footer(){
     </div>
 
      <div className="nav-2 nav footer1">
-     <ul >
+   <ul >
      <li><a href="#department"><h2>Department</h2></a></li>
     <li><a href="#fashion">Fashion</a></li>
     <li><a href="#education">Education Product</a></li>
@@ -60,12 +60,7 @@ function Footer(){
     <li><a href="#office-supplies">Office Supplies</a></li>
     <li><a href="#beauty-products">Beauty Products</a></li>
     <li><a href="#books">Books</a></li>
-    <li><a href="#electronics">Electronics & Gadget</a></li>
-    <li><a href="#travel-accessories">Travel Accessories</a></li>
-    <li><a href="#fitness">Fitness</a></li>
-    <li><a href="#sneakers">Sneakers</a></li>
-    <li><a href="#toys">Toys</a></li>
-    <li><a href="#furniture">Furniture</a></li>
+
   </ul>
   
 
@@ -109,12 +104,6 @@ function Footer(){
    </div>
   <hr /> <hr />
 
-<div className="fo-logo">
-  <h2><span><img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63eb0ed6e927bdf5bc4309e0_briefcase.svg" alt="" /></span>   Become Seller</h2>
- <h2><span><img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63eb0ed6c4510c256356f4cd_gift.svg" alt="" /></span>Gift Cards</h2>
-<h2><span><img src="https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63eb0ed6ae57fd74e0402aa4_help-circle.svg" alt="" /></span>help Center</h2>
-<h2><a href="#">All Right reserved by Musemind ui/ux design agency | 2024</a></h2>
-</div>
         
         </div>
     )
